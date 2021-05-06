@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="40d157f1-c7a1-472a-b486-475a65de35de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/BMI/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/BMI/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/BMI/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/BMI/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/BMI/BMI.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/BMI/out/production/BMI/BMI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/BMI/src/BMI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/ConvertVND/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/ConvertVND/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/ConvertVND/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/ConvertVND/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/ConvertVND/ConvertVND.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/ConvertVND/out/production/ConvertVND/VND.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/ConvertVND/src/VND.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DayInMonth/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DayInMonth/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DayInMonth/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DayInMonth/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DayInMonth/DayInMonth.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DayInMonth/out/production/DayInMonth/DayInMonth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DayInMonth/src/DayInMonth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DeclarationVariable/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DeclarationVariable/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DeclarationVariable/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DeclarationVariable/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DeclarationVariable/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DeclarationVariable/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DeclarationVariable/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DeclarationVariable/DeclarationVariable.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DeclarationVariable/out/production/DeclarationVariable/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/DeclarationVariable/src/com/company/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LeapYear/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LeapYear/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LeapYear/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LeapYear/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LeapYear/LeapYear.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LeapYear/out/production/LeapYear/LeapYear.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LeapYear/src/LeapYear.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LinearEquation/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LinearEquation/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LinearEquation/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LinearEquation/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LinearEquation/LinearEquation.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LinearEquation/out/production/LinearEquation/LinearEquation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/LinearEquation/src/LinearEquation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/Operation/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/Rectangle/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/Rectangle/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/Rectangle/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/Rectangle/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/Rectangle/Rectangle.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/Rectangle/out/production/Rectangle/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/Rectangle/src/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/SystemTime" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/TransferNumberToWord/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/TransferNumberToWord/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/TransferNumberToWord/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/TransferNumberToWord/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/TransferNumberToWord/TransferNumberToWord.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/TransferNumberToWord/out/production/TransferNumberToWord/NumberToWord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/TransferNumberToWord/src/NumberToWord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/displayHello/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/displayHello/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/displayHello/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/displayHello/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/displayHello/displayHello.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/displayHello/out/production/displayHello/HelloDisplay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntroJava/displayHello/src/HelloDisplay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShapeDraw.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GreatestCommonFactor/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GreatestCommonFactor/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GreatestCommonFactor/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GreatestCommonFactor/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GreatestCommonFactor/GreatestCommonFactor.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GreatestCommonFactor/out/production/GreatestCommonFactor/GreatestCommonFactor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GreatestCommonFactor/src/GreatestCommonFactor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterestLoan/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterestLoan/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterestLoan/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterestLoan/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterestLoan/InterestLoan.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterestLoan/out/production/InterestLoan/Interest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterestLoan/src/Interest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/Menu.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/out/production/Menu/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeLessThan100/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeLessThan100/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeLessThan100/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeLessThan100/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeLessThan100/PrimeLessThan100.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeLessThan100/out/production/PrimeLessThan100/PrimeLessThan100.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeLessThan100/src/PrimeLessThan100.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeNumber/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeNumber/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeNumber/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeNumber/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeNumber/PrimeNumber.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeNumber/out/production/PrimeNumber/PrimeNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeNumber/src/PrimeNumber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimePrint/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimePrint/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimePrint/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimePrint/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimePrint/PrimePrint.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimePrint/out/production/PrimePrint/PrimePrint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimePrint/src/PrimePrint.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1s8ncKNOIPqlZg6zKtWujoqAcRu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="ShapeDraw" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ShapeDraw" />
+      <module name="DrawShape" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ShapeDraw" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40d157f1-c7a1-472a-b486-475a65de35de" name="Default Changelist" comment="" />
+      <created>1620263162581</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620263162581</updated>
+      <workItem from="1620263163846" duration="1072000" />
+      <workItem from="1620265786779" duration="4425000" />
+      <workItem from="1620276095714" duration="1106000" />
+      <workItem from="1620284102957" duration="105000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
