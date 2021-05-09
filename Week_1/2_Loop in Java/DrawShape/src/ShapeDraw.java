@@ -38,6 +38,30 @@ public class ShapeDraw {
                         }
                         System.out.print("\n");
                     }
+                    System.out.println("Top-right");
+                    for(int i=7;i>0;i--) {
+                        for(int j=7;j>=i;j--){
+                            System.out.print(" ");
+
+                        }
+                        for(int k=0;k<i;k++){
+                            System.out.print("*");
+                        }
+
+                        System.out.print("\n");
+                    }
+                    System.out.println("Bottom-right");
+                    for(int i=7;i>0;i--) {
+                        for(int j=0;j<i;j++){
+                            System.out.print(" ");
+
+                        }
+                        for(int k=7;k>i;k--){
+                            System.out.print("*");
+                        }
+
+                        System.out.print("\n");
+                    }
                     break;
                 case 3:
                     System.out.println("Print isosceles triangle");
