@@ -1,21 +1,21 @@
 public class StopWatch {
     private long startTime, endTime;
-    public long getStartTime(){
-        return this.startTime;
-    }
-    public long getEndTime(){
-        return this.endTime;
-    }
     public StopWatch(){
         start();
+    }
+    public long getStartTime(){
+        return startTime;
     }
     public void start(){
         this.startTime=System.currentTimeMillis();
     }
+    public long getEndTime(){
+        return endTime;
+    }
     public void stop(){
-        this.endTime=System.currentTimeMillis();
+        endTime=System.currentTimeMillis();
     }
     public long getElapsedTime() {
-        return (this.endTime-this.startTime);
+        return (endTime-startTime);
     }
 }
