@@ -6,6 +6,15 @@ public class ColorableTest {
         shapes[2]=new Square(6);
         shapes[3]=new Circle(7);
         shapes[4]=new Square(8);
+
+//        for(Shape shape:shapes){
+//            switch (shape.getClass()){
+//                case Square:
+//                    System.out.println(1);
+//                    break;
+//            }
+//        }
+        System.out.println(shapes[4].getClass());
         for (Shape shape:shapes){
             System.out.println(shape);
             if(shape instanceof Colorable){
