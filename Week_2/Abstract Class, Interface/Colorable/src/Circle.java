@@ -14,6 +14,7 @@ public class Circle extends Shape{
     public void setRadius(double radius){
         this.radius=radius;
     }
+    @Override
     public double getArea(){
         return Math.pow(radius,2)*Math.PI;
     }
@@ -38,5 +39,6 @@ public class Circle extends Shape{
         circle = new Circle(3.5, "indigo", false);
         System.out.println(circle);
     }
+
 
 }
