@@ -38,6 +38,14 @@ public class Rectangle extends Shape{
     public double getPerimeter() {
         return 2 * (width + this.length);
     }
-
+    @Override
+    public String toString() {
+        return "A Rectangle with width="
+                + getWidth()
+                + " and length="
+                + getLength()
+                + ", which is a subclass of "
+                + super.toString();
+    }
 
 }
