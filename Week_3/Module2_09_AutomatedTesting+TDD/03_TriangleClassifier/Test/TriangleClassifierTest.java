@@ -10,7 +10,8 @@ public class TriangleClassifierTest {
         int side2=2;
         int side3=2;
         String expectedResult="equilateral triangle";
-        String result=TriangleClassifier.checkTriangle(side1,side2,side3);
+        TriangleClassifier classifier=new TriangleClassifier(side1,side2,side3);
+        String result=classifier.checkTriangle();
         assertEquals(expectedResult,result);
     }
 
@@ -20,7 +21,8 @@ public class TriangleClassifierTest {
         int side2=2;
         int side3=3;
         String expectedResult="isosceles triangle";
-        String result=TriangleClassifier.checkTriangle(side1,side2,side3);
+        TriangleClassifier classifier=new TriangleClassifier(side1,side2,side3);
+        String result=classifier.checkTriangle();
         assertEquals(expectedResult,result);
     }
     @Test
@@ -29,7 +31,8 @@ public class TriangleClassifierTest {
         int side2=4;
         int side3=5;
         String expectedResult="triangle";
-        String result=TriangleClassifier.checkTriangle(side1,side2,side3);
+        TriangleClassifier classifier=new TriangleClassifier(side1,side2,side3);
+        String result=classifier.checkTriangle();
         assertEquals(expectedResult,result);
     }
     @Test
@@ -38,7 +41,8 @@ public class TriangleClassifierTest {
         int side2=2;
         int side3=3;
         String expectedResult="not triangle";
-        String result=TriangleClassifier.checkTriangle(side1,side2,side3);
+        TriangleClassifier classifier=new TriangleClassifier(side1,side2,side3);
+        String result=classifier.checkTriangle();
         assertEquals(expectedResult,result);
     }
     @Test
@@ -47,7 +51,8 @@ public class TriangleClassifierTest {
         int side2=2;
         int side3=1;
         String expectedResult="not triangle";
-        String result=TriangleClassifier.checkTriangle(side1,side2,side3);
+        TriangleClassifier classifier=new TriangleClassifier(side1,side2,side3);
+        String result=classifier.checkTriangle();
         assertEquals(expectedResult,result);
     }
     @Test
@@ -56,7 +61,8 @@ public class TriangleClassifierTest {
         int side2=1;
         int side3=1;
         String expectedResult="not triangle";
-        String result=TriangleClassifier.checkTriangle(side1,side2,side3);
+        TriangleClassifier classifier=new TriangleClassifier(side1,side2,side3);
+        String result=classifier.checkTriangle();
         assertEquals(expectedResult,result);
     }
 }
