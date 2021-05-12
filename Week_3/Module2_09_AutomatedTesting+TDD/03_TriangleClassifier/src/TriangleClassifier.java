@@ -7,8 +7,12 @@ public class TriangleClassifier {
         this.side2=side2;
         this.side3=side3;
     }
+
     public static String checkTriangle(int side1,int side2, int side3){
-        throw new UnsupportedOperationException("no support");
+//        if(this.side1>0){
+
+//        }
+        return "";
     }
 
 }
