@@ -3,10 +3,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class NextDayCalculatorTest {
 
     @org.junit.jupiter.api.Test
-    void displayNextDayOf01_01_2018() {
-        int day=1;
-        int month=1;
-        int year=2018;
-
+    void test01_01_2018() {
+        String dateString="01/01/2008";
+        String expectedResult="02/01/2008";
+        String result=NextDayCalculator.displayNextDay(dateString);
+        assertEquals(expectedResult,result);
     }
 }

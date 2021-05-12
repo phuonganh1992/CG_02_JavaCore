@@ -3,25 +3,21 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class NextDayCalculator {
-    static void displayNextDay() {
-        Calendar calendar = Calendar.getInstance();
-        System.out.println(calendar);
+    static String displayNextDay(String dateString) {
+        String[] array=dateString.split("/");
+
+        int day=Integer.parseInt(array[0]);
+        int month=Integer.parseInt(array[1]);
+        int year=Integer.parseInt(array[2]);
+        if(month==12 && day==31) {
+            day=1;
+            month=1;
+            year=year+1;
+        } else if(day==endMonth()){
+
+        }
+
+
+        return "";
     }
 }
-
-//    public static void main(String[] args) {
-//        Calendar cal=Calendar.getInstance();
-////        Date date=cal.getTime();
-////
-////        System.out.println(date);
-////        SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
-////        System.out.println(sdf.format(date));
-//
-//        Date date=new Date();
-//        cal.setTime(date);
-//        date.setTime();
-
-
-//        System.out.println(calendar.get(12/7/2021));
-//    }
-//}
