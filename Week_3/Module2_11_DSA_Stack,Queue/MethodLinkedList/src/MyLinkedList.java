@@ -9,11 +9,36 @@ public class MyLinkedList<E> {
         head=new Node(data);
     }
     public void add(int index, E element){
-        Node tail=head;
-        tail.next=new Node(element);
+        if(index==0) addFirst(element);
+        else if(index>=numNodes) addLast(element);
+        else {
+            Node current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+            //curent ở index-1
+            Node temp = current.next; //index
+            current.next = new Node(element); //gán element vào index
+            current.next.next = temp; //gán temp vào index+1
+        }
+    }
+    public void addFirst(E element){
+        Node temp=head;
+        head=new Node(element);
+        head.next=temp;
+        numNodes++;
 
     }
+    public void addLast(E element){
 
+    }
+    public void printList(){
+        Node temp=head;
+        while (temp!=null){
+            System.out.println(temp.data);
+            temp=temp.next;
+        }
+    }
 
     public class Node{
         private Node next;
