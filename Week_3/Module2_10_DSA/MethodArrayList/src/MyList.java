@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import java.util.Arrays;
 
 public class MyList<E> {
@@ -44,9 +44,9 @@ public class MyList<E> {
 
         return size;
     }
-//    public E clone(){
-//
-//    }
+    public E[] clone(){
+        return (E[]) elements;
+    }
     public boolean contains(E o){
         boolean isContains=false;
         for (int i = 0; i < size; i++) {
@@ -56,5 +56,32 @@ public class MyList<E> {
         }
         return isContains;
     }
-
+    public int indexOf(E o){
+        int index=-1;
+        for (int i=0; i < size; i++) {
+            if(elements[i]==o) {
+                index=i;
+                break;
+            }
+        }
+        return index;
+    }
+    public boolean add(E e){
+        return true;
+    }
+    public void ensureCapacity(int minCapacity){
+        if(minCapacity>size) elements=Arrays.copyOf(elements,minCapacity);
+    }
+    public E get(int i){
+        if(i<0 || i>=size){
+            throw new IndexOutOfBoundsException("Index "+i+" is out of size");
+        }
+        return (E) elements[i];
+    }
+    public void clear(){
+        for (int i = 0; i < size; i++) {
+            elements[i]=null;
+        }
+        size=0;
+    }
 }
