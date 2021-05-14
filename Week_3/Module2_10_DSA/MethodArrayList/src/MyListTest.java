@@ -17,18 +17,24 @@ public class MyListTest {
         System.out.println("Size after add is: "+listInteger.size());
         System.out.println("Capacity after add is: "+listInteger.elements.length);
 
-        listInteger.remove(5);
-        listInteger.print();
-        System.out.println("Size after remove is: "+listInteger.size());
-        System.out.println("Capacity after remove is: "+listInteger.elements.length);
+        System.out.println(listInteger.contains(20));
+        System.out.println(listInteger.indexOf(21));
+//        Integer[] copyList;
+//        copyList = listInteger.clone();
+        System.out.println(listInteger.clone());
 
-        listInteger.clear();
-        listInteger.print();
-        System.out.println("Size after clear is: "+listInteger.size());
-        System.out.println("Capacity after clear is: "+listInteger.elements.length);
-
-        listInteger.ensureCapacity(50);
-        System.out.println("Capacity is: "+listInteger.elements.length);
+//        listInteger.remove(5);
+//        listInteger.print();
+//        System.out.println("Size after remove is: "+listInteger.size());
+//        System.out.println("Capacity after remove is: "+listInteger.elements.length);
+//
+//        listInteger.clear();
+//        listInteger.print();
+//        System.out.println("Size after clear is: "+listInteger.size());
+//        System.out.println("Capacity after clear is: "+listInteger.elements.length);
+//
+//        listInteger.ensureCapacity(50);
+//        System.out.println("Capacity is: "+listInteger.elements.length);
     }
 
 
