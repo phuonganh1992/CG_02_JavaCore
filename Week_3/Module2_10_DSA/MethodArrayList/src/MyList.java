@@ -2,9 +2,9 @@
 import java.util.Arrays;
 
 public class MyList<E> {
-    private int size=0;
+    public int size=0;
     public static final int DEFAULT_CAPACITY=10;
-    private Object[] elements;
+    public Object[] elements;
 
     public MyList() {
         elements=new Object[DEFAULT_CAPACITY];
@@ -17,18 +17,31 @@ public class MyList<E> {
             elements=new Object[]{};
         } else throw new IllegalArgumentException("Illegal capacity: "+capacity);
     }
-    public void add(int index,E element){
-        if (index<0 || index>size) throw new IndexOutOfBoundsException("Index is out of range");
-        else {
-            if(size==elements.length){
-                elements=Arrays.copyOf(elements,size+1);
-            }
-            for (int i = size; i >index ; i--) {
-                elements[i]=elements[i-1];
-            }
-            elements[index]=element;
-            size++;
+    public void print(){
+        System.out.println("My list is: ");
+        for (int i = 0; i < elements.length; i++) {
+            System.out.print(elements[i]+", ");
         }
+        System.out.println();
+    }
+    public void add(int index,E element){
+        if (index<0 || index>size) {
+            throw new IndexOutOfBoundsException("Index is out of range");
+        } else if(size==elements.length) {
+                elements = Arrays.copyOf(elements, size + 1);
+                size++;
+        }
+//        else if(index==size && size==0) {
+//                size=size+1;
+//                elements[index]=element;
+//            }
+        else {
+                for (int i = size; i > index; i--) {
+                    elements[i] = elements[i - 1];
+                }
+                elements[index] = element;
+                size++;
+            }
     }
     public E remove(int index){
         if (index<0 || index>=size) throw new IndexOutOfBoundsException("Index is out of range");
@@ -41,8 +54,10 @@ public class MyList<E> {
         return oldValue;
     }
     public int size(){
-
         return size;
+    }
+    public void setSize(int size){
+        this.size=size;
     }
     public E[] clone(){
         return (E[]) elements;
@@ -67,10 +82,13 @@ public class MyList<E> {
         return index;
     }
     public boolean add(E e){
+        if(size==0) return false;
         return true;
     }
     public void ensureCapacity(int minCapacity){
-        if(minCapacity>size) elements=Arrays.copyOf(elements,minCapacity);
+        if(minCapacity> elements.length) {
+            elements=Arrays.copyOf(elements,minCapacity);
+        }
     }
     public E get(int i){
         if(i<0 || i>=size){
