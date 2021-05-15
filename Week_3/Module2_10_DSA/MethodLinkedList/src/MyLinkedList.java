@@ -101,6 +101,7 @@ public class MyLinkedList<E> {
            current.data=null;
            current=current.next;
        }
+       numNodes=0;
    }
     public boolean contain(E element){
         if (this.indexOf(element)==-1) return false;
