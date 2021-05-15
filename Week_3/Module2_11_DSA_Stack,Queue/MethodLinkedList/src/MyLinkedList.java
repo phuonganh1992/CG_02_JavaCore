@@ -35,7 +35,7 @@ public class MyLinkedList<E> {
     public void printList(){
         Node temp=head;
         while (temp!=null){
-            System.out.println(temp.data);
+            System.out.print(temp.data+"\t");
             temp=temp.next;
         }
     }
