@@ -2,7 +2,7 @@ import org.omg.CosNaming.NamingContextPackage.NotEmpty;
 
 public class MyLinkedList<E> {
 
-    public int numNodes;
+    private int numNodes;
     private Node head;
 
     public MyLinkedList(Object data) {
@@ -40,6 +40,9 @@ public class MyLinkedList<E> {
         tail=tail.next;
         numNodes++;
     }
+    public boolean add(E element){
+        return true;
+    }
     public E remove(int index){
         if(index<0 || index>= numNodes) return null;
         if(index==0) {
@@ -60,10 +63,52 @@ public class MyLinkedList<E> {
         return numNodes;
     }
     public MyLinkedList<E> clone(){
-
+        return this;
     }
-    public boolean remove(Object e){
+    public int indexOf(E element){
+        Node temp=head;
+        int index=-1;
+        for (int i = 0; i < numNodes; i++) {
+            index++;
+            if (temp.data==element) return index;
+            else temp=temp.next;
+        }
+        return -1;
+    }
+   public E get(int i){
+        if(i<0 || i>=numNodes) return null;
+        else {
+        Node current =head;
+        for (int j = 0; j < i; j++) {
+            current = current.next;
+        }
+        return (E)current.data;
+        }
+   }
+   public E getFirst(){
+        return (E)head.data;
+   }
+   public E getLast(){
+        Node tail=head;
+       for (int i = 0; i < numNodes-1; i++) {
+           tail=tail.next;
+       }
+        return (E)tail.data;
+   }
+   public void clear(){
+        Node current=head;
+       for (int i = 0; i < numNodes; i++) {
+           current.data=null;
+           current=current.next;
+       }
+   }
+    public boolean contain(E element){
+        if (this.indexOf(element)==-1) return false;
         return true;
+    }
+    public boolean remove(Object element){
+        if(this.contain((E)element)) return true;
+        return false;
     }
     public void printList(){
         Node temp=head;
