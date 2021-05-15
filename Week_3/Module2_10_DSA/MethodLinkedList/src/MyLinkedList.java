@@ -42,18 +42,28 @@ public class MyLinkedList<E> {
     }
     public E remove(int index){
         if(index<0 || index>= numNodes) return null;
-        else {
+        if(index==0) {
+            head=head.next;
+            numNodes--;
+        } else {
             Node previous=head;
             for(int i=1;i<index;i++){
                previous =previous.next;
             }
             Node current=previous.next;
-
             previous.next=current.next;
             numNodes--;
-
         }
         return null;
+    }
+    public int size(){
+        return numNodes;
+    }
+    public MyLinkedList<E> clone(){
+
+    }
+    public boolean remove(Object e){
+        return true;
     }
     public void printList(){
         Node temp=head;
