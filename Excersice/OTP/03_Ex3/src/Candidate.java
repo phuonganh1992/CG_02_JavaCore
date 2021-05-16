@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Candidate {
     private String id;
     private String name;
@@ -44,5 +46,26 @@ public class Candidate {
 
     public void setPriority(int priority) {
         this.priority = priority;
+    }
+    public void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter id: ");
+        this.id = sc.nextLine();
+        System.out.print("Enter name: ");
+        this.name = sc.nextLine();
+        System.out.print("Enter address: ");
+        this.address = sc.nextLine();
+        System.out.print("Enter priority: ");
+        this.priority = sc.nextInt();
+    }
+
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", priority=" + priority +
+                '}';
     }
 }
