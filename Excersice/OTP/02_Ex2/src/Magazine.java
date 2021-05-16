@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Magazine extends Document {
     private int issueNumber;
     private int monthIssue;
@@ -28,10 +30,20 @@ public class Magazine extends Document {
     }
 
     @Override
+    public void input() {
+        Scanner sc=new Scanner(System.in);
+        super.input();
+        System.out.print("Enter issue number: ");
+        this.issueNumber=sc.nextInt();
+        System.out.print("Enter month issue: ");
+        this.monthIssue=sc.nextInt();
+    }
+
+    @Override
     public String toString() {
         return "Magazine{" +
                 "issueNumber=" + issueNumber +
                 ", monthIssue=" + monthIssue +
-                "} " + super.toString();
+                "} " +" is subclass of "+ super.toString();
     }
 }

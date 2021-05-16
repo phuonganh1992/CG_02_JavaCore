@@ -1,7 +1,9 @@
+import java.util.Scanner;
+
 public class Document {
     private String code;
     private String publisher;
-    private int Quantity;
+    private int quantity;
 
     public Document() {
     }
@@ -9,7 +11,7 @@ public class Document {
     public Document(String code, String publisher, int quantity) {
         this.code = code;
         this.publisher = publisher;
-        Quantity = quantity;
+        this.quantity = quantity;
     }
 
     public String getCode() {
@@ -29,11 +31,20 @@ public class Document {
     }
 
     public int getQuantity() {
-        return Quantity;
+        return quantity;
     }
 
     public void setQuantity(int quantity) {
-        Quantity = quantity;
+        quantity = quantity;
+    }
+    public void input(){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter code: ");
+        this.code=sc.nextLine();
+        System.out.print("Enter publisher: ");
+        this.publisher=sc.nextLine();
+        System.out.print("Enter quantity: ");
+        this.quantity=sc.nextInt();
     }
 
     @Override
@@ -41,7 +52,7 @@ public class Document {
         return "Document{" +
                 "code='" + code + '\'' +
                 ", publisher='" + publisher + '\'' +
-                ", Quantity=" + Quantity +
+                ", Quantity=" + quantity +
                 '}';
     }
 }

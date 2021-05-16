@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Book extends Document{
     private String author;
     private int numberPage;
@@ -10,6 +12,7 @@ public class Book extends Document{
         this.author = author;
         this.numberPage = numberPage;
     }
+
 
     public String getAuthor() {
         return author;
@@ -28,10 +31,20 @@ public class Book extends Document{
     }
 
     @Override
+    public void input() {
+        Scanner sc=new Scanner(System.in);
+        super.input();
+        System.out.print("Enter author: ");
+        this.author=sc.nextLine();
+        System.out.print("Enter number pages: ");
+        this.numberPage=sc.nextInt();
+    }
+
+    @Override
     public String toString() {
         return "Book{" +
                 "author='" + author + '\'' +
                 ", numberPage=" + numberPage +
-                "} " + super.toString();
+                "} " +" is subclass of "+ super.toString();
     }
 }

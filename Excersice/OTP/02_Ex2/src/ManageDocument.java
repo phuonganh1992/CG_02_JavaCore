@@ -1,14 +1,8 @@
-import java.util.ArrayList;
-
 public class ManageDocument {
-    private Document[] listDocument;
-    private int size;
+    private Document[] listDocument=new Document[100];
+    private int size=0;
 
     public ManageDocument() {
-    }
-
-    public ManageDocument(int size) {
-        listDocument=new Document[size];
     }
 
     public void add(Document element){
@@ -16,24 +10,30 @@ public class ManageDocument {
         size++;
     }
 
-    public int find(Document element){
+    public int find(String code){
         for (int i = 0; i < size; i++) {
-            if (element==listDocument[i]) return i;
-            break;
+            if (listDocument[i].getCode()==code) return i;
         }
         return -1;
     }
     public void delete(String code){
-        for (Document element:listDocument) {
-            if (element.getCode()==code){
-
+        int index=find(code);
+        if (index!=-1){
+            for (int i = index; i <size ; i++) {
+                listDocument[i]=listDocument[i+1];
             }
-        }
-    }
-    public void displayDocument(){
-        for (Document element:listDocument) {
-            System.out.println(element+"\t");
+            listDocument[size-1]=null;
+            size--;
         }
     }
 
+    public void displayDocument() {
+        for (int i = 0; i < size; i++) {
+            listDocument[i].toString();
+        }
+    }
+    public void displayDocument(int i){
+        listDocument[i].toString();
+
+    }
 }
