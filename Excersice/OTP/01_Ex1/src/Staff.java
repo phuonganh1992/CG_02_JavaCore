@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Staff extends Officer{
     private String task;
 
@@ -22,9 +24,18 @@ public class Staff extends Officer{
     }
 
     @Override
+    public void input() {
+        super.input();
+        Scanner sc=new Scanner(System.in);
+
+        System.out.print("Enter task: ");
+        this.task=sc.nextLine();
+    }
+
+    @Override
     public String toString() {
         return "Staff{" +
                 "task='" + task + '\'' +
-                "} " + super.toString();
+                "} " +" is subclass of " +super.toString();
     }
 }

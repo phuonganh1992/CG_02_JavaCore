@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Officer {
     private String name;
     private int age;
@@ -44,6 +46,18 @@ public class Officer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+    public void input(){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter name: ");
+        this.name=sc.nextLine();
+        System.out.print("Enter age: ");
+        this.age=sc.nextInt();
+        System.out.print("Enter gender: ");
+        sc.nextLine();
+        this.gender=sc.nextLine();
+        System.out.print("Enter address: ");
+        this.address=sc.nextLine();
     }
 
     @Override

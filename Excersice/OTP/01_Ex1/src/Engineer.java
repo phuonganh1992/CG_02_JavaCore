@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Engineer extends Officer{
     private String techicalTraining;
 
@@ -22,9 +24,17 @@ public class Engineer extends Officer{
     }
 
     @Override
+    public void input() {
+        Scanner sc=new Scanner(System.in);
+        super.input();
+        System.out.print("Enter technicalTraining: ");
+        this.techicalTraining=sc.nextLine();
+    }
+
+    @Override
     public String toString() {
         return "Engineer{" +
                 "techicalTraining='" + techicalTraining + '\'' +
-                "} " + super.toString();
+                "} " +" is subclass of "+ super.toString();
     }
 }
