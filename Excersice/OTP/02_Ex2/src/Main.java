@@ -49,6 +49,7 @@ public class Main {
                     break;
                 case 2:
                     System.out.print("Enter your code to delete: ");
+                    sc.nextLine();
                     String codeDelete=sc.nextLine();
                     if(listBook.find(codeDelete)!=-1) listBook.delete(codeDelete);
                     else if(listMagazine.find(codeDelete)!=-1) listMagazine.delete(codeDelete);
@@ -69,6 +70,7 @@ public class Main {
                     }
                 case 4:
                     System.out.print("Enter your code to find: ");
+                    sc.nextLine();
                     String codeFind=sc.nextLine();
                     int index;
                     if(listBook.find(codeFind)!=-1) {

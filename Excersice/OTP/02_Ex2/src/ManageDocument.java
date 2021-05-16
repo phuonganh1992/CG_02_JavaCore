@@ -16,6 +16,21 @@ public class ManageDocument {
         }
         return -1;
     }
+    public void searchBook(){
+        for (int i = 0; i < size; i++) {
+            if(listDocument[i] instanceof Book) displayDocument(i);
+        }
+    }
+    public void searchMagazine(){
+        for (int i = 0; i < size; i++) {
+            if (listDocument[i] instanceof Magazine) displayDocument(i);
+        }
+    }
+    public void searchNewspaper(){
+        for (int i = 0; i < size; i++) {
+            if (listDocument[i] instanceof Newspaper) displayDocument(i);
+        }
+    }
     public void delete(String code){
         int index=find(code);
         if (index!=-1){
