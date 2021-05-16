@@ -4,7 +4,6 @@ public class Main2 {
     public static void main(String[] args) {
         ManageDocument listDocument=new ManageDocument();
         int choice;
-        int size;
         Scanner sc=new Scanner(System.in);
         do{
             menu();
