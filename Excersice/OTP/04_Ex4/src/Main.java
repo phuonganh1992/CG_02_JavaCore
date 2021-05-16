@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Family family=new Family();
-        family.input();
+        Town town=new Town();
+        town.input();
+        town.display();
     }
 }

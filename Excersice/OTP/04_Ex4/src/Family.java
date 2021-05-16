@@ -7,11 +7,9 @@ public class Family {
     private String address;
 
     public Family() {
-        people=new Person[0];
-    }
-
-    public Family(int size) {
-        this.size = size;
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter size: ");
+        this.size = sc.nextInt();
         people=new Person[size];
     }
 
@@ -34,21 +32,17 @@ public class Family {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter address: ");
         this.address=sc.nextLine();
-        System.out.print("Enter size: ");
-        this.size = sc.nextInt();
         for(int i=0;i<size;i++){
+            System.out.println("Information of person "+(i+1));
             Person person=new Person();
             person.input();
             people[i]=person;
         }
     }
-
-    @Override
-    public String toString() {
-        return "Family{" +
-                "people=" + Arrays.toString(people) +
-                ", size=" + size +
-                ", address='" + address + '\'' +
-                '}';
+    public void display(){
+        System.out.println("Family have "+size+" person:");
+        for(int i=0;i<size;i++){
+            System.out.println(people[i]);
+        }
     }
 }
