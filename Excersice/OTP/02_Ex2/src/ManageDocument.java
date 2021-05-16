@@ -12,7 +12,7 @@ public class ManageDocument {
 
     public int find(String code){
         for (int i = 0; i < size; i++) {
-            if (listDocument[i].getCode()==code) return i;
+            if (listDocument[i].getCode().equals(code)) return i;
         }
         return -1;
     }
@@ -29,11 +29,11 @@ public class ManageDocument {
 
     public void displayDocument() {
         for (int i = 0; i < size; i++) {
-            listDocument[i].toString();
+            System.out.println(listDocument[i].toString());
+
         }
     }
     public void displayDocument(int i){
-        listDocument[i].toString();
-
+        System.out.println(listDocument[i].toString());
     }
 }

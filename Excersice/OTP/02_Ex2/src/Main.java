@@ -68,9 +68,9 @@ public class Main {
                             break;
                     }
                 case 4:
-                    int index;
                     System.out.print("Enter your code to find: ");
                     String codeFind=sc.nextLine();
+                    int index;
                     if(listBook.find(codeFind)!=-1) {
                         index = listBook.find(codeFind);
                         listBook.displayDocument(index);
