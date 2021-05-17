@@ -1,13 +1,11 @@
 public class ManageOfficer {
-    private Officer[] officers=new Officer[100];
+    private Officer[] officers;
     private int size;
 
     public ManageOfficer() {
+        officers=new Officer[100];
     }
 
-    public ManageOfficer(int size) {
-        Officer[] officers=new Officer[size];
-    }
     public void add(Officer element){
         officers[size]=element;
         size++;
