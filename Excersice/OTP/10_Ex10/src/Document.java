@@ -7,9 +7,16 @@ public class Document {
     public Document(String st) {
         this.st = st;
     }
-    public int countWord(String st){
+    public int countWord(){
+        String[] word=st.split(" ");
+        return word.length;
+    }
+    public int counChar(){
+        String[] word=st.split(" ");
         int count=0;
-        st.split("");
+        for (int i = 0; i < word.length; i++) {
+            count+=word[i].length();
+        }
         return count;
     }
 }
