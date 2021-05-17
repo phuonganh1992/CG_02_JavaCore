@@ -27,9 +27,9 @@ public class Hotel {
             people[i]=person;
         }
     }
-    public void add(){
-        Person person=new Person();
-        person.input();
+    public void add(Person person){
+//        Person person=new Person();
+//        person.input();
         people[size]=person;
         size++;
     }

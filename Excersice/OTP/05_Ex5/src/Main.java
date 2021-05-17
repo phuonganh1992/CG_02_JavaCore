@@ -11,12 +11,21 @@ public class Main {
             choice=sc.nextInt();
             switch (choice){
                 case 1:
+                    hotel.add();
                     break;
                 case 2:
+                    System.out.print("Enter id of client to delete: ");
+                    sc.nextLine();
+                    String idDelete=sc.nextLine();
+                    int index=hotel.find(idDelete);
+                    if(index!=-1) hotel.delete(idDelete);
+                    else System.out.println("No client with id above, pls re-input");
                     break;
                 case 3:
+                    hotel.display();
                     break;
                 case 4:
+
                     break;
                 case 5:
                     break;
