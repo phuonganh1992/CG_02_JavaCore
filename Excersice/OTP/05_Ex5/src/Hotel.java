@@ -55,4 +55,10 @@ public class Hotel {
         int index=find(id);
         return people[index].getRoom().getPrice()*people[index].getDayRent();
     }
+    public void display(){
+        System.out.println("Hotel have "+size+" clients");
+        for (int i = 0; i < size; i++) {
+            System.out.println(people[i]);
+        }
+    }
 }

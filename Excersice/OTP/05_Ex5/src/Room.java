@@ -59,7 +59,7 @@ public class Room {
     @Override
     public String toString() {
         return "Room{" +
-                "category= " + category + '\'' +
+                "category= " + category +
                 ", price= " + price +
                 '}';
     }
