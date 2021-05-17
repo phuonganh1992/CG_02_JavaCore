@@ -68,6 +68,7 @@ public class Person {
         System.out.print("Enter day rent: ");
         this.dayRent = sc.nextInt();
         this.room=new Room();
+        room.input();
     }
 
     @Override
@@ -76,6 +77,8 @@ public class Person {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", id='" + id + '\'' +
+                ", day rent ='" + dayRent + '\'' +
+                ", "+room.toString()+
                 '}';
     }
 }

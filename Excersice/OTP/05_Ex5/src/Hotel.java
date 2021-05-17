@@ -27,7 +27,37 @@ public class Hotel {
             people[i]=person;
         }
     }
-    public int calculateRent(Person person){
+    public void add(){
+        Person person=new Person();
+        person.input();
+        people[size]=person;
+        size++;
+    }
+    public int find(String id){
+        for (int i = 0; i < size; i++) {
+            if(people[i].getId().equals(id)) return i;
+            break;
+        }
+        return -1;
+    }
+    public void delete(String id){
+        int index=find(id);
+        if(index!=-1){
+            people[size-1]=null;
+            for (int i = index; i < size-1; i++) {
+                people[i]=people[i+1];
+            }
+            size--;
+        }
+
+
+    }
+
+
+    public int calculateRent(String id){
+
+        return 0;
+
     }
 
 }
