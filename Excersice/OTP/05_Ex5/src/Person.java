@@ -4,14 +4,34 @@ public class Person {
     private String name;
     private int age;
     private String id;
+    private Room room;
+    private int dayRent;
 
     public Person() {
     }
 
-    public Person(String name, int age, String id) {
+    public Person(String name, int age, String id, Room room, int dayRent) {
         this.name = name;
         this.age = age;
         this.id = id;
+        this.room = room;
+        this.dayRent = dayRent;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public int getDayRent() {
+        return dayRent;
+    }
+
+    public void setDayRent(int dayRent) {
+        this.dayRent = dayRent;
     }
 
     public String getName() {
@@ -45,6 +65,9 @@ public class Person {
         this.name = sc.nextLine();
         System.out.print("Enter age: ");
         this.age = sc.nextInt();
+        System.out.print("Enter day rent: ");
+        this.dayRent = sc.nextInt();
+        this.room=new Room();
     }
 
     @Override
