@@ -49,15 +49,10 @@ public class Hotel {
             }
             size--;
         }
-
-
     }
-
 
     public int calculateRent(String id){
-
-        return 0;
-
+        int index=find(id);
+        return people[index].getRoom().getPrice()*people[index].getDayRent();
     }
-
 }
