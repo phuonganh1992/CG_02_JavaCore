@@ -43,10 +43,11 @@ public class Hotel {
     public void delete(String id){
         int index=find(id);
         if(index!=-1){
-            people[size-1]=null;
+
             for (int i = index; i < size-1; i++) {
                 people[i]=people[i+1];
             }
+            people[size-1]=null;
             size--;
         }
     }
