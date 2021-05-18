@@ -1,5 +1,10 @@
 public class Queue {
-    private Node front;
-    private Node rear;
+    public Node front;
+    public Node rear;
+
+    public Queue() {
+        this.front = null;
+        this.rear = null;
+    }
 
 }
