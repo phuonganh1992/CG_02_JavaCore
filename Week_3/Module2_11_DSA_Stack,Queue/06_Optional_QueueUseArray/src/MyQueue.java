@@ -49,7 +49,7 @@ public class MyQueue {
         }
     }
     public void display(){
-        for (int i = 0; i < currentSize; i++) {
+        for (int i = head; i <= tail; i++) {
             System.out.println(queueArr[i]);
         }
     }
