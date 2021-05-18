@@ -31,14 +31,14 @@ public class StackReverse {
         System.out.println("----------------------------STRING---------------------------------");
         Stack<String> stackString=new Stack<>();
         String st="Em co hai con vit";
-        String[] stword=st.split(" ");
+        String[] mWord=st.split(" ");
         System.out.println("String array is: ");
-        for (String element:stword) {
+        for (String element:mWord) {
             System.out.print(element+",");
         }
         System.out.println();
         System.out.println("stack is: ");
-        for (String element:stword){
+        for (String element:mWord){
             stackString.push(element);
         }
         for (String element:stackString) {
@@ -46,7 +46,7 @@ public class StackReverse {
         }
         System.out.println();
         System.out.println("Use pop to get element out of stack and put in to array: ");
-        for (String element:stword) {
+        for (String element:mWord) {
             while ((!stackString.isEmpty())){
                 element=stackString.pop();
                 System.out.print(element+",");
