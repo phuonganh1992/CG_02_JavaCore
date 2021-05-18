@@ -3,8 +3,8 @@ import java.util.Stack;
 public class MyStack {
     public static void main(String[] args) {
         Stack<Integer> binaryStack=new Stack<Integer>();
-        int number=111;
-        while (number!=0){
+        int number=500;
+        while (binaryStack.size()!=8){
             int item=number%2;
             binaryStack.push(item);
             number=number/2;
