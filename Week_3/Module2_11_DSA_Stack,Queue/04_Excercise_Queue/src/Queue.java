@@ -1,6 +1,6 @@
 public class Queue {
-    public Node front;
-    public Node rear;
+    public static Node front;
+    public static Node rear;
 
     public Queue() {
         this.front = null;
