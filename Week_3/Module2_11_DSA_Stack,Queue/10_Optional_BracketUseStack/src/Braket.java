@@ -7,7 +7,6 @@ public class Braket {
         String operationWithoutSpace=operation.replaceAll(" ","");
         String [] operationArray=operationWithoutSpace.split("");
 
-        String left="";
         boolean isWell=true;
         for (String sym:operationArray) {
             if(sym.equals("(")) bracketStack.push(sym);
@@ -15,14 +14,11 @@ public class Braket {
                 if(bracketStack.isEmpty()) {
                     isWell=false;
                     break;
-                } else left=bracketStack.pop();
+                } else bracketStack.pop();
             }
-
         }
         if(!bracketStack.isEmpty()) isWell=false;
         if(isWell) System.out.println("Use bracket well!");
         else System.out.println("Use bracket badly");
-
-
     }
 }
