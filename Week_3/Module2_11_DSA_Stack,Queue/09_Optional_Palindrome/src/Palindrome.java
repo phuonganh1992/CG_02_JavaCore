@@ -9,28 +9,19 @@ public class Palindrome {
         for (String charPalindrome: palindromeArray) {
             queueString.add(charPalindrome);
         }
-
-        System.out.println(queueString);
-
-        System.out.println(queueString);
+        System.out.println("Chuỗi Queue: "+queueString);
         for (String charPalindrome: palindromeArray) {
             stackString.push(charPalindrome);
         }
 
-        System.out.println(stackString);
-
-        System.out.println(stackString);
+        System.out.println("Chuỗi stack: "+stackString);
 
         for (int i = 0; i < palindromeArray.length; i++) {
-            if(queueString.remove().equals(stackString.pop())) {
+            if(queueString.peek().equals(stackString.peek())) {
                 queueString.remove();
                 stackString.pop();
             }
         }
-        System.out.println(queueString.size());
         if(queueString.isEmpty()) System.out.println("Your string is a palindrome");
-
-
-
     }
 }
