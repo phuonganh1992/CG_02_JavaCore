@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class Braket {
+public class Bracket {
     public static void main(String[] args) {
         Stack<String> bracketStack=new Stack<>();
         String operation="s * (s – a) * (s – b( * s – c)))    ";
