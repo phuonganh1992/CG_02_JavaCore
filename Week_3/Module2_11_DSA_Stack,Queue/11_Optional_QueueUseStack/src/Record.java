@@ -1,4 +1,6 @@
-public class Record implements Comparable<Record>{
+import java.util.Comparator;
+
+public class Record implements Comparable<Record> {
     private String name;
     private boolean gender;
     private int dateOfBirth;
@@ -47,9 +49,6 @@ public class Record implements Comparable<Record>{
 
     @Override
     public int compareTo(Record record) {
-        if(getDateOfBirth()>record.dateOfBirth) return 1;
-        else if(getDateOfBirth()<record.dateOfBirth) return -1;
-        else return 0;
-
+        return getDateOfBirth()-record.dateOfBirth;
     }
 }
