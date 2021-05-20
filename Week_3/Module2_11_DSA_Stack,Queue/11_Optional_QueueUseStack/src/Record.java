@@ -1,14 +1,15 @@
-import java.util.Comparator;
+
+import java.util.Date;
 
 public class Record implements Comparable<Record> {
     private String name;
     private boolean gender;
-    private int dateOfBirth;
+    private Date dateOfBirth;
 
     public Record() {
     }
 
-    public Record(String name, boolean gender, int dateOfBirth) {
+    public Record(String name, boolean gender, Date dateOfBirth) {
         this.name = name;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
@@ -30,11 +31,11 @@ public class Record implements Comparable<Record> {
         this.gender = gender;
     }
 
-    public int getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(int dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -49,6 +50,6 @@ public class Record implements Comparable<Record> {
 
     @Override
     public int compareTo(Record record) {
-        return getDateOfBirth()-record.dateOfBirth;
+        return getDateOfBirth().compareTo(record.dateOfBirth);
     }
 }

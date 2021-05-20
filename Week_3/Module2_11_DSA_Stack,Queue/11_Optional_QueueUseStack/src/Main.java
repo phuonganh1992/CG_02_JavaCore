@@ -1,3 +1,6 @@
+import javafx.util.converter.DateStringConverter;
+
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main {
@@ -25,7 +28,7 @@ public class Main {
         while ((!maleQueue.isEmpty())){
             Record maleRecord=maleQueue.remove();
             for(int i=0;i<outputRecord.size();i++){
-                if(outputRecord.get(i).getDateOfBirth()> maleRecord.getDateOfBirth() ){
+                if(outputRecord.get(i).getDateOfBirth().compareTo(maleRecord.getDateOfBirth())>=0){
                     outputRecord.add(i,maleRecord);
                     break;
                 }
@@ -35,6 +38,11 @@ public class Main {
         for (Record record:outputRecord) {
             System.out.println(record);
         }
-//        System.out.println(outputRecord);
+
+        Date a = new Date(2021,12,1);
+        Date b = new Date(2021,11,31);
+        SimpleDateFormat formatter=new SimpleDateFormat("dd/MM/yyyy");
+        String dateString=formatter.format(a);
+        System.out.println(dateString);
     }
 }
