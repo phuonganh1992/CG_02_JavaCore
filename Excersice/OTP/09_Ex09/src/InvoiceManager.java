@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class InvoiceManager {
     private List<Invoice> invoices;
@@ -26,25 +23,54 @@ public class InvoiceManager {
         }
         return -1;
     }
-//    public List<Integer> findByElectricMeterArray(int electricMeterNumber){
-//        int index=findByElectricityMeter(electricMeterNumber);
-//        List<Integer> indexList=new ArrayList<>();
-//        while (index!=-1) {
-//            indexList.add(index);
-//            List<Invoice> newInvoiceList= ;
-//            for (int i = 0; i < newInvoiceList.size(); i++) {
-//                if(newInvoiceList.get(i).getClient().getElectricMeterNumber()==electricMeterNumber){
-//                    index=i;
-//                    break;
-//                }
-//            }
-//        }
-//        return indexList;
-//    }
+    public Invoice researchInvoive(int electricMeterNumber) {
+        int index = findByElectricityMeter(electricMeterNumber);
+        if (index == -1) return null;
+        else return invoices.get(index);
+    }
+    public List<Integer> findByElectricMeterArray(int electricMeterNumber){
+        int index=findByElectricityMeter(electricMeterNumber);
+        List<Integer> indexList=new ArrayList<>();
+        boolean isExist;
+        if(index==-1) isExist=false;
+        else isExist=true;
+
+        while (isExist) {
+            indexList.add(index);
+            for (int i = index+1; i < invoices.size(); i++) {
+                if(invoices.get(i).getClient().getElectricMeterNumber()==electricMeterNumber){
+                    index=i;
+                    indexList.add(index);
+                    isExist=true;
+                    break;
+                }else isExist=false;
+            }
+        }
+        return indexList;
+
+    }
     public void display(){
         for (int i = 0; i < invoices.size(); i++) {
             System.out.println(invoices.get(i));
         }
         System.out.println("-----------------------------------------------------------------------");
+    }
+    public void edit(int electricityMeter,Invoice invoice){
+        int index=findByElectricityMeter(electricityMeter);
+        if(index==-1) System.out.println("Found no invoice for electricity meter number as above");
+        else invoices.set(index,invoice);
+    }
+    public void delete(int electricityMeter){
+        int index=findByElectricityMeter(electricityMeter);
+        if(index==-1) System.out.println("Found no invoice for electricity meter number as above");
+        else invoices.remove(invoices.get(index));
+    }
+    public void sortByName(){
+        Collections.sort(invoices, new Comparator<Invoice>() {
+            @Override
+            public int compare(Invoice o1, Invoice o2) {
+                return o1.getClient().getName().compareTo(o2.getClient().getName());
+            }
+        });
     }
 }

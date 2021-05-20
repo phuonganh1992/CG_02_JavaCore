@@ -45,7 +45,9 @@ public class Invoice {
     public void setPayableAmount(int payableAmount) {
         this.payableAmount = payableAmount;
     }
-
+    public int calculateEletricityMoney(){
+        return (currentElectricityIndicator-oldElectricityIndicator)*5;
+    }
     @Override
     public String toString() {
         return "Invoice{" +
