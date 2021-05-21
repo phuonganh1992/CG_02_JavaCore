@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public class AbstractTree {
+public abstract class AbstractTree<E> implements Tree<E> {
+    @Override
+    public void inorder() {
+
+    }
 }

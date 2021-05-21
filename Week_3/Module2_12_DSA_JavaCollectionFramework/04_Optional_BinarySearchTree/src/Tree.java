@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public interface Tree {
+public interface Tree <E>{
+    boolean insert(E e);
+    void inorder();
+    int getSize();
 }
