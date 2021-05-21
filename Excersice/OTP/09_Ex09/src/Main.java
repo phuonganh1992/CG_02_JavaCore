@@ -22,26 +22,26 @@ public class Main {
         invoiceManager.add(invoice7);
         System.out.println("Original invoice list: ");
         invoiceManager.display();
-//        System.out.println("Invoice list after sorting: ");
-//        invoiceManager.sortByName();
-//        invoiceManager.display();
-//
-//        System.out.println("Invoice with electric meter number is: "+invoiceManager.researchInvoive(130));
-//        invoiceManager.delete(130);
-//        System.out.println("Invoice list afer deleting: ");
-//        invoiceManager.display();
-//
-//        Invoice invoice6=new Invoice(client3,40,199,900);
-//        invoiceManager.edit(99,invoice6);
-//        System.out.println("Invoice list after editing: ");
-//        invoiceManager.display();
+        System.out.println("Invoice list after sorting: ");
+        invoiceManager.sortByName();
+        invoiceManager.display();
 
-//
+        System.out.println("Invoice with electric meter number is: "+invoiceManager.researchInvoive(130));
+        invoiceManager.delete(130);
+        System.out.println("Invoice list afer deleting: ");
+        invoiceManager.display();
+
+        Invoice invoice8=new Invoice(client3,40,199,900);
+        invoiceManager.edit(99,invoice6);
+        System.out.println("Invoice list after editing: ");
+        invoiceManager.display();
+
         List<Integer> indexList=invoiceManager.findByElectricMeterArray(130);
+        System.out.println("List invoice with electric meter number above is: ");
         if (indexList.size()==0) System.out.println("Found no invoice with electric meter number as above");
-        System.out.println(indexList.size());
+
         for (int i = 0; i < indexList.size(); i++) {
-            System.out.println(indexList.get(i));
+            System.out.println(invoiceManager.getInvoices().get(indexList.get(i)));
         }
     }
 }
