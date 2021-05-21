@@ -2,15 +2,27 @@ public class Customer {
     private String cusName;
     private int cusAge;
     private String cusAddress;
+    private String cusIdentity;
 
     public Customer() {
     }
 
-    public Customer(String cusName, int cusAge, String cusAddress) {
+    public Customer(String cusName, int cusAge, String cusAddress, String cusIdentity) {
         this.cusName = cusName;
         this.cusAge = cusAge;
         this.cusAddress = cusAddress;
+        this.cusIdentity = cusIdentity;
     }
+
+    public String getCusIdentity() {
+        return cusIdentity;
+    }
+
+    public void setCusIdentity(String cusIdentity) {
+        this.cusIdentity = cusIdentity;
+    }
+
+
 
     public String getCusName() {
         return cusName;
@@ -42,6 +54,7 @@ public class Customer {
                 "cusName='" + cusName + '\'' +
                 ", cusAge=" + cusAge +
                 ", cusAddress='" + cusAddress + '\'' +
+                ", cusIdentity='" + cusIdentity + '\'' +
                 '}';
     }
 }
