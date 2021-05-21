@@ -12,7 +12,13 @@ public class Main {
         studentMap.put(3,student3);
         studentMap.put(4,student1);
         System.out.println(studentMap);
-        System.out.println(Map.Entry);
+        for(Integer key:studentMap.)
+        for(Map.Entry<Integer, Student> studentEntry : studentMap.entrySet()){
+            System.out.println(studentEntry.toString());
+        }
+
+        Map.Entry<>
+//        System.out.println(Map.Entry);
 
 //        for (:) {
 //
