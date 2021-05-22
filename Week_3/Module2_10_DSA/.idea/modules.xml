@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MethodArrayList/MethodArrayList.iml" filepath="$PROJECT_DIR$/MethodArrayList/MethodArrayList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MethodLinkedList/MethodLinkedList.iml" filepath="$PROJECT_DIR$/MethodLinkedList/MethodLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Module2_10_DSA.iml" filepath="$PROJECT_DIR$/.idea/Module2_10_DSA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyLinkedList/MyLinkedList.iml" filepath="$PROJECT_DIR$/MyLinkedList/MyLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PracticeSimpleList/PracticeSimpleList.iml" filepath="$PROJECT_DIR$/PracticeSimpleList/PracticeSimpleList.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="caf0529c-6ed9-470b-98a4-5b9606828691" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Week_1/3_Array/Menu/out/production/Menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_1/3_Array/Menu/out/production/Menu/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_1/3_Array/check tu/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_1/3_Array/deleteElement/src/ElementSpice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_1/3_Array/deleteElement/src/ElementSpice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/Shape.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/out/production/Shape/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/out/production/Shape/CircleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/out/production/Shape/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/out/production/Shape/RectangleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/out/production/Shape/Resizeable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/out/production/Shape/ResizeableTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/out/production/Shape/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/out/production/Shape/ShapeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/out/production/Shape/Square.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/out/production/Shape/SquareTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/src/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/src/CircleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/src/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/src/RectangleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/src/Resizeable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/src/ResizeableTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/src/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/src/ShapeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/src/Square.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape/src/SquareTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cleancode,Refactoring/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cleancode,Refactoring/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cleancode,Refactoring/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cleancode,Refactoring/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cleancode,Refactoring/01_PracticeRefactoring/java-cleancode-refactoring-renaming" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cleancode,Refactoring/Cleancode,Refactoring.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/AbstractAndInterfaceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/AbstractAndInterfaceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/Fruit/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/Fruit/Apple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/Fruit/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/Fruit/Fruit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/Fruit/Orange.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/Fruit/Orange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/animal/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/animal/Chicken.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/animal/Chicken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/animal/Tiger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/animal/Tiger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/edible/Edible.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Inheritance/Animal &amp; Interface_Edible/src/edible/Edible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Inheritance/Shape/src/Resizeable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Inheritance/Shape/src/ResizeableTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1sLdhJ0iYvdsjzpqcBqp8mBcOHI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Colorable" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="caf0529c-6ed9-470b-98a4-5b9606828691" name="Default Changelist" comment="" />
+      <created>1620655922630</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620655922630</updated>
+      <workItem from="1620655923824" duration="93000" />
+      <workItem from="1620750418356" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

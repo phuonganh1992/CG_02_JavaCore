@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01_Practice_UseMap/01_Practice_UseMap.iml" filepath="$PROJECT_DIR$/01_Practice_UseMap/01_Practice_UseMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_PracticeHashMap/02_PracticeHashMap.iml" filepath="$PROJECT_DIR$/02_PracticeHashMap/02_PracticeHashMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03_ComparableAndComparator/03_ComparableAndComparator.iml" filepath="$PROJECT_DIR$/03_ComparableAndComparator/03_ComparableAndComparator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_Optional_BinarySearchTree/04_Optional_BinarySearchTree.iml" filepath="$PROJECT_DIR$/04_Optional_BinarySearchTree/04_Optional_BinarySearchTree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Module2_12_DSA_JavaCollectionFramework.iml" filepath="$PROJECT_DIR$/.idea/Module2_12_DSA_JavaCollectionFramework.iml" />
+    </modules>
+  </component>
+</project>

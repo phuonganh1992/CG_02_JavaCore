@@ -43,6 +43,7 @@ public class Main {
         Date b = new Date(2021,11,31);
         SimpleDateFormat formatter=new SimpleDateFormat("dd/MM/yyyy");
         String dateString=formatter.format(a);
+        System.out.println(a);
         System.out.println(dateString);
     }
 }

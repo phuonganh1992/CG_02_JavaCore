@@ -1,2 +1,7 @@
-package Fruit;public class Fruit {
+package Fruit;
+
+import edible.Edible;
+
+public abstract class Fruit implements Edible {
+
 }

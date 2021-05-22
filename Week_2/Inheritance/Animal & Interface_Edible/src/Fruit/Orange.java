@@ -1,2 +1,4 @@
-package Fruit;public class Orange {
+package Fruit;
+
+public class Orange {
 }

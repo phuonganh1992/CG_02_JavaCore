@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d5ff135a-4e2e-40a2-9248-2375110afb82" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Excersice/OTP/11_Ex11/out/production/11_Ex11/RealNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Excersice/OTP/11_Ex11/out/production/11_Ex11/RealNumber.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_1/3_Array/Menu/out/production/Menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_1/3_Array/Menu/out/production/Menu/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_1/3_Array/check tu/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_1/3_Array/deleteElement/src/ElementSpice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_1/3_Array/deleteElement/src/ElementSpice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Colorable/src/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Colorable/src/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/Shape.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/out/production/Shape/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/out/production/Shape/CircleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/out/production/Shape/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/out/production/Shape/RectangleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/out/production/Shape/Resizeable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/out/production/Shape/ResizeableTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/out/production/Shape/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/out/production/Shape/ShapeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/out/production/Shape/Square.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/out/production/Shape/SquareTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/src/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/src/CircleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/src/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/src/RectangleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/src/Resizeable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/src/ResizeableTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/src/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/src/ShapeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/src/Square.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Abstract Class, Interface/Shape/src/SquareTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Cleancode,Refactoring/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Cleancode,Refactoring/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Cleancode,Refactoring/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Cleancode,Refactoring/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Cleancode,Refactoring/01_PracticeRefactoring/java-cleancode-refactoring-renaming" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Cleancode,Refactoring/Cleancode,Refactoring.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/AbstractAndInterfaceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/AbstractAndInterfaceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/Fruit/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/Fruit/Apple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/Fruit/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/Fruit/Fruit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/Fruit/Orange.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/Fruit/Orange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/animal/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/animal/Chicken.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/animal/Chicken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/animal/Tiger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/animal/Tiger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/edible/Edible.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_2/Inheritance/Animal &amp; Interface_Edible/src/edible/Edible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Inheritance/Shape/src/Resizeable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_2/Inheritance/Shape/src/ResizeableTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/01_Practice_Calculator/out/production/01_Practice_Calculator/CalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/01_Practice_Calculator/out/production/01_Practice_Calculator/CalculatorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/01_Practice_Calculator/src/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/01_Practice_Calculator/src/CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/02_AbsoluteNumberCalculator/02_AbsoluteNumberCalculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/02_AbsoluteNumberCalculator/02_AbsoluteNumberCalculator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/03_NextDayCalculator/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/03_NextDayCalculator/src/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/03_TriangleClassifier/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/03_TriangleClassifier/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/03_TriangleClassifier/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/03_TriangleClassifier/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/03_TriangleClassifier/04_TriangleClassifier.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/03_TriangleClassifier/Test/TriangleClassifierTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/03_TriangleClassifier/out/production/04_TriangleClassifier/TriangleClassifier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/03_TriangleClassifier/out/test/04_TriangleClassifier/TriangleClassifierTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/03_TriangleClassifier/src/TriangleClassifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/04_TriangleClassifier/04_TriangleClassifier.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/04_TriangleClassifier/04_TriangleClassifier.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/05_FizzBuzzTranslate/05_FizzBuzzTranslate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/05_FizzBuzzTranslate/05_FizzBuzzTranslate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/NextDayCalculator/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/NextDayCalculator/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/NextDayCalculator/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/NextDayCalculator/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/NextDayCalculator/03_NextDayCalculator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/NextDayCalculator/Test/NextDayCalculatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/NextDayCalculator/out/production/03_NextDayCalculator/NextDayCalculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/NextDayCalculator/out/production/03_NextDayCalculator/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/NextDayCalculator/out/test/03_NextDayCalculator/NextDayCalculatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_09_AutomatedTesting+TDD/NextDayCalculator/src/NextDayCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MethodArrayList/MethodArrayList.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MethodLinkedList/MethodLinkedList.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyLinkedList/MyLinkedList.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyLinkedList/out/production/MyLinkedList/MyLinkedListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyLinkedList/out/production/MyLinkedList/MyLinkedListTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyLinkedList/src/MyLinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyLinkedList/src/MyLinkedListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeSimpleList/PracticeSimpleList.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeSimpleList/out/production/PracticeSimpleList/MyList.class" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeSimpleList/out/production/PracticeSimpleList/MyList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeSimpleList/out/production/PracticeSimpleList/MyListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeSimpleList/out/production/PracticeSimpleList/MyListTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeSimpleList/src/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeSimpleList/src/MyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeSimpleList/src/MyListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeSimpleList/src/MyListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/06_Optional_QueueUseArray/src/MyQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/06_Optional_QueueUseArray/src/MyQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/MethodLinkedList/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/MethodLinkedList/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/MethodLinkedList/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/MethodLinkedList/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/MethodLinkedList/MethodLinkedList.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/MethodLinkedList/out/production/MethodLinkedList/MyLinkedList$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/MethodLinkedList/out/production/MethodLinkedList/MyLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/MethodLinkedList/out/production/MethodLinkedList/MyLinkedListTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/MethodLinkedList/src/MyLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_11_DSA_Stack,Queue/MethodLinkedList/src/MyLinkedListTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1sjZ891VLBUOKvxpjj0VPOq6tIk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d5ff135a-4e2e-40a2-9248-2375110afb82" name="Default Changelist" comment="" />
+      <created>1621387796737</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621387796737</updated>
+      <workItem from="1621387798463" duration="34000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

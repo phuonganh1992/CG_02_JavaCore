@@ -33,10 +33,6 @@ public class MyList<E> {
             elements = Arrays.copyOf(elements, size + 1);
             size++;
         }
-//        else if(index==size && size==0) {
-//                size=size+1;
-//                elements[index]=element;
-//            }
         else {
             for (int i = size; i > index; i--) {
                 elements[i] = elements[i - 1];

@@ -11,6 +11,7 @@ public class TestMap {
         hashMap.put("Trung",21);
         hashMap.put("Hung",30);
         hashMap.put("Anh",26);
+
         System.out.println("---------------HashMap---------------");
         System.out.println(hashMap);
 

@@ -22,7 +22,6 @@ public class ElementSpice {
         //Check x is in array
         int index_del=indexValue(array,x);
 
-
         //Delete x out array
         int count=0;
         while(index_del!=-1) {

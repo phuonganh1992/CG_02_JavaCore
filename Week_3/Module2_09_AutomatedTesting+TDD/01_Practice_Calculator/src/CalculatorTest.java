@@ -6,10 +6,10 @@ public class CalculatorTest {
     @Test
     @DisplayName("Testing add 1+1")
     public void testAdd1And1(){
-        int x=1;
+        int x= (int) Math.pow(2,31)-1;
         int y=1;
 
-        int expectedResult=2;
+        int expectedResult= (int) Math.pow(2,31);
         int result=SimpleCalculator.add(x,y);
         assertEquals(expectedResult, result);
     }

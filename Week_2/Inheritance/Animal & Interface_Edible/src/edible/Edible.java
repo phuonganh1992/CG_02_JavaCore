@@ -1,2 +1,5 @@
-package edible;public class Edible {
+package edible;
+
+public interface Edible {
+    String howToEat();
 }
