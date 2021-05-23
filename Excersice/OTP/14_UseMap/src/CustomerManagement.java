@@ -12,12 +12,12 @@ public class CustomerManagement {
         this.customerMap = customerMap;
     }
 
-    public String getIdentityCard() {
+    public String getKeyMap() {
         return keyMap;
     }
 
-    public void setIdentityCard(String identityCard) {
-        this.keyMap = identityCard;
+    public void setKeyMap(String keyMap) {
+        this.keyMap = keyMap;
     }
 
     public Map<String, Customer> getCustomerMap() {
@@ -27,8 +27,8 @@ public class CustomerManagement {
     public void setCustomerMap(Map<String, Customer> customerMap) {
         this.customerMap = customerMap;
     }
-    public void add(Customer customer){
-        customerMap.put(customer.getCusIdentity(), customer);
+    public void add(String key,Customer customer){
+        customerMap.put(key, customer);
     }
     public void display(){
         for (Map.Entry<String,Customer> entry: customerMap.entrySet()) {
@@ -61,19 +61,22 @@ public class CustomerManagement {
         if(isKey(key)) customerMap.replace(key,customer);
         else System.out.println("Found no key as above");
     }
-    public void delete(String name){
+    public void deleteByName(String name){
         Map<String,Customer> deleteMap=findByName(name);
-
         for (Map.Entry<String,Customer> entry:deleteMap.entrySet()) {
-            customerMap.remove(entry);
+            customerMap.remove(entry.getKey());
         }
+    }
+    public void deleteByKey(String key){
+        customerMap.remove(key);
     }
     public void sort(){
         List<Map.Entry<String,Customer>> entryCollection=new ArrayList<>(customerMap.entrySet());
         Collections.sort(entryCollection, new Comparator<Map.Entry<String, Customer>>() {
             @Override
             public int compare(Map.Entry<String, Customer> o1, Map.Entry<String, Customer> o2) {
-                return o1.getValue().getCusName().compareTo(o2.getValue().getCusName());
+                if(o1.getValue().getCusName().equals(o2.getValue().getCusName())) return o1.getValue().getCusAge()-o2.getValue().getCusAge();
+               else return o1.getValue().getCusName().compareTo(o2.getValue().getCusName());
             }
         });
         Map<String,Customer> sortedMap=new LinkedHashMap<>();
