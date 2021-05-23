@@ -1,6 +1,10 @@
 public class BubbleSortByStep {
     public static void main(String[] args) {
         bubbleSortByStep(list);
+        System.out.println("List after sorting:");
+        for (int element:list) {
+            System.out.print(element+"\t");
+        }
 
     }
     public static int[]list={90,45,34,-5,7,9,24,30};
