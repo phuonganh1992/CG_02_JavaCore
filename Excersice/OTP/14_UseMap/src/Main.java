@@ -50,7 +50,7 @@ public class Main {
                     System.exit(0);
                     break;
             }
-        }while (choice>=1 && choice<=7);
+        }while (choice>=1 && choice<=9);
 
     }
     static void menu(){
@@ -82,7 +82,6 @@ public class Main {
     }
     static String inputKey(){
         Scanner sc=new Scanner(System.in);
-        sc.nextLine();
         System.out.print("Enter key: ");
         return sc.nextLine();
     }
