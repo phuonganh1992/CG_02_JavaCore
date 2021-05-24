@@ -8,7 +8,7 @@ public class UsingTreeMap {
         String[] sentenceUpper=sentence.toUpperCase().split(" ");
         System.out.println(sentenceUpper.length);
         for (String element: sentenceUpper) {
-            int value=element.length();
+            int value=1;
             if(treeMap.containsKey(element)) {
                 value+=treeMap.get(element);
             }
