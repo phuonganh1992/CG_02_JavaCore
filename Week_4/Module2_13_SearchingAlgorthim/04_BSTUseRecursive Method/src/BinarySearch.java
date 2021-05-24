@@ -1,15 +1,14 @@
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
+
 
 public class BinarySearch {
     static int[] arrays={1,3,30,89,10,45,7,20,40};
-    static int binarySearch(int [] arrays,int left, int right,int value){
-        while (left<=right){
-            int middle=(left+right)/2;
+    static int binarySearch(int [] array,int left, int right,int value){
+        int middle=(left+right)/2;
+        if (left<=right){
             if(value==arrays[middle]) return middle;
-            if(value<arrays[middle]) right=middle-1;
-            else left=middle+1;
+            if(value<arrays[middle]) return binarySearch(array,left,middle-1,value);
+            else return binarySearch(array,middle+1,right,value);
         }
         return -1;
     }
