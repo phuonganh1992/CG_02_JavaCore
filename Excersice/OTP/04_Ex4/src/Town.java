@@ -1,36 +1,20 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Town {
-    private Family[] families;
-    private int size;
+    private List<Family> families;
 
     public Town() {
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Enter size: ");
-        this.size = sc.nextInt();
-        families=new Family[size];
+        families=new ArrayList<>();
+    }
+    public void add(Family family){
+        families.add(family);
     }
 
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-    public void input(){
-        for(int i=0;i<size;i++){
-            System.out.println("Information of family "+(i+1));
-            Family family=new Family();
-            family.input();
-            families[i]=family;
-        }
-    }
     public void display(){
-        System.out.println("Town have "+size+" families:");
-        for(int i=0;i<size;i++){
-            families[i].display();
+        System.out.println("Town have "+families.size()+" families:");
+        for(Family family:families){
+            family.display();
         }
     }
-
 }

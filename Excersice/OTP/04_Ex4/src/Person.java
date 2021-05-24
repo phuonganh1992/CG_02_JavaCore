@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Person {
     private String name;
     private int age;
@@ -46,17 +44,6 @@ public class Person {
 
     public void setId(String id) {
         this.id = id;
-    }
-    public void input() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter id: ");
-        this.id = sc.nextLine();
-        System.out.print("Enter name: ");
-        this.name = sc.nextLine();
-        System.out.print("Enter career: ");
-        this.career = sc.nextLine();
-        System.out.print("Enter age: ");
-        this.age = sc.nextInt();
     }
 
     @Override

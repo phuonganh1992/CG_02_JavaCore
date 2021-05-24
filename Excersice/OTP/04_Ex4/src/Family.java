@@ -1,24 +1,21 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Family {
-    private Person[] people;
-    private int size;
+    private List<Person> members;
+
     private String address;
 
     public Family() {
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Enter size: ");
-        this.size = sc.nextInt();
-        people=new Person[size];
+        members=new ArrayList<>();
     }
 
-    public int getSize() {
-        return size;
+    public List<Person> getMembers() {
+        return members;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    public void setMembers(List<Person> members) {
+        this.members = members;
     }
 
     public String getAddress() {
@@ -28,21 +25,10 @@ public class Family {
     public void setAddress(String address) {
         this.address = address;
     }
-    public void input() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter address: ");
-        this.address=sc.nextLine();
-        for(int i=0;i<size;i++){
-            System.out.println("Information of person "+(i+1));
-            Person person=new Person();
-            person.input();
-            people[i]=person;
-        }
-    }
     public void display(){
-        System.out.println("Family have "+size+" person:");
-        for(int i=0;i<size;i++){
-            System.out.println(people[i]);
+        System.out.println("Family have "+members.size()+" person:");
+        for(Person member:members){
+            System.out.println(member);
         }
     }
 }
