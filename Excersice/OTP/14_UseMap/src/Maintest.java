@@ -13,19 +13,24 @@ public class Maintest {
     customerManagement.add("CU004",customer_4);
     customerManagement.add("CU005",customer_5);
     customerManagement.add("CU007",customer_7);
-    customerManagement.sort();
-    customerManagement.display();
 
-    System.out.println(customerManagement.findByKey("CU004"));
-    System.out.println("--------------------------------------------");
-
-
-    Customer customer_6=new Customer("Hung",26,"YB","ID006",2);
-    customerManagement.edit("CU004",customer_6);
-    customerManagement.display();
-        System.out.println(customerManagement.findByName("Anh"));
-        customerManagement.deleteByName("Anh");
-
-    customerManagement.display();
+        System.out.println(customerManagement.findAgeRange(20,30));
+        customerManagement.deleteAgeRange(20,30);
+        customerManagement.display();
+    ;
+//    customerManagement.sort();
+//    customerManagement.display();
+//
+//    System.out.println(customerManagement.findByKey("CU004"));
+//    System.out.println("--------------------------------------------");
+//
+//
+//    Customer customer_6=new Customer("Hung",26,"YB","ID006",2);
+//    customerManagement.edit("CU004",customer_6);
+//    customerManagement.display();
+//        System.out.println(customerManagement.findByName("Anh"));
+//        customerManagement.deleteByName("Anh");
+//
+//    customerManagement.display();
     }
 }

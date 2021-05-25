@@ -55,13 +55,13 @@ public class Customer {
     public void setCusAddress(String cusAddress) {
         this.cusAddress = cusAddress;
     }
+
     public String displayGender(){
         switch (this.cusGender){
             case 0:
                 return "female";
             case 1:
                 return "male";
-
         }
         return "other";
     }

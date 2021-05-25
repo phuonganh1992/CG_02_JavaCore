@@ -1,3 +1,4 @@
+import java.time.temporal.ValueRange;
 import java.util.*;
 
 public class CustomerManagement {
@@ -30,6 +31,7 @@ public class CustomerManagement {
     public void add(String key,Customer customer){
         customerMap.put(key, customer);
     }
+
     public void display(){
         for (Map.Entry<String,Customer> entry: customerMap.entrySet()) {
             System.out.println(entry);
@@ -37,38 +39,51 @@ public class CustomerManagement {
         System.out.println("--------------------------------------------------------------------------");
     }
     public Customer findByKey(String key){
-        if(isKey(key)) return customerMap.get(key);
+        if(customerMap.containsKey(key)) return customerMap.get(key);
         else return null;
     }
-    public boolean isKey(String key){
-        Set<String> keys=customerMap.keySet();
-        for (String keyElement:keys) {
-            if(keyElement.equals(keyElement)) return true;
-        }
-        return false;
-    }
-    public Map findByName(String cusName){
+
+    public Map<String,Customer> findByName(String cusName){
         Map<String,Customer> sameNameMap=new HashMap<>();
         Set<String> keys=customerMap.keySet();
         for (String key:keys){
-            if(customerMap.get(key).getCusName().equals(cusName)){
+            if(customerMap.get(key).getCusName().equals(cusName))
                 sameNameMap.put(key,customerMap.get(key));
-            }
+
         }
         return sameNameMap;
     }
+
+    public Map<String,Customer> findAgeRange(int minAge, int maxAge){
+        Map<String,Customer> sameAgeRange=new HashMap<>();
+        Set<String> keys= customerMap.keySet();
+        for(String key: keys){
+            if(customerMap.get(key).getCusAge()>=minAge && customerMap.get(key).getCusAge()<=maxAge)
+                sameAgeRange.put(key,customerMap.get(key));
+        }
+
+        return sameAgeRange;
+    }
     public void edit(String key,Customer customer){
-        if(isKey(key)) customerMap.replace(key,customer);
+        if(customerMap.containsKey(key)) customerMap.replace(key,customer);
         else System.out.println("Found no key as above");
     }
-    public void deleteByName(String name){
-        Map<String,Customer> deleteMap=findByName(name);
-        for (Map.Entry<String,Customer> entry:deleteMap.entrySet()) {
-            customerMap.remove(entry.getKey());
-        }
-    }
+
     public void deleteByKey(String key){
         customerMap.remove(key);
+    }
+
+    public void deleteByName(String name){
+        Map<String,Customer> sameNameMap=findByName(name);
+        for (String key:sameNameMap.keySet()) {
+            customerMap.remove(key);
+        }
+    }
+    public void deleteAgeRange(int minAge,int maxAge){
+        Map<String, Customer> sameAgeRange=findAgeRange(minAge,maxAge);
+        for(String key: sameAgeRange.keySet()){
+            customerMap.remove(key);
+        }
     }
     public void sort(){
         List<Map.Entry<String,Customer>> entryCollection=new ArrayList<>(customerMap.entrySet());

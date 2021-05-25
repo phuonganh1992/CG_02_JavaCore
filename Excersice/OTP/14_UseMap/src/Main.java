@@ -2,6 +2,8 @@
 import java.util.Scanner;
 
 public class Main {
+    public static final Scanner SC = new Scanner(System.in);
+
     public static void main(String[] args) {
         CustomerManagement customerManagement=new CustomerManagement();
         int choice;
@@ -68,19 +70,24 @@ public class Main {
         System.out.println("8. Sort customer map");
         System.out.println("9. Exit");
     }
+//    static void chooseKeyNameAge(){
+//        
+//        switch()
+//        
+//    }
     static Customer inputCustomerInformation(){
-        Scanner sc=new Scanner(System.in);
+        Scanner SC= SC;
         System.out.print("Enter customer name: ");
-        String customerName=sc.nextLine();
+        String customerName=SC.nextLine();
         System.out.print("Enter customer age: ");
-        int customerAge=sc.nextInt();
-        sc.nextLine();
+        int customerAge=SC.nextInt();
+        SC.nextLine();
         System.out.print("Enter customer address: ");
-        String customerAddress=sc.nextLine();
+        String customerAddress=SC.nextLine();
         System.out.print("Enter customer Identity - string: ");
-        String customerIdentity=sc.nextLine();
+        String customerIdentity=SC.nextLine();
         System.out.print("Enter customer gender - int(0,1,2): ");
-        int customerGender=sc.nextInt();
+        int customerGender=SC.nextInt();
         return new Customer(customerName,customerAge,customerAddress,customerIdentity,customerGender);
     }
     static String inputKey(){
