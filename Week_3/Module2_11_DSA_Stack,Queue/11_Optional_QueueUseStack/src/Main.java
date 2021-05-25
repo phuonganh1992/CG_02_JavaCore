@@ -1,6 +1,8 @@
 import javafx.util.converter.DateStringConverter;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.*;
 
 public class Main {
@@ -39,11 +41,17 @@ public class Main {
             System.out.println(record);
         }
 
-        Date a = new Date(2021,12,1);
+        Date a = new Date(2021-1900,12-1,1);
         Date b = new Date(2021,11,31);
         SimpleDateFormat formatter=new SimpleDateFormat("dd/MM/yyyy");
         String dateString=formatter.format(a);
         System.out.println(a);
         System.out.println(dateString);
+
+        LocalDate localDate2 = LocalDate.of(2017, Month.MAY, 15);
+        System.out.println("localdate = "+localDate2);
+        LocalDate localDate=LocalDate.of(2021,9,30);
+        System.out.println(localDate);
+
     }
 }
