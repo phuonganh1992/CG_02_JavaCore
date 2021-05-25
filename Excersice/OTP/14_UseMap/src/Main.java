@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ public class Main {
     public static boolean isDuplicateKeyMap;
 
     public static void main(String[] args) {
-        CustomerManagement customerManagement = new CustomerManagement(availableMap());
+        CustomerManagement customerManagement = new CustomerManagement();
         int choice;
         do {
             menu();
@@ -129,12 +130,13 @@ public class Main {
     static Customer getCustomerInformation() {
         System.out.println("Enter information of customer");
         String customerName = getCustomerName();
-        int customerAge = getCustomerAge();
+//        int customerAge = getCustomerAge();
         SCANNER.nextLine();
         String customerAddress = getCustomerAddress();
         String customerIdentity = getCustomerIdentity();
         int customerGender = getCustomerGender();
-        return new Customer(customerName, customerAge, customerAddress, customerIdentity, customerGender);
+        LocalDate customerDateOfBirth=LocalDate.of(2021,1,1);
+        return new Customer(customerName, customerAddress, customerIdentity, customerGender,customerDateOfBirth);
     }
 
     private static int getCustomerGender() {
@@ -176,12 +178,12 @@ public class Main {
 
     private static Map<String, Customer> availableMap() {
         Map<String, Customer> map = new LinkedHashMap<>();
-        map.put("Cus001", new Customer("Hoa", 20, "HN", "ID001", 0));
-        map.put("Cus002", new Customer("Anh", 29, "ND", "ID002", 0));
-        map.put("Cus003", new Customer("Thanh", 30, "BG", "ID003", 1));
-        map.put("Cus004", new Customer("Nam", 40, "DN", "ID004", 0));
-        map.put("Cus005", new Customer("Tu", 19, "HCM", "ID005", 1));
-        map.put("Cus006", new Customer("Anh", 19, "HCM", "ID006", 2));
+        map.put("Cus001", new Customer("Hoa", "HN", "ID001", 0, LocalDate.of(1992,2,13)));
+        map.put("Cus002", new Customer("Anh", "ND", "ID002", 0,LocalDate.of(1999,5,20)));
+        map.put("Cus003", new Customer("Thanh", "BG", "ID003", 1,LocalDate.of(1984,2,13)));
+        map.put("Cus004", new Customer("Nam", "DN", "ID004", 0,LocalDate.of(1996,9,27)));
+        map.put("Cus005", new Customer("Tu",  "HCM", "ID005", 1,LocalDate.of(2002,2,13)));
+        map.put("Cus006", new Customer("Anh", "HCM", "ID006", 2,LocalDate.of(1991,1,13)));
         return map;
     }
 

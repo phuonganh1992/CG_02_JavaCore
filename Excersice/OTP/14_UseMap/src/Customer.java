@@ -1,19 +1,42 @@
+import java.text.Format;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Customer {
     private String cusName;
     private int cusAge;
     private String cusAddress;
     private String cusIdentity;
     private int cusGender;
+    private LocalDate cusDateOfBirth;
 
     public Customer() {
     }
 
-    public Customer(String cusName, int cusAge, String cusAddress, String cusIdentity,int cusGender) {
+    public Customer(String cusName, String cusAddress, String cusIdentity, int cusGender, LocalDate cusDateOfBirth) {
         this.cusName = cusName;
-        this.cusAge = cusAge;
         this.cusAddress = cusAddress;
         this.cusIdentity = cusIdentity;
-        this.cusGender=cusGender;
+        this.cusGender = cusGender;
+        this.cusDateOfBirth = cusDateOfBirth;
+        this.cusAge=LocalDate.now().getYear()- cusDateOfBirth.getYear();
+    }
+
+//    public Customer(String cusName, int cusAge, String cusAddress, String cusIdentity, int cusGender, LocalDate dateOfBirth) {
+//        this.cusName = cusName;
+//        this.cusAge = cusAge;
+//        this.cusAddress = cusAddress;
+//        this.cusIdentity = cusIdentity;
+//        this.cusGender=cusGender;
+//        this.dateOfBirth=dateOfBirth;
+//    }
+
+    public LocalDate getDateOfBirth() {
+        return cusDateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.cusDateOfBirth = dateOfBirth;
     }
 
     public String getCusIdentity() {
@@ -44,8 +67,8 @@ public class Customer {
         return cusAge;
     }
 
-    public void setCusAge(int cusAge) {
-        this.cusAge = cusAge;
+    public void setCusAge() {
+        this.cusAge =LocalDate.now().getYear()- cusDateOfBirth.getYear();
     }
 
     public String getCusAddress() {
@@ -65,6 +88,9 @@ public class Customer {
         }
         return "other";
     }
+    public String displayDateOfBirth(){
+        return cusDateOfBirth.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    }
 
     @Override
     public String toString() {
@@ -74,6 +100,7 @@ public class Customer {
                 ", Address='" + cusAddress + '\'' +
                 ", Identity='" + cusIdentity + '\'' +
                 ", Gender='" + displayGender() + '\'' +
+                ", DOB='" + displayDateOfBirth() + '\'' +
                 '}';
     }
 }
