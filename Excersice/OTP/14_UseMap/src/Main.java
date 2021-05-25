@@ -15,8 +15,11 @@ public class Main {
             choice=sc.nextInt();
             switch (choice){
                 case 1:
+                    do {
+                        keyMap = inputKey();
+                        if(customerManagement.getCustomerMap().containsKey(keyMap)) System.out.println("Key exist, pls re-enter!");
+                    }while (customerManagement.getCustomerMap().containsKey(keyMap));
                     Customer customer= inputCustomerInformation();
-                    keyMap=inputKey();
                     customerManagement.add(keyMap,customer);
                     break;
                 case 2:
@@ -74,15 +77,15 @@ public class Main {
         sc.nextLine();
         System.out.print("Enter customer address: ");
         String customerAddress=sc.nextLine();
-        System.out.print("Enter customer Identity: ");
+        System.out.print("Enter customer Identity - string: ");
         String customerIdentity=sc.nextLine();
-        System.out.print("Enter customer gender: ");
+        System.out.print("Enter customer gender - int(0,1,2): ");
         int customerGender=sc.nextInt();
         return new Customer(customerName,customerAge,customerAddress,customerIdentity,customerGender);
     }
     static String inputKey(){
         Scanner sc=new Scanner(System.in);
-        System.out.print("Enter key: ");
+        System.out.print("Enter key - type string: ");
         return sc.nextLine();
     }
     static String inputName(){
