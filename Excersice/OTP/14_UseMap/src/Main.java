@@ -3,7 +3,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-
     public static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -14,12 +13,13 @@ public class Main {
             menu();
             System.out.print("Enter your choice: ");
             choice= SCANNER.nextInt();
+            SCANNER.nextLine();
             switch (choice){
                 case 1:
                     do {
                         keyMap = inputKey();
                         if(customerManagement.getCustomerMap().containsKey(keyMap)) System.out.println("Key exist, pls re-enter!");
-                    }while (customerManagement.getCustomerMap().containsKey(keyMap));
+                    } while (customerManagement.getCustomerMap().containsKey(keyMap));
                     customerManagement.add(keyMap,inputCustomerInformation());
                     break;
                 case 2:
@@ -50,8 +50,7 @@ public class Main {
         String type;
         String customerName;
         String keyMap;
-        do {
-            type = inputType();
+        type = inputType();
             switch (type){
                 case "a":
                     keyMap= inputKey();
@@ -71,15 +70,13 @@ public class Main {
                     displayMap(customerManagement.findAgeRange(minAge,maxAge));
                     break;
             }
-        } while (type.equals("a") || type.equals("b") || type.equals("c"));
     }
     private static void deleteByKeyOrNameOrAgeRange(CustomerManagement customerManagement) {
         String type;
         String customerName;
         String keyMap;
-        do {
-            type = inputType();
-            switch (type){
+        type = inputType();
+                switch (type){
                 case "a":
                     keyMap= inputKey();
                     customerManagement.deleteByKey(keyMap);
@@ -96,16 +93,17 @@ public class Main {
                     customerManagement.deleteAgeRange(minAge,maxAge);
                     break;
             }
-        } while (type.equals("a") || type.equals("b") || type.equals("c"));
     }
 
     private static String inputType() {
         String type;
         menuChooseKeyNameAge();
-        System.out.print("Enter type:");
-        SCANNER.nextLine();
-        type=SCANNER.nextLine();
-        if(!type.equals("a") && !type.equals("b") && !type.equals("c")) System.out.println("Wrong input, pls re-enter!");
+        do {
+            System.out.print("Enter type:");
+            type = SCANNER.nextLine();
+            if (!type.equals("a") && !type.equals("b") && !type.equals("c"))
+                System.out.println("Wrong input, pls re-enter!");
+        } while (!type.equals("a") && !type.equals("b") && !type.equals("c"));
         return type;
     }
 
