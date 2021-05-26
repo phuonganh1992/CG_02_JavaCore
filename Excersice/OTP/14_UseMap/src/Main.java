@@ -12,7 +12,7 @@ public class Main {
     public static boolean isDuplicateKeyMap;
 
     public static void main(String[] args) {
-        CustomerManagement customerManagement = new CustomerManagement();
+        CustomerManagement customerManagement = new CustomerManagement(availableMap());
         int choice;
         do {
             menu();
@@ -130,13 +130,21 @@ public class Main {
     static Customer getCustomerInformation() {
         System.out.println("Enter information of customer");
         String customerName = getCustomerName();
-//        int customerAge = getCustomerAge();
-        SCANNER.nextLine();
         String customerAddress = getCustomerAddress();
         String customerIdentity = getCustomerIdentity();
         int customerGender = getCustomerGender();
-        LocalDate customerDateOfBirth=LocalDate.of(2021,1,1);
+        SCANNER.nextLine();
+        LocalDate customerDateOfBirth=getCustomerDateOfBirth();
         return new Customer(customerName, customerAddress, customerIdentity, customerGender,customerDateOfBirth);
+    }
+    private static LocalDate getCustomerDateOfBirth(){
+        System.out.print("Enter customer date of birth with format 'dd/MM/yyy': ");
+        String inputString=SCANNER.nextLine();
+        String [] strings=inputString.split("/");
+        int day=Integer.parseInt(strings[0]);
+        int month=Integer.parseInt(strings[1]);
+        int year=Integer.parseInt(strings[2]);
+        return LocalDate.of(year,month,day);
     }
 
     private static int getCustomerGender() {

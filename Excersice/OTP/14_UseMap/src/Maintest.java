@@ -10,6 +10,13 @@ public class Maintest {
 //    Customer customer_7=new Customer("Anh",19,"HCM","ID007",0,LocalDate.of(1991,1,13));
         System.out.println(customer_1);
         LocalDate bob=LocalDate.of(1992,10,3);
+        String stringDate="03/10/1992";
+        String[] strings=stringDate.split("/");
+        int day=Integer.parseInt(strings[0]);
+        int month=Integer.parseInt(strings[1]);
+        int year=Integer.parseInt(strings[2]);
+        LocalDate localDate=LocalDate.of(year,month,day);
+        System.out.println(localDate);
 
 
     CustomerManagement customerManagement=new CustomerManagement();
