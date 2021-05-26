@@ -3,6 +3,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class ValidDate {
+
     public static final Scanner SCANNER = new Scanner(System.in);
 
     private static LocalDate getCustomerDateOfBirth(){
@@ -14,9 +15,9 @@ public class ValidDate {
             day = Integer.parseInt(strings[0]);
             month = Integer.parseInt(strings[1]);
             year = Integer.parseInt(strings[2]);
-            if (year < 0 || !(month > 1 && month <= 12) || !(day >= 1 && day < calculateMondEnd(month, year)))
+            if (year < 0 || !(month > 1 && month <= 12) || !(day >= 1 && day < calculateDayEndMonth(month, year)))
                 System.out.println("Invalid date, pls re-enter");
-        } while (year < 0 || !(month > 1 && month <= 12) || !(day >= 1 && day < calculateMondEnd(month, year)));
+        } while (year < 0 || !(month > 1 && month <= 12) || !(day >= 1 && day < calculateDayEndMonth(month, year)));
         return LocalDate.of(year,month,day);
     }
     public static String displayDate(LocalDate localDate){
@@ -26,7 +27,7 @@ public class ValidDate {
         if(year%400==0 || (year%4==0 && year%100!=0)) return true;
         return false;
     }
-    public static int calculateMondEnd(int month,int year){
+    public static int calculateDayEndMonth(int month, int year){
         int endMonth=0;
         switch (month){
             case 1:
