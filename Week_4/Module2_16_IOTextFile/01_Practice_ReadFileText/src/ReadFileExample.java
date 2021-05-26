@@ -6,7 +6,7 @@ import java.io.FileReader;
 public class ReadFileExample {
     void readFileText(String pathFile) {
         try {
-            File file = new File(pathFile);
+            File file = new File("filenew.txt");
             if (!file.exists()) {
                 throw new FileNotFoundException("Can not find this file");
             }

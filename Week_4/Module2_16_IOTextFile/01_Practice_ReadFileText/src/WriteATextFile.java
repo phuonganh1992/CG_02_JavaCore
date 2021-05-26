@@ -4,7 +4,7 @@ import java.io.IOException;
 public class WriteATextFile {
     public static void main(String[] args)  {
         try {
-            FileWriter writer = new FileWriter("fileWrite.txt");
+            FileWriter writer = new FileWriter("filenew.txt");
 //        writer.write("Hello");
 //        writer.close();
             writer.write(3);
