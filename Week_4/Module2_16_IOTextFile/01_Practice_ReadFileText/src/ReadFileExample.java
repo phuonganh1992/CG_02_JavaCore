@@ -11,14 +11,14 @@ public class ReadFileExample {
                 throw new FileNotFoundException("Can not find this file");
             }
             BufferedReader bufferedReader=new BufferedReader(new FileReader(file));
-            String line="";
-            int sum=0;
+            String line=null;
+//            int sum=0;
             while ((line= bufferedReader.readLine())!=null){
                 System.out.println(line);
-                sum+=Integer.parseInt(line);
+//                sum+=Integer.parseInt(line);
             }
             bufferedReader.close();
-            System.out.println("Sum= "+sum);
+//            System.out.println("Sum= "+sum);
 
         }catch (Exception e){
             System.err.println("File is not found or error on content");
