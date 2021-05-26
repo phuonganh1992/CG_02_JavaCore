@@ -6,13 +6,14 @@ import java.io.FileReader;
 public class ReadFileExample {
     void readFileText(String pathFile) {
         try {
-            File file = new File("filenew.txt");
+            File file = new File(pathFile);
             if (!file.exists()) {
                 throw new FileNotFoundException("Can not find this file");
             }
-            BufferedReader bufferedReader=new BufferedReader(new FileReader(file));
+            FileReader fileReader=new FileReader(file);
+            BufferedReader bufferedReader=new BufferedReader(fileReader);
             String line=null;
-//            int sum=0;
+            int sum=0;
             while ((line= bufferedReader.readLine())!=null){
                 System.out.println(line);
 //                sum+=Integer.parseInt(line);
