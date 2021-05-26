@@ -1,12 +1,10 @@
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class ValidDate {
-
     public static final Scanner SCANNER = new Scanner(System.in);
 
-    private static LocalDate getCustomerDateOfBirth(){
+    public static LocalDate getValidDate(){
         int day, month,year;
         do {
             System.out.print("Enter customer date of birth with format 'dd/MM/yyyy': ");
@@ -20,9 +18,7 @@ public class ValidDate {
         } while (year < 0 || !(month > 1 && month <= 12) || !(day >= 1 && day < calculateDayEndMonth(month, year)));
         return LocalDate.of(year,month,day);
     }
-    public static String displayDate(LocalDate localDate){
-        return localDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    }
+
     public static boolean isLeapYear(int year){
         if(year%400==0 || (year%4==0 && year%100!=0)) return true;
         return false;

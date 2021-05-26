@@ -22,15 +22,6 @@ public class Customer {
         this.cusAge=LocalDate.now().getYear()- cusDateOfBirth.getYear();
     }
 
-//    public Customer(String cusName, int cusAge, String cusAddress, String cusIdentity, int cusGender, LocalDate dateOfBirth) {
-//        this.cusName = cusName;
-//        this.cusAge = cusAge;
-//        this.cusAddress = cusAddress;
-//        this.cusIdentity = cusIdentity;
-//        this.cusGender=cusGender;
-//        this.dateOfBirth=dateOfBirth;
-//    }
-
     public LocalDate getDateOfBirth() {
         return cusDateOfBirth;
     }

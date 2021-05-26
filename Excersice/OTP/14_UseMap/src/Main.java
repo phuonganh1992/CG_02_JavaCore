@@ -138,13 +138,7 @@ public class Main {
         return new Customer(customerName, customerAddress, customerIdentity, customerGender,customerDateOfBirth);
     }
     private static LocalDate getCustomerDateOfBirth(){
-        System.out.print("Enter customer date of birth with format 'dd/MM/yyy': ");
-        String inputString=SCANNER.nextLine();
-        String [] strings=inputString.split("/");
-        int day=Integer.parseInt(strings[0]);
-        int month=Integer.parseInt(strings[1]);
-        int year=Integer.parseInt(strings[2]);
-        return LocalDate.of(year,month,day);
+        return ValidDate.getValidDate();
     }
 
     private static int getCustomerGender() {
