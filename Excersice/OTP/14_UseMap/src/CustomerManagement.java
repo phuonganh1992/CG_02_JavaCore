@@ -90,7 +90,7 @@ public class CustomerManagement {
         Collections.sort(entryCollection, new Comparator<Map.Entry<String, Customer>>() {
             @Override
             public int compare(Map.Entry<String, Customer> o1, Map.Entry<String, Customer> o2) {
-                if(o1.getValue().getCusName().equals(o2.getValue().getCusName())) return o1.getValue().getCusAge()-o2.getValue().getCusAge();
+                if(o1.getValue().getCusName().equals(o2.getValue().getCusName())) return o2.getValue().getDateOfBirth().compareTo(o1.getValue().getDateOfBirth());
                else return o1.getValue().getCusName().compareTo(o2.getValue().getCusName());
             }
         });
