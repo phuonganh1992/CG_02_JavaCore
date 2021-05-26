@@ -68,7 +68,9 @@ public class Main {
         switch (type) {
             case "a":
                 keyMap = inputKey();
-                System.out.println("The result of search by key " + keyMap + " is: " + customerManagement.findByKey(keyMap));
+                if (customerManagement.findByKey(keyMap) == null) System.out.println("Find no customer with key above");
+                else
+                    System.out.println("The result of search by key " + keyMap + " is: " + customerManagement.findByKey(keyMap));
                 break;
             case "b":
                 customerName = getCustomerName();
@@ -92,6 +94,7 @@ public class Main {
         switch (type) {
             case TYPE_A:
                 keyMap = inputKey();
+                if (customerManagement.findByKey(keyMap) == null) System.out.println("Find no customer with key above");
                 customerManagement.deleteByKey(keyMap);
                 break;
             case TYPE_B:
@@ -134,10 +137,11 @@ public class Main {
         String customerIdentity = getCustomerIdentity();
         int customerGender = getCustomerGender();
         SCANNER.nextLine();
-        LocalDate customerDateOfBirth=getCustomerDateOfBirth();
-        return new Customer(customerName, customerAddress, customerIdentity, customerGender,customerDateOfBirth);
+        LocalDate customerDateOfBirth = getCustomerDateOfBirth();
+        return new Customer(customerName, customerAddress, customerIdentity, customerGender, customerDateOfBirth);
     }
-    private static LocalDate getCustomerDateOfBirth(){
+
+    private static LocalDate getCustomerDateOfBirth() {
         return ValidDate.getValidDate();
     }
 
@@ -175,13 +179,13 @@ public class Main {
 
     private static Map<String, Customer> availableMap() {
         Map<String, Customer> map = new LinkedHashMap<>();
-        map.put("Cus001", new Customer("Hoa", "HN", "ID001", 0, LocalDate.of(1992,2,13)));
-        map.put("Cus002", new Customer("Anh", "ND", "ID002", 0,LocalDate.of(1992,12,10)));
-        map.put("Cus003", new Customer("Thanh", "BG", "ID003", 1,LocalDate.of(1984,2,13)));
-        map.put("Cus004", new Customer("Nam", "DN", "ID004", 0,LocalDate.of(1996,9,27)));
-        map.put("Cus005", new Customer("Tu",  "HCM", "ID005", 1,LocalDate.of(2002,2,13)));
-        map.put("Cus006", new Customer("Anh", "HCM", "ID006", 2,LocalDate.of(1991,1,13)));
-        map.put("Cus007", new Customer("Anh", "HN", "ID007", 1,LocalDate.of(1992,12,12)));
+        map.put("Cus001", new Customer("Hoa", "HN", "ID001", 0, LocalDate.of(1992, 2, 13)));
+        map.put("Cus002", new Customer("Anh", "ND", "ID002", 0, LocalDate.of(1992, 12, 10)));
+        map.put("Cus003", new Customer("Thanh", "BG", "ID003", 1, LocalDate.of(1984, 2, 13)));
+        map.put("Cus004", new Customer("Nam", "DN", "ID004", 0, LocalDate.of(1996, 9, 27)));
+        map.put("Cus005", new Customer("Tu", "HCM", "ID005", 1, LocalDate.of(2002, 2, 13)));
+        map.put("Cus006", new Customer("Anh", "HCM", "ID006", 2, LocalDate.of(1991, 1, 13)));
+        map.put("Cus007", new Customer("Anh", "HN", "ID007", 1, LocalDate.of(1992, 12, 12)));
         return map;
     }
 

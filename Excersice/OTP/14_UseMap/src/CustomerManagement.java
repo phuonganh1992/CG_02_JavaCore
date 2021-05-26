@@ -74,8 +74,11 @@ public class CustomerManagement {
 
     public void deleteByName(String name){
         Map<String,Customer> sameNameMap=findByName(name);
-        for (String key:sameNameMap.keySet()) {
-            customerMap.remove(key);
+        if(findByName(name).isEmpty()) System.out.println("Found no customer to delete");
+        else {
+            for (String key : sameNameMap.keySet()) {
+                customerMap.remove(key);
+            }
         }
     }
     public void deleteAgeRange(int minAge,int maxAge){
