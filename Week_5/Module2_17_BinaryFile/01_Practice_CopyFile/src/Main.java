@@ -27,4 +27,10 @@ public class Main {
         inputStream.close();
         outputStream.close();
     }
+//    private static void copyFileUsingStreamByWriteString(File source, File dest) throws IOException{
+//        InputStream inputStream= new FileInputStream(source);
+//        OutputStream outputStream=new FileOutputStream(dest);
+//
+//
+//    }
 }
