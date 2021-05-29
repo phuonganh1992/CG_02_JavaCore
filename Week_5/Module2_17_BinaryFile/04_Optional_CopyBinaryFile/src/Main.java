@@ -7,8 +7,11 @@ public class Main {
     public static void main(String[] args) {
 
         try {
+
             copyBinaryFile(PATH_SOURCE_FILE,PATH_DEST_FILE);
+            System.out.println();
             readDataFromFile(PATH_SOURCE_FILE);
+            readDataFromFile(PATH_DEST_FILE);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -24,10 +27,21 @@ public class Main {
             System.out.print(i);
         }
         inputStream.close();
+        System.out.println();
     }
-    public static void copyBinaryFile(String souce,String dest) throws IOException {
-        InputStream inputStream=new FileInputStream(souce);
-        OutputStream outputStream=new FileOutputStream(dest);
+    public static void copyBinaryFile(String source,String dest) throws IOException {
+        File sourceFile=new File(source);
+        if(!sourceFile.exists()) {
+            System.out.println("File is not found!");
+            sourceFile.createNewFile();
+        }
+        System.out.println("Source File has length of: "+source.length());
+
+        InputStream inputStream=new FileInputStream(sourceFile);
+        File destFile=new File(dest);
+        if(destFile.exists()) System.out.println("Dest file exists!");
+        System.out.println("Dest File has length of: "+destFile.length());
+        OutputStream outputStream=new FileOutputStream(destFile);
         byte[] bytes=new byte[1024];
         int length;
         while ((length=inputStream.read(bytes))!=-1){
@@ -36,5 +50,7 @@ public class Main {
         inputStream.close();
         outputStream.close();
         System.out.println("File is copied successfully");
+        System.out.println("Dest File has length of: "+destFile.length());
+
     }
 }
