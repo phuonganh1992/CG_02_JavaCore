@@ -5,9 +5,7 @@ public class Main {
     static final String PATH_SOURCE_FILE="src/file/products.txt";
     static final String PATH_DEST_FILE="src/file/destFile.txt";
     public static void main(String[] args) {
-
         try {
-
             copyBinaryFile(PATH_SOURCE_FILE,PATH_DEST_FILE);
             System.out.println();
             readDataFromFile(PATH_SOURCE_FILE);
@@ -17,8 +15,6 @@ public class Main {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
     }
     public static void readDataFromFile(String pathFile) throws IOException, ClassNotFoundException {
         InputStream inputStream=new FileInputStream(pathFile);
@@ -35,9 +31,9 @@ public class Main {
             System.out.println("File is not found!");
             sourceFile.createNewFile();
         }
-        System.out.println("Source File has length of: "+source.length());
 
         InputStream inputStream=new FileInputStream(sourceFile);
+        System.out.println("Source File has length of: "+source.length());
         File destFile=new File(dest);
         if(destFile.exists()) System.out.println("Dest file exists!");
         System.out.println("Dest File has length of: "+destFile.length());
