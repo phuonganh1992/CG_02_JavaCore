@@ -2,15 +2,14 @@ package model;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
+
 
 public class ManagementProduct {
     private List<Product> productList;
 
     public ManagementProduct() {
-        productList=new LinkedList<>();
+        productList=new ArrayList<>();
     }
 
     public List<Product> getProductList() {
@@ -51,8 +50,8 @@ public class ManagementProduct {
     }
 
     public void writeToFile(String pathFile,List<Product> productList) throws IOException {
-
-        FileOutputStream fileOutputStream=new FileOutputStream(pathFile);
+        File file=new File(pathFile);
+        FileOutputStream fileOutputStream=new FileOutputStream(file);
         ObjectOutputStream objectOutputStream=new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(productList);
         objectOutputStream.close();

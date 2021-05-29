@@ -12,22 +12,28 @@ public class Main {
     public static void main(String[] args) {
         ManagementProduct managementProduct=new ManagementProduct();
         managementProduct.add(availableList());
-        managementProduct.display();
+
         try {
             managementProduct.writeToFile(FILE_PATH, managementProduct.getProductList());
             List<Product> listRead1st=managementProduct.readFromFile(FILE_PATH);
             for (Product product:listRead1st) {
                 System.out.println(product);
             }
-//            managementProduct.add(new Product("Code_7","Banh","Kinh Do",700,30));
-//            managementProduct.delete("Code_5");
+            System.out.println("-----------------------------------------------------------------");
+            managementProduct.add(new Product("Code_7","Kem","Kinh Do",700,30));
+            managementProduct.delete("Code_5");
+            managementProduct.writeToFile(FILE_PATH, managementProduct.getProductList());
+            List<Product> listRead2nd=managementProduct.readFromFile(FILE_PATH);
+            for (Product product:listRead2nd) {
+                System.out.println(product);
+            }
         }
-        catch (IOException | ClassNotFoundException e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
-//        catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
     static List<Product> availableList(){
