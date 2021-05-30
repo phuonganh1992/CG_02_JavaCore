@@ -1,8 +1,11 @@
+package model;
+
 import java.util.Random;
+import static model.MainTest.DISTANCE;
+import static model.MainTest.STEP;
 
 public class Car implements Runnable{
-    public static final int DISTANCE=100;
-    public static final int STEP=2;
+
     private String name;
 
     public Car(String name) {
@@ -28,15 +31,15 @@ public class Car implements Runnable{
                 }
             }
             log += "|";
-            System.out.println("Car" + this.name + ": " + log + " " + Math.min(DISTANCE, runDistance) + "KM");
+            System.out.println("model.MainTest.Car" + this.name + ": " + log + " " + Math.min(DISTANCE, runDistance) + "KM");
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
-                System.out.println("Car" + this.name + " broken...");
+                System.out.println("model.MainTest.Car" + this.name + " broken...");
                 break;
             }
         }
         Long endTime=System.currentTimeMillis();
-        System.out.println("Car" + this.name + " Finish in " + (endTime - startTime) / 1000 + "s");
+        System.out.println("model.MainTest.Car" + this.name + " Finish in " + (endTime - startTime) / 1000 + "s");
     }
 }

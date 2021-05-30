@@ -1,6 +1,8 @@
-public class Main {
+package model;
 
-
+public class MainTest {
+    public static final int DISTANCE=100;
+    public static final int STEP=2;
     public static void main(String[] args) {
         Car carA = new Car("A");
         Car carB = new Car("B");
