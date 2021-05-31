@@ -1,3 +1,6 @@
+import model.Customer;
+import model.CustomerManagement;
+
 import java.time.LocalDate;
 
 public class Maintest {
@@ -5,9 +8,9 @@ public class Maintest {
     Customer customer_1=new Customer("Hoa","HN","ID001",0, LocalDate.of(1992,2,13));
     Customer customer_2=new Customer("Anh","ND","ID002",0,LocalDate.of(1999,5,20));
     Customer customer_3=new Customer("Quan","BG","ID003",1,LocalDate.of(1984,2,13));
-//    Customer customer_4=new Customer("Xuan",40,"DN","ID004",0,LocalDate.of(1996,9,27));
-//    Customer customer_5=new Customer("Tu",19,"HCM","ID005",1,LocalDate.of(2002,2,13));
-//    Customer customer_7=new Customer("Anh",19,"HCM","ID007",0,LocalDate.of(1991,1,13));
+//    model.Customer customer_4=new model.Customer("Xuan",40,"DN","ID004",0,LocalDate.of(1996,9,27));
+//    model.Customer customer_5=new model.Customer("Tu",19,"HCM","ID005",1,LocalDate.of(2002,2,13));
+//    model.Customer customer_7=new model.Customer("Anh",19,"HCM","ID007",0,LocalDate.of(1991,1,13));
         System.out.println(customer_1);
         LocalDate bob=LocalDate.of(1992,10,3);
         String stringDate="03/10/1992";
@@ -38,7 +41,7 @@ public class Maintest {
 //    System.out.println("--------------------------------------------");
 //
 //
-//    Customer customer_6=new Customer("Hung",26,"YB","ID006",2);
+//    model.Customer customer_6=new model.Customer("Hung",26,"YB","ID006",2);
 //    customerManagement.edit("CU004",customer_6);
     customerManagement.display();
 //        System.out.println(customerManagement.findByName("Anh"));

@@ -1,4 +1,5 @@
-import java.text.Format;
+package model;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -22,7 +23,7 @@ public class Customer {
         this.cusAge=LocalDate.now().getYear()- cusDateOfBirth.getYear();
     }
 
-    public LocalDate getDateOfBirth() {
+    public LocalDate getCusDateOfBirth() {
         return cusDateOfBirth;
     }
 
@@ -85,7 +86,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "model.Customer{" +
                 "Name='" + cusName + '\'' +
                 ", Age=" + cusAge +
                 ", Address='" + cusAddress + '\'' +
