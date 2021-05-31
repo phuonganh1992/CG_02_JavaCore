@@ -33,7 +33,7 @@ public class Main {
         }
 
         InputStream inputStream=new FileInputStream(sourceFile);
-        System.out.println("Source File has length of: "+source.length());
+        System.out.println("Source File has length of: "+sourceFile.length());
         File destFile=new File(dest);
         if(destFile.exists()) System.out.println("Dest file exists!");
         System.out.println("Dest File has length of: "+destFile.length());
@@ -47,6 +47,5 @@ public class Main {
         outputStream.close();
         System.out.println("File is copied successfully");
         System.out.println("Dest File has length of: "+destFile.length());
-
     }
 }
