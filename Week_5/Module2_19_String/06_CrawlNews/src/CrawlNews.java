@@ -15,12 +15,12 @@ public class CrawlNews {
             String content=scanner.next();
             scanner.close();
 //            content=content.replaceAll("\\n+","");
-            System.out.println(content);
-//            Pattern pattern=Pattern.compile("title=\"(.*?)");
-//            Matcher matcher=pattern.matcher(content);
-//            while (matcher.find()){
-//                System.out.println(matcher.group(1));
-//            }
+//            System.out.println(content);
+            Pattern pattern=Pattern.compile("title=\"(.*?)\">(.*?)</a>");
+            Matcher matcher=pattern.matcher(content);
+            while (matcher.find()){
+                System.out.println(matcher.group(1));
+            }
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
