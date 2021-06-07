@@ -1,6 +1,6 @@
 Student code,Student name,Student date of birth,Student age,Student gender,Student address,Student email,Student average score
-C0321K1,Lai Phuong Anh,1992-12-12,29,0,Nam Dinh,phuonganh.1992@gmail.com,9.0
-C0221H1,Huy Chuong,1994-05-30,27,1,Nam Dinh,chuong.huy@codegym.vn,8.0
-C0221K2,Huy Hung,1993-07-20,28,1,Ha Noi,hung.huy@codegym.vn,7.0
-C0321K2,Van Tu,2001-12-20,20,1,Ha Noi,tu.vuong@codegym.vn,9.0
-C0321K4,Huy Chuong,2001-12-20,20,1,Ha Noi,tu.vuong@codegym.vn,9.0
+C0221K2,Huy Hung,20/07/1993,28,1,Ha Noi,hung.huy@codegym.vn,7.0
+C0221H1,Huy Chuong,30/05/1994,27,1,Nam Dinh,chuong.huy@codegym.vn,8.0
+C0321K4,Huy Chuong,20/12/2001,20,1,Ha Noi,tu.vuong@codegym.vn,9.0
+C0321K1,Lai Phuong Anh,12/12/1992,29,0,Nam Dinh,phuonganh.1992@gmail.com,9.0
+C0321K2,Van Tu,20/12/2001,20,1,Ha Noi,tu.vuong@codegym.vn,9.0

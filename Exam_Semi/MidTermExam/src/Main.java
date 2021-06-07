@@ -22,7 +22,6 @@ public class Main {
             menu();
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
-
             switch (choice) {
                 case 1:
                     Student student= InputOutput.getStudentInformation();
@@ -36,10 +35,12 @@ public class Main {
                     studentManagement.edit(studentEdit);
                     break;
                 case 4:
+                    deleteByCodeNameScore(studentManagement);
+                    System.out.println("Delete successfully!");
 
                     break;
                 case 5:
-
+                    findByCodeNameScore(studentManagement);
                     break;
                 case 6:
                     studentManagement.sort();
@@ -76,23 +77,65 @@ public class Main {
         System.out.println("c. By score range");
     }
     private static void deleteByCodeNameScore(StudentManagement studentManagement) {
-        String customerName;
         String type = inputType();
         switch (type) {
             case TYPE_A:
-
+                String studentCode= InputOutput.getStudentCode();
+                System.out.println("Are you sure to delete? Enter Y for agree");
+                String answer=SCANNER.nextLine();
+                if(answer.equals("Y")){
+                    studentManagement.deleteByCode(studentCode);
+                }
                 break;
             case TYPE_B:
-
+                String studentName=InputOutput.getStudentName();
+                studentManagement.deleteByName(studentName);
                 break;
             case TYPE_C:
                 System.out.print("Enter min score: ");
-                int minAge = SCANNER.nextInt();
+                double minScore = SCANNER.nextDouble();
                 System.out.print("Enter max score: ");
-                int maxAge = SCANNER.nextInt();
-                studentManagement.deleteAgeRange(minAge, maxAge);
+                double maxScore = SCANNER.nextDouble();
+                studentManagement.deleteByScoreRange(minScore, maxScore);
                 break;
         }
+    }
+    private static void findByCodeNameScore(StudentManagement studentManagement) {
+        String type = inputType();
+        switch (type) {
+            case TYPE_A:
+                String studentCode= InputOutput.getStudentCode();
+//                studentManagement.findByCode(studentCode);
+                System.out.println("Students found as below: ");
+                System.out.println(studentManagement.findByCode(studentCode));
+                break;
+            case TYPE_B:
+                String studentName=InputOutput.getStudentName();
+//                studentManagement.findByName(studentName);
+                System.out.println("Student found as below: ");
+                System.out.println(studentManagement.findByName(studentName));
+                break;
+            case TYPE_C:
+                System.out.print("Enter min score: ");
+                double minScore = SCANNER.nextDouble();
+                System.out.print("Enter max score: ");
+                double maxScore = SCANNER.nextDouble();
+                System.out.println("Student found as below: ");
+                System.out.println(studentManagement.findByScoreRange(minScore, maxScore));
+                break;
+        }
+    }
+    private static String inputType() {
+        String type;
+        menuChooseCodeNameScore();
+        boolean isWrongType;
+        do {
+            System.out.print("Enter type:");
+            type = SCANNER.nextLine();
+            isWrongType = !type.equals(TYPE_A) && !type.equals(TYPE_B) && !type.equals(TYPE_C);
+            if (isWrongType) System.out.println("Wrong input, pls re-enter!");
+        } while (isWrongType);
+        return type;
     }
     public static List<Student> currentStudentList(){
         List<Student> currentStudentList=new LinkedList<>();

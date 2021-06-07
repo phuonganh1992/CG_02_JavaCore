@@ -4,6 +4,7 @@ import javafx.util.converter.LocalDateStringConverter;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class StudentIO {
         for (Student student:studentList) {
             bufferedWriter.write(student.getStudentCode()+","+
                     student.getStudentName()+","+
-                    student.getStudentDateOfBirth()+","+
+                    student.displayDateOfBirth()+","+
                     student.getStudentAge()+","+
                     student.getStudentGender()+","+
                     student.getStudentAddress()+","+
@@ -33,13 +34,14 @@ public class StudentIO {
         File file=new File(pathFile);
         FileReader fileReader=new FileReader(file);
         BufferedReader bufferedReader=new BufferedReader(fileReader);
-        String lineCSV=null;
-        while (bufferedReader.readLine()!=null){
+        String lineCSV= bufferedReader.readLine();
+        while ((lineCSV=bufferedReader.readLine())!=null){
             String[] lineContent=lineCSV.split(",");
             String studentCode=lineContent[0];
             String studentName=lineContent[1];
             String dateString=lineContent[2];
-            LocalDate studentDateOfBirth=new LocalDateStringConverter().fromString(dateString);
+            DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate studentDateOfBirth=LocalDate.parse(dateString,formatter);
             int studentGender=Integer.parseInt(lineContent[4]);
             String studentAddress=lineContent[5];
             String studentEmail=lineContent[6];

@@ -1,9 +1,9 @@
 package model;
 
-import javafx.util.converter.LocalDateStringConverter;
-
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+
 
 public class InputOutput {
 //    public static void main(String[] args) {
@@ -12,24 +12,23 @@ public class InputOutput {
 //    }
     public static final Scanner SCANNER=new Scanner(System.in);
     public static Student getStudentInformation() {
-        Scanner scanner=new Scanner(System.in);
         System.out.println("Enter information of student");
         String studentCode = getStudentCode();
         String studentName = getStudentName();
         LocalDate studentDateOfBirth=getDateOfBirth();
 
         System.out.print("Enter address: ");
-        String studentAddress=scanner.nextLine();
+        String studentAddress=SCANNER.nextLine();
         String studentEmail = getStudentEmail();
         System.out.print("Enter average score: ");
-        double studentScore=scanner.nextDouble();
+        double studentScore=SCANNER.nextDouble();
 
         int studentGender = getStudentGender();
-        scanner.nextLine();
+        SCANNER.nextLine();
 
         return new Student(studentCode,studentName,studentDateOfBirth,studentGender,studentAddress,studentEmail,studentScore);
     }
-    private static int getStudentGender() {
+    public static int getStudentGender() {
         int studentGender;
         boolean invalidStudentGender;
         do {
@@ -41,7 +40,7 @@ public class InputOutput {
         return studentGender;
     }
 
-    private static String getStudentCode() {
+    public static String getStudentCode() {
         String studentCode;
         do {
             System.out.print("Enter code: ");
@@ -51,7 +50,7 @@ public class InputOutput {
         return studentCode;
     }
 
-    private static String getStudentName() {
+    public static String getStudentName() {
         String studentName;
         do {
             System.out.print("Enter name: ");
@@ -61,7 +60,7 @@ public class InputOutput {
         return studentName;
     }
 
-    private static String getStudentEmail() {
+    public static String getStudentEmail() {
         String studentEmail;
         do {
             System.out.print("Enter email: ");
@@ -74,12 +73,13 @@ public class InputOutput {
     private static LocalDate getDateOfBirth() {
         String dateString;
         do {
-            System.out.println("Enter date of birth (format dd/mm/yyyy)");
+            System.out.print("Enter date of birth (format dd/mm/yyyy): ");
             dateString = SCANNER.nextLine();
             if (!ValidateStudent.valid(dateString, ValidateStudent.DATEOFBIRTH_REGEX))
                 System.out.println("Invalid date!");
-        }while (!ValidateStudent.valid(dateString, ValidateStudent.DATEOFBIRTH_REGEX));
-        LocalDate studentDateOfBirth =new LocalDateStringConverter().fromString(dateString);
+        } while (!ValidateStudent.valid(dateString, ValidateStudent.DATEOFBIRTH_REGEX));
+        DateTimeFormatter dateTimeFormatter= DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate studentDateOfBirth = LocalDate.parse(dateString,dateTimeFormatter);
         return studentDateOfBirth;
     }
 }
