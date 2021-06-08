@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Set;
 
 public class Client {
@@ -11,4 +12,7 @@ public class Client {
         int max = collectionOperations.findMax(numbers);
         System.out.println("Max value is: " + max);
     }
+
+
+
 }
