@@ -7,15 +7,15 @@ import java.util.Scanner;
 public class TaxiApp {
     private Client client;
     private Order order;
-    private Taxi taxi;
+    private TaxiPool taxi;
     public static final Scanner SCANNER = new Scanner(System.in);
-    public static List<Taxi> availableTaxi=new ArrayList<>();
+    public static List<TaxiPool> availableTaxi=new ArrayList<>();
 
 
     public TaxiApp() {
     }
 
-    public TaxiApp(Client client, Order order, Taxi taxi) {
+    public TaxiApp(Client client, Order order, TaxiPool taxi) {
         this.client = client;
         this.order = order;
         this.taxi = taxi;

@@ -3,16 +3,16 @@ package model;
 import java.time.LocalDateTime;
 
 public class Order {
-    enum OrderStatusEnum{
-        _0("Waiting"),_1("Cancel"),_2("Accepted"),_3("Paid");
-        String display;
-
-        OrderStatusEnum(String display) {
-            this.display = display;
-        }
-    }
+//    enum OrderStatusEnum{
+//        _0("Waiting"),_1("Cancel"),_2("Accepted"),_3("Paid");
+//        String display;
+//
+//        OrderStatusEnum(String display) {
+//            this.display = display;
+//        }
+//    }
     private Client client;
-    private Taxi taxi;
+    private TaxiPool taxi;
     private String startLocation;
     private String endLocation;
     private LocalDateTime startTime;
@@ -20,7 +20,7 @@ public class Order {
     private int km;
     private int price;
     private int totalAmount;
-    private String orderStatus;
+    private int orderStatus;
 
     public Order() {
         this.client=null;
@@ -32,10 +32,10 @@ public class Order {
         this.km=0;
         this.price=0;
         this.totalAmount=0;
-        this.orderStatus="_0";
+        this.orderStatus=0;
     }
 
-    public Order(Client client, Taxi taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime, int km, int price, int totalAmount, String orderStatus) {
+    public Order(Client client, TaxiPool taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime, int km, int price, int totalAmount, int orderStatus) {
         this.client = client;
         this.taxi = taxi;
         this.startLocation = startLocation;
@@ -72,11 +72,11 @@ public class Order {
         this.client = client;
     }
 
-    public Taxi getTaxi() {
+    public TaxiPool getTaxi() {
         return taxi;
     }
 
-    public void setTaxi(Taxi taxi) {
+    public void setTaxi(TaxiPool taxi) {
         this.taxi = taxi;
     }
 
@@ -120,18 +120,25 @@ public class Order {
         this.totalAmount = totalAmount;
     }
 
-    public String getOrderStatus() {
+    public int getOrderStatus() {
         return orderStatus;
     }
 
-    public void setOrderStatus(String orderStatus) {
+    public void setOrderStatus(int orderStatus) {
         this.orderStatus = orderStatus;
     }
-    public String displayOrderStatus(){
-        for (OrderStatusEnum s: OrderStatusEnum.values()) {
-            if(s.equals(orderStatus)) return s.display;
+    public String displayStatus(){
+        switch (orderStatus){
+            case 0:
+                return "Waiting";
+            case 1:
+                return "Cancel";
+            case 2:
+                return "Accepted";
+            case 3:
+                return "Paid";
         }
-        return null;
+        return "";
     }
 
     @Override
@@ -144,7 +151,7 @@ public class Order {
                 ", km=" + km +
                 ", price=" + price +
                 ", totalAmount=" + totalAmount +
-                ", orderStatus='" + orderStatus + '\'' +
+                ", orderStatus='" + displayStatus() + '\'' +
                 '}';
     }
 }

@@ -1,24 +1,24 @@
 package model;
 
 public class Taxi {
-    enum TaxiStatusEnum {
-        _1("Available"), _0("Unavailable");
-        String display;
-
-        TaxiStatusEnum(String display) {
-            this.display = display;
-        }
-    }
+//    enum TaxiStatusEnum {
+//        _1("Available"), _0("Unavailable");
+//        String display;
+//
+//        TaxiStatusEnum(String display) {
+//            this.display = display;
+//        }
+//    }
     private String taxiCode;
     private String taxiLicensePlate;
     private String taxiColor;
     private int taxiSeatQuantity;
-    private String taxiStatus;
+    private int taxiStatus;
 
     public Taxi() {
     }
 
-    public Taxi(String taxiCode, String taxiLicensePlate, String taxiColor, int seatQuantity, String status) {
+    public Taxi(String taxiCode, String taxiLicensePlate, String taxiColor, int seatQuantity, int status) {
         this.taxiCode = taxiCode;
         this.taxiLicensePlate = taxiLicensePlate;
         this.taxiColor = taxiColor;
@@ -58,18 +58,21 @@ public class Taxi {
         this.taxiSeatQuantity = seatQuantity;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return taxiStatus;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.taxiStatus = status;
     }
-    public String displayTaxiStatus(){
-        for (TaxiStatusEnum s: TaxiStatusEnum.values()) {
-            if(s.equals(taxiStatus)) return s.display;
+    public String displayStatus(){
+        switch (taxiStatus){
+            case 0:
+                return "Unavailable";
+            case 1:
+                return "Available";
         }
-        return null;
+        return "";
     }
 
 
@@ -80,7 +83,7 @@ public class Taxi {
                 ", taxiLicensePlate='" + taxiLicensePlate + '\'' +
                 ", taxiColor='" + taxiColor + '\'' +
                 ", seatQuantity=" + taxiSeatQuantity +
-                ", status=" + displayTaxiStatus() +
+                ", status=" + displayStatus() +
                 '}';
     }
 }
