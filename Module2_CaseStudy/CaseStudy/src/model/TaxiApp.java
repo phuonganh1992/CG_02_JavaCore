@@ -1,6 +1,7 @@
 package model;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
 
@@ -43,24 +44,30 @@ public class TaxiApp {
         this.taxi = taxi;
     }
 
-    public void findTaxi(){
-        order=new Order();
+    public void findTaxi() {
+        order = new Order();
         System.out.println("Enter start location");
-        String startLocation=SCANNER.nextLine();
+        String startLocation = SCANNER.nextLine();
         System.out.println("Enter end location");
-        String endLocation=SCANNER.nextLine();
+        String endLocation = SCANNER.nextLine();
 
         int choice;
+        TaxiPool taxiPool = new TaxiPool();
         do {
-            TaxiPool taxiPool=new TaxiPool();
             taxiPool.display();
             System.out.println("Enter taxi that you want to choose: ");
-            choice=SCANNER.nextInt();
-            Taxi x= taxiPool.getAvailableTaxi().get(choice);
+            choice = SCANNER.nextInt();
+            LocalDateTime startTime=LocalDateTime.now();
+            LocalDateTime endTime=startTime.plusMinutes(10);
+            Taxi currentTaxi = taxiPool.getAvailableTaxi().get(choice);
+            order.setTaxi(currentTaxi);
+            order.setOrderStatus(2);
+            order.setStartLocation(startLocation);
+            order.setEndLocation(endLocation);
 
-//            order.setTaxi(taxiPool.getAvailableTaxi().get(choice));
 
-        }while (choice>=1 && choice<=5);
+        } while (choice >=taxiPool.getAvailableTaxi().size() );
+    }
 
 
 

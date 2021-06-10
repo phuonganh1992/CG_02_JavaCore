@@ -12,7 +12,7 @@ public class Order {
 //        }
 //    }
     private Client client;
-    private TaxiPool taxi;
+    private Taxi taxi;
     private String startLocation;
     private String endLocation;
     private LocalDateTime startTime;
@@ -35,7 +35,7 @@ public class Order {
         this.orderStatus=0;
     }
 
-    public Order(Client client, TaxiPool taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime, int km, int price, int totalAmount, int orderStatus) {
+    public Order(Client client, Taxi taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime, int km, int price, int totalAmount, int orderStatus) {
         this.client = client;
         this.taxi = taxi;
         this.startLocation = startLocation;
@@ -72,11 +72,11 @@ public class Order {
         this.client = client;
     }
 
-    public TaxiPool getTaxi() {
+    public Taxi getTaxi() {
         return taxi;
     }
 
-    public void setTaxi(TaxiPool taxi) {
+    public void setTaxi(Taxi taxi) {
         this.taxi = taxi;
     }
 
