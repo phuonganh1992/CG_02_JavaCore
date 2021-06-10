@@ -3,7 +3,7 @@ package model;
 public class Client {
     private String clientName;
     private String clientPhoneNumber;
-    private String clientCountry;
+    private String clientAddress;
 
     public Client() {
     }
@@ -11,7 +11,7 @@ public class Client {
     public Client(String clientName, String clientPhoneNumber, String clientCountry) {
         this.clientName = clientName;
         this.clientPhoneNumber = clientPhoneNumber;
-        this.clientCountry = clientCountry;
+        this.clientAddress = clientCountry;
     }
 
     public String getClientName() {
@@ -32,19 +32,19 @@ public class Client {
         this.clientPhoneNumber = clientPhoneNumber;
     }
 
-    public String getClientCountry() {
-        return clientCountry;
+    public String getClientAddress() {
+        return clientAddress;
     }
 
-    public void setClientCountry(String clientCountry) {
-        this.clientCountry = clientCountry;
+    public void setClientAddress(String clientAddress) {
+        this.clientAddress = clientAddress;
     }
     @Override
     public String toString() {
         return "Client{" +
                 "clientName='" + clientName + '\'' +
                 ", clientPhoneNumber='" + clientPhoneNumber + '\'' +
-                ", clientCountry='" + clientCountry + '\'' +
+                ", clientCountry='" + clientAddress + '\'' +
                 '}';
     }
 }
