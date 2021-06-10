@@ -8,10 +8,10 @@ public class Client {
     public Client() {
     }
 
-    public Client(String clientName, String clientPhoneNumber, String clientCountry) {
+    public Client(String clientName, String clientPhoneNumber, String clientAddress) {
         this.clientName = clientName;
         this.clientPhoneNumber = clientPhoneNumber;
-        this.clientAddress = clientCountry;
+        this.clientAddress = clientAddress;
     }
 
     public String getClientName() {

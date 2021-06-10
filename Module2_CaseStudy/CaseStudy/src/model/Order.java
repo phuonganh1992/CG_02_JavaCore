@@ -1,5 +1,6 @@
 package model;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Order {
@@ -17,37 +18,34 @@ public class Order {
     private String endLocation;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
+    private int journeyTime;
     private int km;
-    private int price;
+    private int price=10;
     private int totalAmount;
     private int orderStatus;
 
     public Order() {
-        this.client=null;
-        this.taxi=null;
-        this.startLocation=null;
-        this.endLocation=null;
-        this.startTime=null;
-        this.endTime=null;
-        this.km=0;
-        this.price=0;
-        this.totalAmount=0;
-        this.orderStatus=0;
-    }
 
-    public Order(Client client, Taxi taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime, int km, int price, int totalAmount, int orderStatus) {
+    }
+    public Order(Client client, Taxi taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime, int km, int orderStatus) {
         this.client = client;
         this.taxi = taxi;
         this.startLocation = startLocation;
         this.endLocation = endLocation;
         this.startTime = startTime;
         this.endTime = endTime;
-        this.km = km;
-        this.price = price;
-        this.totalAmount = totalAmount;
+        this.journeyTime=(int) Duration.between(startTime,endTime).getSeconds();
+        this.totalAmount = price*journeyTime;
         this.orderStatus = orderStatus;
     }
 
+    public int getJourneyTime() {
+        return journeyTime;
+    }
+
+    public void setJourneyTime() {
+        this.journeyTime = (int) Duration.between(startTime,endTime).getSeconds();
+    }
     public LocalDateTime getStartTime() {
         return startTime;
     }
@@ -116,8 +114,8 @@ public class Order {
         return totalAmount;
     }
 
-    public void setTotalAmount(int totalAmount) {
-        this.totalAmount = totalAmount;
+    public void setTotalAmount() {
+        this.totalAmount =price*journeyTime;
     }
 
     public int getOrderStatus() {
@@ -148,6 +146,9 @@ public class Order {
                 ", taxi=" + taxi +
                 ", startLocation='" + startLocation + '\'' +
                 ", endLocation='" + endLocation + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", journeyTime='" + journeyTime + '\'' +
                 ", km=" + km +
                 ", price=" + price +
                 ", totalAmount=" + totalAmount +

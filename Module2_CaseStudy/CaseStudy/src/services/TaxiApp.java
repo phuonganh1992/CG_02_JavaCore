@@ -1,8 +1,11 @@
-package model;
+package services;
 
+
+import model.Client;
+import model.Order;
+import model.Taxi;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Scanner;
 
 public class TaxiApp {
@@ -45,7 +48,8 @@ public class TaxiApp {
     }
 
     public void findTaxi() {
-        order = new Order();
+        client=new Client("Anh","xxxxx","HN");
+//        order = new Order();
         System.out.println("Enter start location");
         String startLocation = SCANNER.nextLine();
         System.out.println("Enter end location");
@@ -58,15 +62,22 @@ public class TaxiApp {
             System.out.println("Enter taxi that you want to choose: ");
             choice = SCANNER.nextInt();
             LocalDateTime startTime=LocalDateTime.now();
-            LocalDateTime endTime=startTime.plusMinutes(10);
+            LocalDateTime endTime=startTime.plusMinutes(60);
             Taxi currentTaxi = taxiPool.getAvailableTaxi().get(choice);
-            order.setTaxi(currentTaxi);
-            order.setOrderStatus(2);
-            order.setStartLocation(startLocation);
-            order.setEndLocation(endLocation);
-
-
+            order=new Order(client,currentTaxi,startLocation,endLocation,startTime,endTime,10,2);
+//            order.setTaxi(currentTaxi);
+//            order.setOrderStatus(2);
+//            order.setStartLocation(startLocation);
+//            order.setEndLocation(endLocation);
+//            order.setStartTime(startTime);
+//            order.setEndTime(endTime);
+//            order.setJourneyTime();
         } while (choice >=taxiPool.getAvailableTaxi().size() );
+    }
+    public void payment(){
+        System.out.println("Client paid: "+order.getTotalAmount());
+        order.setOrderStatus(3);
+
     }
 
 
