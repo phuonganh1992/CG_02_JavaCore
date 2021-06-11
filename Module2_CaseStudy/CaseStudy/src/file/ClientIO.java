@@ -7,10 +7,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientIO implements FileIO<Client> {
+public class ClientIO {
 
-    @Override
-    public void writeToFile(String pathFile, List<Client> list) throws IOException {
+
+    public static void writeToFile(String pathFile, List<Client> list) throws IOException {
         File file=new File(pathFile);
         FileWriter fileWriter=new FileWriter(file);
         BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
@@ -28,8 +28,8 @@ public class ClientIO implements FileIO<Client> {
         fileWriter.close();
     }
 
-    @Override
-    public List<Client> readFromFile(String pathFile) throws IOException {
+
+    public static List<Client> readFromFile(String pathFile) throws IOException {
         List<Client> clients=new ArrayList<>();
         File file=new File(pathFile);
         FileReader fileReader=new FileReader(file);

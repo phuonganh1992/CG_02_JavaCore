@@ -1,16 +1,38 @@
 package services;
 
+import file.TaxiIO;
 import model.Client;
 import model.Taxi;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TaxiService implements GeneralService<Taxi>{
     private List<Taxi> taxis;
+    private static TaxiService instance;
 
-    public TaxiService() {
-        this.taxis = new ArrayList<>();
+
+    private TaxiService() {
+        try {
+            this.taxis = TaxiIO.readFromFile("D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataTaxi.csv");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static TaxiService getInstance() {
+        if(instance==null) instance=new TaxiService();
+        return instance;
+    }
+
+
+    public List<Taxi> getTaxis() {
+        return taxis;
+    }
+
+    public void setTaxis(List<Taxi> taxis) {
+        this.taxis = taxis;
     }
 
     @Override

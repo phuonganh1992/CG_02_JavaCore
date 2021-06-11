@@ -1,7 +1,10 @@
 package services;
 
+import file.ClientIO;
 import model.Client;
+import model.Taxi;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +13,11 @@ public class ClientService implements GeneralService<Client> {
     private static ClientService instance;
 
     private ClientService() {
-        this.clients = new ArrayList<>();
+        try {
+            this.clients = ClientIO.readFromFile("D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataClient.csv");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static ClientService getInstance() {
@@ -75,6 +82,7 @@ public class ClientService implements GeneralService<Client> {
     }
 
     public Client findByUsername(String username) {
+        List<Taxi> findList=new ArrayList<>();
         int index=-1;
         for (int i = 0; i < clients.size(); i++) {
             if(clients.get(i).getClientUsername().equals(username)) {

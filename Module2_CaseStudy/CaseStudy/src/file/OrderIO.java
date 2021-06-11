@@ -1,18 +1,18 @@
 package file;
 
-import model.Client;
+import model.Order;
 import model.Taxi;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaxiIO {
-    public static void writeToFile(String pathFile, List<Taxi> list) throws IOException {
+public class OrderIO {
+    public static void writeToFile(String pathFile, List<Order> list) throws IOException {
         File file=new File(pathFile);
         FileWriter fileWriter=new FileWriter(file);
         BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
-        bufferedWriter.write("Taxi ID,Taxi License Plate,Taxi Color,Taxi Seat Quantity,Taxi Status\n");
+        bufferedWriter.write("Order ID,Client Username,Taxi ID,Start Location,End Location,Start Time,End Time,Journey Time,Km,Price,Total Amount,Order Status\n");
         for (Taxi taxi:list) {
             bufferedWriter.write(taxi.getTaxiID()+","+
                     taxi.getTaxiLicensePlate()+","+

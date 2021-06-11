@@ -4,14 +4,6 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Order {
-//    enum OrderStatusEnum{
-//        _0("Waiting"),_1("Cancel"),_2("Accepted"),_3("Paid");
-//        String display;
-//
-//        OrderStatusEnum(String display) {
-//            this.display = display;
-//        }
-//    }
     private int orderId;
     private Client client;
     private Taxi taxi;

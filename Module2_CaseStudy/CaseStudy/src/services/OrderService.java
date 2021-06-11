@@ -1,6 +1,7 @@
 package services;
 
 import model.Order;
+import model.Taxi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ public class OrderService implements GeneralService<Order> {
     private List<Order> orders;
 
     public OrderService() {
-        this.orders = new ArrayList<>(orders);
+        this.orders = new ArrayList<>();
     }
 
     @Override
@@ -60,6 +61,17 @@ public class OrderService implements GeneralService<Order> {
             System.out.println("Order is found successfully!");
             return orders.get(index);
         }
+    }
+    public List<Order> findByUsername(String username){
+        List<Order> findList=new ArrayList<>();
+        for (int i = 0; i < orders.size(); i++) {
+            if(orders.get(i).getClient().getClientUsername().equals(username))  findList.add(orders.get(i));
+        }
+        if (findList.isEmpty()) System.out.println("Found no order with username "+username);
+        else {
+            System.out.println("list order is found");
+        }
+        return findList;
     }
 
     @Override

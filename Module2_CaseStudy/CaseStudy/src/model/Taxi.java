@@ -1,14 +1,6 @@
 package model;
 
 public class Taxi {
-//    enum TaxiStatusEnum {
-//        _1("Available"), _0("Unavailable");
-//        String display;
-//
-//        TaxiStatusEnum(String display) {
-//            this.display = display;
-//        }
-//    }
     private int taxiID;
     private String taxiLicensePlate;
     private String taxiColor;

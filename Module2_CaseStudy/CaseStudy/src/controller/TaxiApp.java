@@ -5,18 +5,26 @@ import model.Client;
 import model.Order;
 import model.Taxi;
 import services.ClientService;
+import services.OrderService;
+import services.TaxiService;
+
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Scanner;
 
-public class TaxiApp{
+public class TaxiApp {
     public static final Scanner SCANNER = new Scanner(System.in);
     private Client client;
     private Order order;
     private Taxi taxi;
     private ClientService clientService;
+    private OrderService orderService;
+    private TaxiService taxiService;
 
     public TaxiApp() {
-        clientService=ClientService.getInstance();
+        clientService = ClientService.getInstance();
+        orderService = new OrderService();
+        taxiService=TaxiService.getInstance();
     }
 
     public TaxiApp(Client client, Order order, Taxi taxi) {
@@ -51,39 +59,51 @@ public class TaxiApp{
 
     public void register() {
 
-        Client client = new Client(1000,"Anh","0337644653","HN","anhlai","anhlai123");
+        Client client = new Client(1000, "Anh", "0337644653", "HN", "anhlai", "anhlai123");
         clientService.create(client);
     }
+
     public void login() {
         System.out.print("Enter username: ");
-        String username=SCANNER.nextLine();
+        String username = SCANNER.nextLine();
         System.out.print("Enter password: ");
-        String password=SCANNER.nextLine();
-        Client client=clientService.findByUsername(username);
-        if(client.getClientPassword().equals(password)) System.out.println("Login successfully");
+        String password = SCANNER.nextLine();
+        Client client = clientService.findByUsername(username);
+        if (client.getClientPassword().equals(password)) {
+            this.client = client;
+            System.out.println("Login successfully");
+        }
     }
 
     public void findTaxi() {
-        System.out.println("Enter start location");
+        System.out.print("Enter start location: ");
         String startLocation = SCANNER.nextLine();
-        System.out.println("Enter end location");
+        System.out.print("Enter end location: ");
         String endLocation = SCANNER.nextLine();
-
         int choice;
-        TaxiPool taxiPool = new TaxiPool();
         do {
-            taxiPool.display();
+            this.taxiService.display();
             System.out.println("Enter taxi that you want to choose: ");
             choice = SCANNER.nextInt();
-            LocalDateTime startTime=LocalDateTime.now();
-            LocalDateTime endTime=startTime.plusMinutes(60);
-            Taxi currentTaxi = taxiPool.getAvailableTaxi().get(choice);
-            order=new Order(123,client,currentTaxi,startLocation,endLocation,startTime,endTime,10,2);
-        } while (choice >=taxiPool.getAvailableTaxi().size() );
+            LocalDateTime startTime = LocalDateTime.now();
+            LocalDateTime endTime = startTime.plusMinutes(60);
+            Taxi currentTaxi = taxiService.getTaxis().get(choice);
+            order = new Order(123, client, currentTaxi, startLocation, endLocation, startTime, endTime, 10, 2);
+            this.orderService.create(order);
+        } while (choice >= taxiService.getTaxis().size());
     }
-    public void payment(){
-        System.out.println("Client paid: "+order.getTotalAmount());
-        order.setOrderStatus(3);
 
+    public void payment() {
+        System.out.println("Client paid: " + order.getTotalAmount());
+        order.setOrderStatus(3);
+        System.out.println("Order status is: " + order.displayStatus());
+    }
+
+    public void findHistory() {
+        List<Order> historyOrder = orderService.findByUsername(client.getClientUsername());
+        System.out.println("Client with username of " + client.getClientUsername() + " has history as below");
+        for (Order order : historyOrder) {
+            System.out.println(order);
+        }
     }
 }
