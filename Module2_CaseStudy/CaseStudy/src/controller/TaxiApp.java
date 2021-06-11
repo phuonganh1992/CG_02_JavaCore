@@ -1,6 +1,7 @@
 package controller;
 
 
+import input.Input;
 import model.Client;
 import model.Order;
 import model.Taxi;
@@ -59,7 +60,7 @@ public class TaxiApp {
 
     public void register() {
 
-        Client client = new Client(1000, "Anh", "0337644653", "HN", "anhlai", "anhlai123");
+        Client client = Input.inputClient();
         clientService.create(client);
     }
 

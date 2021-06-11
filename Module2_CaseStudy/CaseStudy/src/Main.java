@@ -27,6 +27,7 @@ public class Main {
                         break;
                     case 2:
                         taxiApp.register();
+
                         break;
                     case 3:
                         System.exit(0);
@@ -39,10 +40,6 @@ public class Main {
         catch (InputMismatchException e){
             System.out.println("Input mismatch exception");
         }
-
-
-
-
     }
     public static void menu_1(){
         System.out.println("----------------MENU_1---------------");
@@ -54,6 +51,5 @@ public class Main {
         System.out.println("----------------MENU_2---------------");
         System.out.println("1. Find taxi");
         System.out.println("2. Find history");
-
     }
 }
