@@ -12,6 +12,7 @@ public class Order {
 //            this.display = display;
 //        }
 //    }
+    private int orderId;
     private Client client;
     private Taxi taxi;
     private String startLocation;
@@ -27,7 +28,8 @@ public class Order {
     public Order() {
 
     }
-    public Order(Client client, Taxi taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime, int km, int orderStatus) {
+    public Order(int orderId,Client client, Taxi taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime, int km, int orderStatus) {
+        this.orderId=orderId;
         this.client = client;
         this.taxi = taxi;
         this.startLocation = startLocation;
@@ -37,6 +39,22 @@ public class Order {
         this.journeyTime=(int) Duration.between(startTime,endTime).getSeconds();
         this.totalAmount = price*journeyTime;
         this.orderStatus = orderStatus;
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setJourneyTime(int journeyTime) {
+        this.journeyTime = journeyTime;
+    }
+
+    public void setTotalAmount(int totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
     public int getJourneyTime() {
@@ -142,6 +160,7 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
+                "orderID=" + orderId +
                 "client=" + client +
                 ", taxi=" + taxi +
                 ", startLocation='" + startLocation + '\'' +

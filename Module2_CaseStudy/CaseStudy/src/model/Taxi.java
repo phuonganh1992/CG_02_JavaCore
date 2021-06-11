@@ -9,7 +9,7 @@ public class Taxi {
 //            this.display = display;
 //        }
 //    }
-    private String taxiCode;
+    private int taxiID;
     private String taxiLicensePlate;
     private String taxiColor;
     private int taxiSeatQuantity;
@@ -18,20 +18,36 @@ public class Taxi {
     public Taxi() {
     }
 
-    public Taxi(String taxiCode, String taxiLicensePlate, String taxiColor, int seatQuantity, int status) {
-        this.taxiCode = taxiCode;
+    public Taxi(int taxiID, String taxiLicensePlate, String taxiColor, int seatQuantity, int status) {
+        this.taxiID = taxiID;
         this.taxiLicensePlate = taxiLicensePlate;
         this.taxiColor = taxiColor;
         this.taxiSeatQuantity = seatQuantity;
         this.taxiStatus = status;
     }
 
-    public String getTaxiCode() {
-        return taxiCode;
+    public int getTaxiID() {
+        return taxiID;
     }
 
-    public void setTaxiCode(String taxiCode) {
-        this.taxiCode = taxiCode;
+    public void setTaxiID(int taxiID) {
+        this.taxiID = taxiID;
+    }
+
+    public int getTaxiSeatQuantity() {
+        return taxiSeatQuantity;
+    }
+
+    public void setTaxiSeatQuantity(int taxiSeatQuantity) {
+        this.taxiSeatQuantity = taxiSeatQuantity;
+    }
+
+    public int getTaxiStatus() {
+        return taxiStatus;
+    }
+
+    public void setTaxiStatus(int taxiStatus) {
+        this.taxiStatus = taxiStatus;
     }
 
     public String getTaxiLicensePlate() {
@@ -79,11 +95,11 @@ public class Taxi {
     @Override
     public String toString() {
         return "Taxi{" +
-                "taxiCode='" + taxiCode + '\'' +
+                "taxiID='" + taxiID + '\'' +
                 ", taxiLicensePlate='" + taxiLicensePlate + '\'' +
                 ", taxiColor='" + taxiColor + '\'' +
                 ", seatQuantity=" + taxiSeatQuantity +
-                ", status=" + displayStatus() +
+                ", taxiStatus=" + displayStatus() +
                 '}';
     }
 }

@@ -1,15 +1,10 @@
-package model;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
-import services.TaxiApp;
-
-import java.time.Duration;
-import java.time.LocalDateTime;
+import controller.TaxiApp;
 
 public class Tes {
     public static void main(String[] args) {
         TaxiApp app=new TaxiApp();
-        app.findTaxi();
+//        app.find();
         app.payment();
 //        Order order=new Order();
 //        LocalDateTime startTime=LocalDateTime.now();
