@@ -6,7 +6,7 @@ import model.Taxi;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaxiService implements GeneralService<Taxi> {
+public class TaxiService implements GeneralService<Taxi>,FindByLicensePlate<Taxi> {
     private List<Taxi> taxis;
 
     public TaxiService() {
@@ -47,7 +47,24 @@ public class TaxiService implements GeneralService<Taxi> {
     }
 
     @Override
-    public List<Taxi> findByName(String taxiLicensePlate) {
+    public Taxi findById(int id) {
+        int index=-1;
+        for (int i = 0; i < taxis.size(); i++) {
+            if(taxis.get(i).getTaxiID()==id) {
+                index=i;
+            }
+        }
+        if(index==-1) {
+            System.out.println("Found no taxi with id "+id);
+            return null;
+        } else {
+            System.out.println("Taxi is found successfully!");
+            return taxis.get(index);
+        }
+    }
+
+    @Override
+    public List<Taxi> findByLicensePlate(String taxiLicensePlate) {
         List<Taxi> findList=new ArrayList<>();
         for (int i = 0; i < taxis.size(); i++) {
             if(taxis.get(i).getTaxiLicensePlate().equals(taxiLicensePlate))  findList.add(taxis.get(i));
