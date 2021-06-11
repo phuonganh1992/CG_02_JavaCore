@@ -6,7 +6,7 @@ import model.Taxi;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaxiService implements GeneralService<Taxi>,FindByLicensePlate<Taxi> {
+public class TaxiService implements GeneralService<Taxi>{
     private List<Taxi> taxis;
 
     public TaxiService() {
@@ -63,7 +63,6 @@ public class TaxiService implements GeneralService<Taxi>,FindByLicensePlate<Taxi
         }
     }
 
-    @Override
     public List<Taxi> findByLicensePlate(String taxiLicensePlate) {
         List<Taxi> findList=new ArrayList<>();
         for (int i = 0; i < taxis.size(); i++) {

@@ -5,11 +5,25 @@ import model.Client;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientService implements GeneralService<Client>, FindByUsername<Client> {
+public class ClientService implements GeneralService<Client> {
     private List<Client> clients;
+    private static ClientService instance;
 
-    public ClientService() {
+    private ClientService() {
         this.clients = new ArrayList<>();
+    }
+
+    public static ClientService getInstance() {
+        if(instance==null) instance=new ClientService();
+        return instance;
+    }
+
+    public List<Client> getClients() {
+        return clients;
+    }
+
+    public void setClients(List<Client> clients) {
+        this.clients = clients;
     }
 
     @Override
@@ -58,20 +72,22 @@ public class ClientService implements GeneralService<Client>, FindByUsername<Cli
             System.out.println("Client is found successfully!");
             return clients.get(index);
         }
-
     }
 
-    @Override
-    public List<Client> findByUsername(String userName) {
-        List<Client> findList=new ArrayList<>();
+    public Client findByUsername(String username) {
+        int index=-1;
         for (int i = 0; i < clients.size(); i++) {
-            if(clients.get(i).getClientUsername().equals(userName))  findList.add(clients.get(i));
+            if(clients.get(i).getClientUsername().equals(username)) {
+                index=i;
+            }
         }
-        if (findList.isEmpty()) System.out.println("Found no client with name of "+userName);
-        else {
-            System.out.println("List client is found");
+        if(index==-1) {
+            System.out.println("Found no client with username "+username);
+            return null;
+        } else {
+            System.out.println("Client is found successfully!");
+            return clients.get(index);
         }
-        return findList;
     }
 
     @Override

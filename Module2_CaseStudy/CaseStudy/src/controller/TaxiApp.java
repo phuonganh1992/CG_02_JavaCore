@@ -18,7 +18,7 @@ public class TaxiApp{
     private ClientService clientService;
 
     public TaxiApp() {
-        clientService=new ClientService();
+        clientService=ClientService.getInstance();
     }
 
     public TaxiApp(Client client, Order order, Taxi taxi) {
@@ -57,12 +57,15 @@ public class TaxiApp{
         clientService.create(client);
     }
     public void login() {
-
+        System.out.print("Enter username: ");
+        String username=SCANNER.nextLine();
+        System.out.print("Enter password: ");
+        String password=SCANNER.nextLine();
+        Client client=clientService.findByUsername(username);
+        if(client.getClientPassword().equals(password)) System.out.println("Login successfully");
     }
 
     public void findTaxi() {
-        clientService.create(new Client());
-        client=new Client("Anh","xxxxx","HN","user","password");
         System.out.println("Enter start location");
         String startLocation = SCANNER.nextLine();
         System.out.println("Enter end location");
@@ -77,7 +80,7 @@ public class TaxiApp{
             LocalDateTime startTime=LocalDateTime.now();
             LocalDateTime endTime=startTime.plusMinutes(60);
             Taxi currentTaxi = taxiPool.getAvailableTaxi().get(choice);
-            order=new Order(client,currentTaxi,startLocation,endLocation,startTime,endTime,10,2);
+            order=new Order(,currentTaxi,startLocation,endLocation,startTime,endTime,10,2);
         } while (choice >=taxiPool.getAvailableTaxi().size() );
     }
 //    public void payment(){
