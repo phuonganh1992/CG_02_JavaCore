@@ -5,8 +5,6 @@ import model.Client;
 import model.Order;
 import model.Taxi;
 import services.ClientService;
-import services.GeneralService;
-
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
