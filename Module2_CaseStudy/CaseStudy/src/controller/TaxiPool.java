@@ -1,7 +1,9 @@
 package controller;
 
+import file.TaxiIO;
 import model.Taxi;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,12 +12,13 @@ public class TaxiPool {
 
 
     public TaxiPool() {
-        availableTaxi=new ArrayList<>();
-        availableTaxi.add(new Taxi("Code001","LI001","white",4,1));
-        availableTaxi.add(new Taxi("Code002","LI002","red",5,1));
-        availableTaxi.add(new Taxi("Code003","LI003","green",7,1));
-        availableTaxi.add(new Taxi("Code004","LI004","black",4,1));
-        availableTaxi.add(new Taxi("Code005","LI005","white",7,1));
+        TaxiIO taxiIO=new TaxiIO();
+        try {
+            availableTaxi=taxiIO.readFromFile("D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataTaxi.csv");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public List<Taxi> getAvailableTaxi() {

@@ -51,7 +51,7 @@ public class TaxiApp{
 
     public void register() {
 
-        Client client = new Client();
+        Client client = new Client(1000,"Anh","0337644653","HN","anhlai","anhlai123");
         clientService.create(client);
     }
     public void login() {
@@ -78,22 +78,12 @@ public class TaxiApp{
             LocalDateTime startTime=LocalDateTime.now();
             LocalDateTime endTime=startTime.plusMinutes(60);
             Taxi currentTaxi = taxiPool.getAvailableTaxi().get(choice);
-            order=new Order(,currentTaxi,startLocation,endLocation,startTime,endTime,10,2);
+            order=new Order(123,client,currentTaxi,startLocation,endLocation,startTime,endTime,10,2);
         } while (choice >=taxiPool.getAvailableTaxi().size() );
     }
-//    public void payment(){
-//        System.out.println("Client paid: "+order.getTotalAmount());
-//        order.setOrderStatus(3);
-//
-//    }
-//    @Override
-//    public void register(){
-//
-//
-//    }
+    public void payment(){
+        System.out.println("Client paid: "+order.getTotalAmount());
+        order.setOrderStatus(3);
 
-
-
-
-
+    }
 }
