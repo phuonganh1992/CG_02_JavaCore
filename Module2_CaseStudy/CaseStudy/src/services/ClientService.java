@@ -5,7 +5,7 @@ import model.Client;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientService implements GeneralService<Client>,FindByName<Client> {
+public class ClientService implements GeneralService<Client>, FindByUsername<Client> {
     private List<Client> clients;
 
     public ClientService() {
@@ -62,12 +62,12 @@ public class ClientService implements GeneralService<Client>,FindByName<Client> 
     }
 
     @Override
-    public List<Client> findByName(String name) {
+    public List<Client> findByUsername(String userName) {
         List<Client> findList=new ArrayList<>();
         for (int i = 0; i < clients.size(); i++) {
-            if(clients.get(i).getClientName().equals(name))  findList.add(clients.get(i));
+            if(clients.get(i).getClientUsername().equals(userName))  findList.add(clients.get(i));
         }
-        if (findList.isEmpty()) System.out.println("Found no client with name of "+name);
+        if (findList.isEmpty()) System.out.println("Found no client with name of "+userName);
         else {
             System.out.println("List client is found");
         }
