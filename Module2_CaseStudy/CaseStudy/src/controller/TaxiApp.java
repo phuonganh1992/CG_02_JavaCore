@@ -70,20 +70,19 @@ public class TaxiApp {
             System.out.print("Enter username: ");
             username=SCANNER.nextLine();
             clientLogin = clientService.findByUsername(username);
-            if(clientLogin==null){
-                System.out.println("Wrong username!");
-            }
+            if(clientLogin==null) System.out.println("Wrong username!");
         }while (clientLogin==null);
 
         String password;
         do {
             System.out.print("Enter password: ");
             password = SCANNER.nextLine();
-            if (clientLogin.getClientPassword().equals(password)) {
-                this.client = clientLogin;
-                System.out.println("Login successfully");
-            } else System.out.println("Wrong password!");
-        }while (!clientLogin.getClientUsername().equals(password));
+            if(!clientLogin.getClientPassword().equals(password)) System.out.println("Wrong password!");
+            else {
+                this.client=clientLogin;
+                System.out.println("Login successfully!");
+            }
+        }while (!clientLogin.getClientPassword().equals(password));
     }
 
     public void findTaxi() {

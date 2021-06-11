@@ -9,7 +9,7 @@ public class Main {
         int choice_1;
         do{
             menu_1();
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your choice 1: ");
             choice_1=SCANNER.nextInt();
             switch (choice_1){
                 case 1:
@@ -17,6 +17,7 @@ public class Main {
                     int choice_2;
                     do{
                         menu_2();
+                        System.out.print("Enter your choice 2: ");
                         choice_2=SCANNER.nextInt();
 
 
