@@ -80,7 +80,7 @@ public class TaxiService implements GeneralService<Taxi>{
             System.out.println("Found no taxi with id "+id);
             return null;
         } else {
-            System.out.println("Taxi is found successfully!");
+//            System.out.println("Taxi is found successfully!");
             return taxis.get(index);
         }
     }

@@ -93,7 +93,7 @@ public class ClientService implements GeneralService<Client> {
             System.out.println("Found no client with username "+username);
             return null;
         } else {
-            System.out.println("Client is found successfully!");
+//            System.out.println("Client is found successfully!");
             return clients.get(index);
         }
     }
