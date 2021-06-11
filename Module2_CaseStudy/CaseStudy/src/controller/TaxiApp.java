@@ -23,7 +23,7 @@ public class TaxiApp {
 
     public TaxiApp() {
         clientService = ClientService.getInstance();
-        orderService = new OrderService();
+        orderService = OrderService.getInstance();
         taxiService=TaxiService.getInstance();
     }
 

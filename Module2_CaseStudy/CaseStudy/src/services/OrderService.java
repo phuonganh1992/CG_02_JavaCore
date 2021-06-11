@@ -1,17 +1,38 @@
 package services;
 
+import file.OrderIO;
 import model.Order;
 import model.Taxi;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderService implements GeneralService<Order> {
     private List<Order> orders;
+    private static OrderService instance;
 
-    public OrderService() {
-        this.orders = new ArrayList<>();
+    private OrderService() {
+        try {
+            this.orders = OrderIO.readFromFile("D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataOrder.csv");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+    public static OrderService getInstance() {
+        if (instance==null) instance=new OrderService();
+        return instance;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+
 
     @Override
     public void create(Order order) {
