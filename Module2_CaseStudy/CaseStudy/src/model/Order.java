@@ -2,6 +2,7 @@ package model;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Order {
     private int orderId;
@@ -135,6 +136,9 @@ public class Order {
     public void setOrderStatus(int orderStatus) {
         this.orderStatus = orderStatus;
     }
+    public String displayTime(LocalDateTime time){
+        return time.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+    }
     public String displayStatus(){
         switch (orderStatus){
             case 0:
@@ -153,12 +157,12 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "orderID=" + orderId +
-                "client=" + client +
+                ", client=" + client +
                 ", taxi=" + taxi +
                 ", startLocation='" + startLocation + '\'' +
                 ", endLocation='" + endLocation + '\'' +
-                ", startTime='" + startTime + '\'' +
-                ", endTime='" + endTime + '\'' +
+                ", startTime='" + displayTime(startTime) + '\'' +
+                ", endTime='" + displayTime(endTime) + '\'' +
                 ", journeyTime='" + journeyTime + '\'' +
                 ", km=" + km +
                 ", price=" + price +
