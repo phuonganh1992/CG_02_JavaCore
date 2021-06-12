@@ -6,19 +6,18 @@ import model.Taxi;
 
 import java.io.IOException;
 import java.util.List;
+import static file.Path.PATH_FILE_TAXI;
 
 public class TaxiService implements GeneralService<Taxi>{
-    public static final String PATH_FILE_TAXI = "D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataTaxi.csv";
+
     private List<Taxi> taxis;
+    private List<Taxi> availableTaxis;
     private static TaxiService instance;
 
 
     private TaxiService() {
-        try {
-            this.taxis = TaxiIO.readFromFile(PATH_FILE_TAXI);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.taxis = TaxiIO.readFromFile(PATH_FILE_TAXI);
+        this.availableTaxis=TaxiIO.readFromFileBaseStatus(PATH_FILE_TAXI,1);
     }
 
     public static TaxiService getInstance() {
@@ -26,6 +25,13 @@ public class TaxiService implements GeneralService<Taxi>{
         return instance;
     }
 
+    public List<Taxi> getAvailableTaxis() {
+        return availableTaxis;
+    }
+
+    public void setAvailableTaxis(List<Taxi> availableTaxis) {
+        this.availableTaxis = availableTaxis;
+    }
 
     public List<Taxi> getTaxis() {
         return taxis;
@@ -38,11 +44,7 @@ public class TaxiService implements GeneralService<Taxi>{
     @Override
     public void create(Taxi taxi) {
         this.taxis.add(taxi);
-        try {
-            TaxiIO.writeToFile(PATH_FILE_TAXI,this.taxis);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        TaxiIO.writeToFile(PATH_FILE_TAXI,this.taxis);
     }
 
     @Override
@@ -56,7 +58,7 @@ public class TaxiService implements GeneralService<Taxi>{
         }
         if(index==-1) System.out.println("Found no taxi to delete!");
         else System.out.println("Delete successfully!");
-
+        TaxiIO.writeToFile(PATH_FILE_TAXI,this.taxis);
     }
 
     @Override
@@ -70,7 +72,7 @@ public class TaxiService implements GeneralService<Taxi>{
         }
         if(index==-1) System.out.println("Found no id match "+id);
         else System.out.println("Update successfully");
-
+        TaxiIO.writeToFile(PATH_FILE_TAXI,this.taxis);
     }
 
     @Override
@@ -82,10 +84,8 @@ public class TaxiService implements GeneralService<Taxi>{
             }
         }
         if(index==-1) {
-//            System.out.println("Found no taxi with id "+id);
             return null;
         } else {
-//            System.out.println("Taxi is found successfully!");
             return taxis.get(index);
         }
     }
@@ -98,10 +98,8 @@ public class TaxiService implements GeneralService<Taxi>{
             }
         }
         if(index==-1) {
-//            System.out.println("Found no taxi with license plate "+taxiLicensePlate);
             return null;
         } else {
-//            System.out.println("Taxi is found successfully!");
             return taxis.get(index);
         }
     }
@@ -116,6 +114,10 @@ public class TaxiService implements GeneralService<Taxi>{
         for (Taxi taxi:taxis) {
             System.out.println(taxi);
         }
-
+    }
+    public void display(List<Taxi> list) {
+        for (Taxi taxi:list) {
+            System.out.println(taxi);
+        }
     }
 }

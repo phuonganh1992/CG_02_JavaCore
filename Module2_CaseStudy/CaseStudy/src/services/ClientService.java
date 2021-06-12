@@ -3,22 +3,17 @@ package services;
 import file.ClientIO;
 import model.Client;
 import model.Taxi;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import static file.Path.PATH_FILE_CLIENT;
+
 
 public class ClientService implements GeneralService<Client> {
-    public static final String PATH_FILE_CLIENT = "D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataClient.csv";
     private List<Client> clients;
     private static ClientService instance;
 
     private ClientService() {
-        try {
-            this.clients = ClientIO.readFromFile(PATH_FILE_CLIENT);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.clients = ClientIO.readFromFile(PATH_FILE_CLIENT);
     }
 
     public static ClientService getInstance() {
@@ -33,11 +28,7 @@ public class ClientService implements GeneralService<Client> {
     @Override
     public void create(Client client) {
         this.clients.add(client);
-        try {
-            ClientIO.writeToFile(PATH_FILE_CLIENT,this.clients);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        ClientIO.writeToFile(PATH_FILE_CLIENT,this.clients);
     }
 
     @Override
@@ -51,6 +42,7 @@ public class ClientService implements GeneralService<Client> {
         }
         if(index==-1) System.out.println("Found no client to delete!");
         else System.out.println("Delete successfully!");
+        ClientIO.writeToFile(PATH_FILE_CLIENT,this.clients);
     }
 
     @Override
@@ -64,6 +56,7 @@ public class ClientService implements GeneralService<Client> {
         }
         if(index==-1) System.out.println("Found no id match "+id);
         else System.out.println("Update successfully");
+        ClientIO.writeToFile(PATH_FILE_CLIENT,this.clients);
     }
 
     @Override
@@ -92,10 +85,8 @@ public class ClientService implements GeneralService<Client> {
             }
         }
         if(index==-1) {
-//            System.out.println("Found no client with username "+username);
             return null;
         } else {
-//            System.out.println("Client is found successfully!");
             return clients.get(index);
         }
     }

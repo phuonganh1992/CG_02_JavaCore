@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args) {
         TaxiApp taxiApp = new TaxiApp();
         int choice_1;
+        boolean check = false;
         try {
             do {
                 menu_1();
@@ -22,6 +23,7 @@ public class Main {
                             menu_2();
                             System.out.print("Enter your choice 2: ");
                             choice_2 = SCANNER.nextInt();
+                            SCANNER.nextLine();
                             switch (choice_2) {
                                 case 1:
                                     taxiApp.makeOrder();
@@ -32,9 +34,7 @@ public class Main {
                                         choice_3 = SCANNER.nextInt();
                                         switch (choice_3) {
                                             case 1:
-                                                taxiApp.getOrder().setOrderStatus(2);
-                                                System.out.println("Order accepted");
-                                                System.out.println(taxiApp.getOrder());
+                                                taxiApp.acceptTaxi();
                                                 System.out.println("Meet driver, Taxi going ---------");
                                                 int choice_4;
                                                 do {
@@ -48,15 +48,17 @@ public class Main {
                                                             break;
                                                         case 2:
                                                             taxiApp.payment();
+                                                            check = true;
                                                             break;
                                                     }
-                                                } while (choice_4 >= 1 && choice_4 <= 2);
+                                                } while (!check);
                                                 break;
                                             case 2:
-                                                taxiApp.getOrder().setOrderStatus(1);
+                                                taxiApp.rejectTaxi();
+                                                check = true;
                                                 break;
                                         }
-                                    } while (choice_3 >= 1 && choice_3 <= 2);
+                                    } while (!check);
                                     break;
                                 case 2:
                                     taxiApp.findHistory();

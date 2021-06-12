@@ -2,21 +2,16 @@ package services;
 
 import file.DistanceIO;
 import model.Distance;
-
-import java.io.IOException;
 import java.util.List;
+import static file.Path.PATH_FILE_LOCATION;
 
 public class DistanceService {
-    public static final String PATH_FILE_LOCATION = "D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataLocation.csv";
+
     private List<Distance> distances;
     public static DistanceService instance;
 
     private DistanceService() {
-        try {
-            this.distances = DistanceIO.readFromFile(PATH_FILE_LOCATION);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.distances = DistanceIO.readFromFile(PATH_FILE_LOCATION);
     }
 
     public static DistanceService getInstance() {

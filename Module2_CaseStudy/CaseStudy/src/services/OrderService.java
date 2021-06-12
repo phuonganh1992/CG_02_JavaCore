@@ -2,23 +2,17 @@ package services;
 
 import file.OrderIO;
 import model.Order;
-
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import static file.Path.PATH_FILE_ORDER;
 
 public class OrderService implements GeneralService<Order> {
-    public static final String PATH_FILE_ORDER = "D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataOrder.csv";
+
     private List<Order> orders;
     private static OrderService instance;
 
     private OrderService() {
-        try {
-            this.orders = OrderIO.readFromFile(PATH_FILE_ORDER);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.orders = OrderIO.readFromFile(PATH_FILE_ORDER);
     }
     public static OrderService getInstance() {
         if (instance==null) instance=new OrderService();
@@ -33,16 +27,10 @@ public class OrderService implements GeneralService<Order> {
         this.orders = orders;
     }
 
-
-
     @Override
     public void create(Order order) {
         this.orders.add(order);
-        try {
-            OrderIO.writeToFile(PATH_FILE_ORDER,this.orders);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        OrderIO.writeToFile(PATH_FILE_ORDER,this.orders);
     }
 
     @Override
@@ -56,6 +44,7 @@ public class OrderService implements GeneralService<Order> {
         }
         if(index==-1) System.out.println("Found no order to delete!");
         else System.out.println("Delete successfully!");
+        OrderIO.writeToFile(PATH_FILE_ORDER,this.orders);
     }
 
     @Override
@@ -69,6 +58,7 @@ public class OrderService implements GeneralService<Order> {
         }
         if(index==-1) System.out.println("Found no id match "+id);
         else System.out.println("Update successfully");
+        OrderIO.writeToFile(PATH_FILE_ORDER,this.orders);
     }
 
     @Override
@@ -80,7 +70,6 @@ public class OrderService implements GeneralService<Order> {
             }
         }
         if(index==-1) {
-//            System.out.println("Found no order with id "+id);
             return null;
         } else {
             System.out.println("Order is found successfully!");

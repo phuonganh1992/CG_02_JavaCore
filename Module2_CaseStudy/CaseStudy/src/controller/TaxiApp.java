@@ -1,6 +1,5 @@
 package controller;
 
-
 import file.OrderIO;
 import input.Input;
 import model.Client;
@@ -10,10 +9,10 @@ import services.ClientService;
 import services.DistanceService;
 import services.OrderService;
 import services.TaxiService;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
+import static file.Path.PATH_FILE_ORDER;
 
 public class TaxiApp {
     public static final Scanner SCANNER = new Scanner(System.in);
@@ -138,59 +137,42 @@ public class TaxiApp {
         System.out.println("Taxi chosen has information: ");
         System.out.println(currentTaxi);
 
-
         int orderId= Input.inputOrderId();
         order = new Order(orderId, client, currentTaxi, startLocation, endLocation, startTime, endTime, lengthDistance);
         this.orderService.create(order);
         System.out.println("Order is creating");
         System.out.println(this.order);
-//        int choice;
-//        do {
-//            System.out.println("----------------MENU_3---------------");
-//            System.out.println("1: Accept this taxi");
-//            System.out.println("2: Cancel");
-//            System.out.print("Enter you choice: ");
-//            choice=SCANNER.nextInt();
-//            switch (choice){
-//                case 1:
-//                    order.setOrderStatus(2);
-//                    System.out.println("Meet driver, Taxi going ---------");
-//                    System.out.println("----------------------MENU_4--------------------");
-//                    System.out.println("1: Have not arrived yet, keep going--------------------");
-//                    System.out.println("2: Finished, pls make payment");
-//                    System.out.println("Enter your action: ");
-//                    int action=SCANNER.nextInt();
-//                    switch (action){
-//                        case 1:
-//                            break;
-//                        case 2:
-//                            payment();
-//                            break;
-//                    }
-//                    break;
-//                case 2:
-//                    order.setOrderStatus(1);
-//                    break;
-//            }
-//        } while (choice >= taxiService.getTaxis().size());
     }
 
-    private Taxi chooseTaxi() {
+    public Taxi chooseTaxi() {
         System.out.println("Wait a minutes, we are find taxis for you");
         System.out.println("...");
         System.out.println("Currently, there are list of available taxi as below: ");
-        this.taxiService.display();
+        List<Taxi> availableTaxis= this.taxiService.getAvailableTaxis();
+        taxiService.display(availableTaxis);
         System.out.println("Enter taxi that you want to choose: ");
         int taxiIndex = SCANNER.nextInt();
         Taxi currentTaxi = taxiService.getTaxis().get(taxiIndex);
         return currentTaxi;
+    }
+    public void acceptTaxi(){
+        order.setOrderStatus(2);
+        System.out.println("Order is accepted");
+        OrderIO.writeToFile(PATH_FILE_ORDER,orderService.getOrders());
+        System.out.println(order);
+    }
+    public void rejectTaxi(){
+        order.setOrderStatus(1);
+        System.out.println("Order is cancelled");
+        OrderIO.writeToFile(PATH_FILE_ORDER,orderService.getOrders());
+        System.out.println(order);
     }
 
     public void payment() {
         System.out.println("Client paid: " + order.getTotalAmount());
         order.setOrderStatus(3);
         System.out.println("Order status is: " + order.displayStatus());
-        System.out.println(order);
+        OrderIO.writeToFile(PATH_FILE_ORDER,orderService.getOrders());
     }
 
     public void findHistory() {
