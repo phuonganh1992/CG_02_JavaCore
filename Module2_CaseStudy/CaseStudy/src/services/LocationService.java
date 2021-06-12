@@ -17,6 +17,24 @@ public class LocationService {
             e.printStackTrace();
         }
     }
+    public int findDistance(String start, String end){
+        int distance=0;
+        for (int i=0; i<locations.size(); i++){
+            if(locations.get(i).getStart().equals(start) && locations.get(i).getEnd().equals(end)) {
+                distance=locations.get(i).getDistance();
+            }
+        }
+        return distance;
+    }
+    public int findJourneyTime(String start, String end){
+        int journeyTime=0;
+        for (int i = 0; i < locations.size(); i++) {
+            if(locations.get(i).getStart().equals(start) && locations.get(i).getEnd().equals(end)) {
+                journeyTime=locations.get(i).getJourneyTime();
+            }
+        }
+        return journeyTime;
+    }
 
 
 }
