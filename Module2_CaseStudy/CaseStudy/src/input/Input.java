@@ -1,55 +1,109 @@
 package input;
 
+import file.DistanceIO;
 import model.Client;
 import model.Order;
 import model.Validation;
+import services.ClientService;
 import services.OrderService;
 
 import java.util.List;
 import java.util.Scanner;
+import static file.Path.PATH_FILE_LOCATION;
 
 public class Input {
     public static final Scanner SCANNER = new Scanner(System.in);
     public static Client inputClient(){
-        Client client=new Client();
-        Validation validation=new Validation();
         System.out.println("Enter client information");
-        System.out.print("Enter client Id: ");
-        int clientId=SCANNER.nextInt();
+        int clientId = inputClientId();
         SCANNER.nextLine();
         System.out.print("Enter client name: ");
         String clientName=SCANNER.nextLine();
-        System.out.print("Enter client phone number: ");
-        String clientPhoneNumber="";
-        do{
-            clientPhoneNumber=SCANNER.nextLine();
-            if(!validation.isValid(clientPhoneNumber,validation.PHONE_NUMBER_REGEX)) System.out.println("Wrong format of phone number");
-        }while (!validation.isValid(clientPhoneNumber,validation.PHONE_NUMBER_REGEX));
-
+        String clientPhoneNumber= inputPhoneNumber();
         System.out.print("Enter client address: ");
         String clientAddress=SCANNER.nextLine();
-        System.out.print("Enter client username: ");
-        String clientUsername;
-        do{
-            clientUsername=SCANNER.nextLine();
-            if (!validation.isValid(clientUsername,validation.USER_NAME_REGEX)) System.out.println("Wrong format of username");
-        } while (!validation.isValid(clientUsername,validation.USER_NAME_REGEX));
-
-        System.out.println("Enter client password");
-        String clientPassword;
-        do{
-            clientPassword=SCANNER.nextLine();
-            if(!validation.isValid(clientPassword,validation.PASSWORD_REGEX)) System.out.println("Wrong format of password");
-        } while (!validation.isValid(clientPassword,validation.PASSWORD_REGEX));
+        String clientUsername= inputClientUsername();
+        String clientPassword = inputClientPassword();
 
         return new Client(clientId,clientName,clientPhoneNumber,clientAddress,clientUsername,clientPassword);
     }
+
+    private static int inputClientId() {
+        boolean existId;
+        int clientId;
+        do {
+            System.out.print("Enter client Id: ");
+            clientId = SCANNER.nextInt();
+            existId=ClientService.getInstance().findById(clientId)!=null;
+            if(existId) System.out.println("Id already existed!");
+        }while (existId);
+        return clientId;
+    }
+
+    private static String inputPhoneNumber() {
+        String clientPhoneNumber;
+        boolean invalidPhoneNUmber;
+        do{
+            System.out.print("Enter client phone number: ");
+            clientPhoneNumber=SCANNER.nextLine();
+            invalidPhoneNUmber=!Validation.isValid(clientPhoneNumber, Validation.PHONE_NUMBER_REGEX);
+            if(invalidPhoneNUmber) System.out.println("Wrong format of phone number");
+        }while (invalidPhoneNUmber);
+        return clientPhoneNumber;
+    }
+
+    public static String inputClientUsername() {
+        String clientUsername;
+        boolean existUsername;
+        boolean invalidUsername;
+        do{
+            System.out.print("Enter client username: ");
+            clientUsername=SCANNER.nextLine();
+            existUsername=ClientService.getInstance().findByUsername(clientUsername)!=null;
+            invalidUsername=!Validation.isValid(clientUsername, Validation.USER_NAME_REGEX);
+            if (invalidUsername) System.out.println("Wrong format of username! ");
+            else if(existUsername) System.out.println("Username already existed! ");
+        } while (invalidUsername ||existUsername );
+        return clientUsername;
+    }
+
+    public static String inputClientPassword() {
+        String clientPassword;
+        boolean invalidPassword;
+        do{
+            System.out.print("Enter client password: ");
+            clientPassword=SCANNER.nextLine();
+            invalidPassword=!Validation.isValid(clientPassword,Validation.PASSWORD_REGEX);
+            if(invalidPassword) System.out.println("Wrong format of password");
+        } while (invalidPassword);
+        return clientPassword;
+    }
+
     public static int inputOrderId(){
         List<Order> orderList=OrderService.getInstance().getOrders();
         int index=orderList.size()-1;
         int lastOrderId=orderList.get(index).getOrderId();
         return lastOrderId+1;
+    }
 
+    public static String inputStartLocation(){
+        String startLocation;
+        do {
+            System.out.print("Enter start location: ");
+            startLocation = SCANNER.nextLine();
+            if (!DistanceIO.startLocations(PATH_FILE_LOCATION).contains(startLocation)) System.out.println("Wrong start location, pls re-enter!");
+        }while (!DistanceIO.startLocations(PATH_FILE_LOCATION).contains(startLocation));
+        return startLocation;
+    }
 
+    public static String inputEndLocation(String startLocation){
+        String endLocation;
+        do {
+            System.out.print("Enter end location: ");
+            endLocation = SCANNER.nextLine();
+            if (!DistanceIO.endLocations(PATH_FILE_LOCATION).contains(endLocation)) System.out.println("Wrong end location, pls re-enter!");
+            if(endLocation.equals(startLocation)) System.out.println("End location is equal to start location,pls re-enter!");
+        }while (!DistanceIO.endLocations(PATH_FILE_LOCATION).contains(endLocation) || endLocation.equals(startLocation));
+        return endLocation;
     }
 }

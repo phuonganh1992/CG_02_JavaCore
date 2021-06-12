@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         TaxiApp taxiApp = new TaxiApp();
         int choice_1;
-        boolean check = false;
+        boolean check_1 = false;
         try {
             do {
                 menu_1();
@@ -28,6 +28,7 @@ public class Main {
                                 case 1:
                                     taxiApp.makeOrder();
                                     int choice_3;
+                                    boolean check_3=false;
                                     do {
                                         menu_3();
                                         System.out.print("Enter you choice 3: ");
@@ -37,8 +38,8 @@ public class Main {
                                                 taxiApp.acceptTaxi();
                                                 System.out.println("Meet driver, Taxi going ---------");
                                                 int choice_4;
+                                                boolean check_4=false;
                                                 do {
-
                                                     menu_4();
                                                     System.out.println("Enter your choice 4: ");
                                                     choice_4 = SCANNER.nextInt();
@@ -48,17 +49,18 @@ public class Main {
                                                             break;
                                                         case 2:
                                                             taxiApp.payment();
-                                                            check = true;
+                                                            check_4 = true;
                                                             break;
                                                     }
-                                                } while (!check);
+                                                } while (!check_4);
+                                                check_3=true;
                                                 break;
                                             case 2:
                                                 taxiApp.rejectTaxi();
-                                                check = true;
+                                                check_3=true;
                                                 break;
                                         }
-                                    } while (!check);
+                                    } while (!check_3);
                                     break;
                                 case 2:
                                     taxiApp.findHistory();
@@ -67,7 +69,8 @@ public class Main {
                                     System.exit(0);
                                     break;
                             }
-                        } while (choice_2 >= 1 && choice_2 <= 2);
+                        } while (choice_2<=3 && choice_2>=1);
+                        check_1=true;
                         break;
                     case 2:
                         taxiApp.register();
@@ -76,9 +79,7 @@ public class Main {
                         System.exit(0);
                         break;
                 }
-            } while (choice_1 >= 1 && choice_1 <= 3);
-
-
+            } while (!check_1);
         } catch (InputMismatchException e) {
             System.out.println("Input mismatch exception");
         }

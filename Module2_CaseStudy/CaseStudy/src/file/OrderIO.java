@@ -4,8 +4,8 @@ import model.Client;
 import model.Order;
 import model.Taxi;
 import services.ClientService;
+import services.DistanceService;
 import services.TaxiService;
-
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -59,11 +59,12 @@ public class OrderIO {
                 Taxi taxi= TaxiService.getInstance().findById(taxiId);
                 String startLocation=lineContent[3];
                 String endLocation=lineContent[4];
+                int journeyTime= DistanceService.getInstance().findJourneyTime(startLocation,endLocation);
                 LocalDateTime startTime=convertStringToDate(lineContent[5]);
                 LocalDateTime endTime=convertStringToDate(lineContent[6]);
 
                 int orderStatus=Integer.parseInt(lineContent[11]);
-                Order order=new Order(orderId,client,taxi,startLocation,endLocation,startTime,endTime,orderStatus);
+                Order order=new Order(orderId,client,taxi,startLocation,endLocation,startTime,endTime,journeyTime,orderStatus);
                 orders.add(order);
             }
         } catch (FileNotFoundException e) {

@@ -30,4 +30,42 @@ public class DistanceIO {
         }
         return locations;
     }
+    public static List<String> startLocations(String pathFile){
+        List<String> startLocations=new ArrayList<>();
+        File file=new File(pathFile);
+        FileReader fileReader= null;
+        try {
+            fileReader = new FileReader(file);
+            BufferedReader bufferedReader=new BufferedReader(fileReader);
+            String lineCSV= bufferedReader.readLine();
+            while ((lineCSV=bufferedReader.readLine())!=null){
+                String[] lineContent=lineCSV.split(",");
+                startLocations.add(lineContent[0]);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return startLocations;
+    }
+    public static List<String> endLocations(String pathFile){
+        List<String> endLocations=new ArrayList<>();
+        File file=new File(pathFile);
+        FileReader fileReader= null;
+        try {
+            fileReader = new FileReader(file);
+            BufferedReader bufferedReader=new BufferedReader(fileReader);
+            String lineCSV= bufferedReader.readLine();
+            while ((lineCSV=bufferedReader.readLine())!=null){
+                String[] lineContent=lineCSV.split(",");
+                endLocations.add(lineContent[1]);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return endLocations;
+    }
 }

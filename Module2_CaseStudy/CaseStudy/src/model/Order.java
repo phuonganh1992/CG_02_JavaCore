@@ -26,7 +26,7 @@ public class Order {
     public Order() {
 
     }
-    public Order(int orderId,Client client, Taxi taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime, int lengthDistance) {
+    public Order(int orderId,Client client, Taxi taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime,int journeyTime, int lengthDistance) {
         this.orderId=orderId;
         this.client = client;
         this.taxi = taxi;
@@ -34,6 +34,7 @@ public class Order {
         this.endLocation = endLocation;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.journeyTime=journeyTime;
         this.lengthDistance=lengthDistance;
         this.totalAmount = lengthDistance*this.price;
         this.orderStatus = 0;

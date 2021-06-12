@@ -122,10 +122,8 @@ public class TaxiApp {
     }
 
     public void makeOrder() {
-        System.out.print("Enter start location: ");
-        String startLocation = SCANNER.nextLine();
-        System.out.print("Enter end location: ");
-        String endLocation = SCANNER.nextLine();
+        String startLocation = Input.inputStartLocation();
+        String endLocation = Input.inputEndLocation(startLocation);
         LocalDateTime startTime = LocalDateTime.now();
         int journeyEstimateTime=distanceService.findJourneyTime(startLocation,endLocation);
         LocalDateTime endTime = startTime.plusMinutes(journeyEstimateTime);
@@ -138,7 +136,7 @@ public class TaxiApp {
         System.out.println(currentTaxi);
 
         int orderId= Input.inputOrderId();
-        order = new Order(orderId, client, currentTaxi, startLocation, endLocation, startTime, endTime, lengthDistance);
+        order = new Order(orderId, client, currentTaxi, startLocation, endLocation, startTime, endTime,journeyEstimateTime, lengthDistance);
         this.orderService.create(order);
         System.out.println("Order is creating");
         System.out.println(this.order);
@@ -150,9 +148,9 @@ public class TaxiApp {
         System.out.println("Currently, there are list of available taxi as below: ");
         List<Taxi> availableTaxis= this.taxiService.getAvailableTaxis();
         taxiService.display(availableTaxis);
-        System.out.println("Enter taxi that you want to choose: ");
+        System.out.println("Enter taxi ID that you want to choose: ");
         int taxiIndex = SCANNER.nextInt();
-        Taxi currentTaxi = taxiService.getTaxis().get(taxiIndex);
+        Taxi currentTaxi = taxiService.findById(taxiIndex);
         return currentTaxi;
     }
     public void acceptTaxi(){
@@ -171,7 +169,7 @@ public class TaxiApp {
     public void payment() {
         System.out.println("Client paid: " + order.getTotalAmount());
         order.setOrderStatus(3);
-        System.out.println("Order status is: " + order.displayStatus());
+        System.out.println(order);
         OrderIO.writeToFile(PATH_FILE_ORDER,orderService.getOrders());
     }
 
