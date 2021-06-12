@@ -1,133 +1,133 @@
-Start Location,End Location,Km
-Hoan Kiem,Ba Dinh,6
-Hoan Kiem,Hoang Mai,13
-Hoan Kiem,Long Bien,7
-Hoan Kiem,Bac Tu Liem,5
-Hoan Kiem,Cau Giay,11
-Hoan Kiem,Dong Da,10
-Hoan Kiem,Hai Ba Trung,6
-Hoan Kiem,Thanh Xuan,8
-Hoan Kiem,Nam Tu Liem,12
-Hoan Kiem,Tay Ho,2
-Hoan Kiem,Ha Dong,10
-Ba Dinh,Hoan Kiem,6
-Ba Dinh,Hoang Mai,7
-Ba Dinh,Long Bien,9
-Ba Dinh,Bac Tu Liem,10
-Ba Dinh,Cau Giay,9
-Ba Dinh,Dong Da,2
-Ba Dinh,Hai Ba Trung,5
-Ba Dinh,Thanh Xuan,7
-Ba Dinh,Nam Tu Liem,9
-Ba Dinh,Tay Ho,4
-Ba Dinh,Ha Dong,8
-Hoang Mai,Hoan Kiem,13
-Hoang Mai,Ba Dinh,6
-Hoang Mai,Long Bien,8
-Hoang Mai,Bac Tu Liem,12
-Hoang Mai,Cau Giay,2
-Hoang Mai,Dong Da,10
-Hoang Mai,Hai Ba Trung,6
-Hoang Mai,Thanh Xuan,7
-Hoang Mai,Nam Tu Liem,9
-Hoang Mai,Tay Ho,10
-Hoang Mai,Ha Dong,11
-Long Bien,Hoan Kiem,7
-Long Bien,Ba Dinh,9
-Long Bien,Hoang Mai,8
-Long Bien,Bac Tu Liem,15
-Long Bien,Cau Giay,13
-Long Bien,Dong Da,10
-Long Bien,Hai Ba Trung,5
-Long Bien,Thanh Xuan,11
-Long Bien,Nam Tu Liem,16
-Long Bien,Tay Ho,5
-Long Bien,Ha Dong,15
-Bac Tu Liem,Hoan Kiem,5
-Bac Tu Liem,Ba Dinh,10
-Bac Tu Liem,Hoang Mai,12
-Bac Tu Liem,Long Bien,15
-Bac Tu Liem,Cau Giay,4
-Bac Tu Liem,Dong Da,9
-Bac Tu Liem,Hai Ba Trung,15
-Bac Tu Liem,Thanh Xuan,13
-Bac Tu Liem,Nam Tu Liem,2
-Bac Tu Liem,Tay Ho,3
-Bac Tu Liem,Ha Dong,8
-Cau Giay,Hoan Kiem,11
-Cau Giay,Ba Dinh,9
-Cau Giay,Hoang Mai,2
-Cau Giay,Long Bien,13
-Cau Giay,Bac Tu Liem,4
-Cau Giay,Dong Da,5
-Cau Giay,Hai Ba Trung,10
-Cau Giay,Thanh Xuan,9
-Cau Giay,Nam Tu Liem,3
-Cau Giay,Tay Ho,4
-Cau Giay,Ha Dong,8
-Dong Da,Hoan Kiem,10
-Dong Da,Ba Dinh,2
-Dong Da,Hoang Mai,10
-Dong Da,Long Bien,10
-Dong Da,Bac Tu Liem,9
-Dong Da,Cau Giay,5
-Dong Da,Hai Ba Trung,7
-Dong Da,Thanh Xuan,4
-Dong Da,Nam Tu Liem,8
-Dong Da,Tay Ho,7
-Dong Da,Ha Dong,7
-Hai Ba Trung,Hoan Kiem,6
-Hai Ba Trung,Ba Dinh,5
-Hai Ba Trung,Hoang Mai,6
-Hai Ba Trung,Long Bien,5
-Hai Ba Trung,Bac Tu Liem,15
-Hai Ba Trung,Cau Giay,10
-Hai Ba Trung,Dong Da,7
-Hai Ba Trung,Thanh Xuan,10
-Hai Ba Trung,Nam Tu Liem,15
-Hai Ba Trung,Tay Ho,5
-Hai Ba Trung,Ha Dong,12
-Thanh Xuan,Hoan Kiem,8
-Thanh Xuan,Ba Dinh,7
-Thanh Xuan,Hoang Mai,7
-Thanh Xuan,Long Bien,11
-Thanh Xuan,Bac Tu Liem,13
-Thanh Xuan,Cau Giay,9
-Thanh Xuan,Dong Da,4
-Thanh Xuan,Hai Ba Trung,10
-Thanh Xuan,Nam Tu Liem,8
-Thanh Xuan,Tay Ho,10
-Thanh Xuan,Ha Dong,3
-Nam Tu Liem,Hoan Kiem,12
-Nam Tu Liem,Ba Dinh,9
-Nam Tu Liem,Hoang Mai,9
-Nam Tu Liem,Long Bien,16
-Nam Tu Liem,Bac Tu Liem,2
-Nam Tu Liem,Cau Giay,3
-Nam Tu Liem,Dong Da,8
-Nam Tu Liem,Hai Ba Trung,15
-Nam Tu Liem,Thanh Xuan,8
-Nam Tu Liem,Tay Ho,10
-Nam Tu Liem,Ha Dong,5
-Tay Ho,Hoan Kiem,2
-Tay Ho,Ba Dinh,4
-Tay Ho,Hoang Mai,10
-Tay Ho,Long Bien,5
-Tay Ho,Bac Tu Liem,3
-Tay Ho,Cau Giay,4
-Tay Ho,Dong Da,7
-Tay Ho,Hai Ba Trung,5
-Tay Ho,Thanh Xuan,10
-Tay Ho,Nam Tu Liem,10
-Tay Ho,Ha Dong,17
-Ha Dong,Hoan Kiem,10
-Ha Dong,Ba Dinh,8
-Ha Dong,Hoang Mai,11
-Ha Dong,Long Bien,15
-Ha Dong,Bac Tu Liem,8
-Ha Dong,Cau Giay,8
-Ha Dong,Dong Da,7
-Ha Dong,Hai Ba Trung,12
-Ha Dong,Thanh Xuan,3
-Ha Dong,Nam Tu Liem,5
-Ha Dong,Tay Ho,17
+Start Location,End Location,Km,Journey Time Estimate
+Hoan Kiem,Ba Dinh,6,
+Hoan Kiem,Hoang Mai,13,
+Hoan Kiem,Long Bien,7,
+Hoan Kiem,Bac Tu Liem,5,
+Hoan Kiem,Cau Giay,11,
+Hoan Kiem,Dong Da,10,
+Hoan Kiem,Hai Ba Trung,6,
+Hoan Kiem,Thanh Xuan,8,
+Hoan Kiem,Nam Tu Liem,12,
+Hoan Kiem,Tay Ho,2,
+Hoan Kiem,Ha Dong,10,
+Ba Dinh,Hoan Kiem,6,
+Ba Dinh,Hoang Mai,7,
+Ba Dinh,Long Bien,9,
+Ba Dinh,Bac Tu Liem,10,
+Ba Dinh,Cau Giay,9,
+Ba Dinh,Dong Da,2,
+Ba Dinh,Hai Ba Trung,5,
+Ba Dinh,Thanh Xuan,7,
+Ba Dinh,Nam Tu Liem,9,
+Ba Dinh,Tay Ho,4,
+Ba Dinh,Ha Dong,8,
+Hoang Mai,Hoan Kiem,13,
+Hoang Mai,Ba Dinh,6,
+Hoang Mai,Long Bien,8,
+Hoang Mai,Bac Tu Liem,12,
+Hoang Mai,Cau Giay,2,
+Hoang Mai,Dong Da,10,
+Hoang Mai,Hai Ba Trung,6,
+Hoang Mai,Thanh Xuan,7,
+Hoang Mai,Nam Tu Liem,9,
+Hoang Mai,Tay Ho,10,
+Hoang Mai,Ha Dong,11,
+Long Bien,Hoan Kiem,7,
+Long Bien,Ba Dinh,9,
+Long Bien,Hoang Mai,8,
+Long Bien,Bac Tu Liem,15,
+Long Bien,Cau Giay,13,
+Long Bien,Dong Da,10,
+Long Bien,Hai Ba Trung,5,
+Long Bien,Thanh Xuan,11,
+Long Bien,Nam Tu Liem,16,
+Long Bien,Tay Ho,5,
+Long Bien,Ha Dong,15,
+Bac Tu Liem,Hoan Kiem,5,
+Bac Tu Liem,Ba Dinh,10,
+Bac Tu Liem,Hoang Mai,12,
+Bac Tu Liem,Long Bien,15,
+Bac Tu Liem,Cau Giay,4,
+Bac Tu Liem,Dong Da,9,
+Bac Tu Liem,Hai Ba Trung,15,
+Bac Tu Liem,Thanh Xuan,13,
+Bac Tu Liem,Nam Tu Liem,2,
+Bac Tu Liem,Tay Ho,3,
+Bac Tu Liem,Ha Dong,8,
+Cau Giay,Hoan Kiem,11,
+Cau Giay,Ba Dinh,9,
+Cau Giay,Hoang Mai,2,
+Cau Giay,Long Bien,13,
+Cau Giay,Bac Tu Liem,4,
+Cau Giay,Dong Da,5,
+Cau Giay,Hai Ba Trung,10,
+Cau Giay,Thanh Xuan,9,
+Cau Giay,Nam Tu Liem,3,
+Cau Giay,Tay Ho,4,
+Cau Giay,Ha Dong,8,
+Dong Da,Hoan Kiem,10,
+Dong Da,Ba Dinh,2,
+Dong Da,Hoang Mai,10,
+Dong Da,Long Bien,10,
+Dong Da,Bac Tu Liem,9,
+Dong Da,Cau Giay,5,
+Dong Da,Hai Ba Trung,7,
+Dong Da,Thanh Xuan,4,
+Dong Da,Nam Tu Liem,8,
+Dong Da,Tay Ho,7,
+Dong Da,Ha Dong,7,
+Hai Ba Trung,Hoan Kiem,6,
+Hai Ba Trung,Ba Dinh,5,
+Hai Ba Trung,Hoang Mai,6,
+Hai Ba Trung,Long Bien,5,
+Hai Ba Trung,Bac Tu Liem,15,
+Hai Ba Trung,Cau Giay,10,
+Hai Ba Trung,Dong Da,7,
+Hai Ba Trung,Thanh Xuan,10,
+Hai Ba Trung,Nam Tu Liem,15,
+Hai Ba Trung,Tay Ho,5,
+Hai Ba Trung,Ha Dong,12,
+Thanh Xuan,Hoan Kiem,8,
+Thanh Xuan,Ba Dinh,7,
+Thanh Xuan,Hoang Mai,7,
+Thanh Xuan,Long Bien,11,
+Thanh Xuan,Bac Tu Liem,13,
+Thanh Xuan,Cau Giay,9,
+Thanh Xuan,Dong Da,4,
+Thanh Xuan,Hai Ba Trung,10,
+Thanh Xuan,Nam Tu Liem,8,
+Thanh Xuan,Tay Ho,10,
+Thanh Xuan,Ha Dong,3,
+Nam Tu Liem,Hoan Kiem,12,
+Nam Tu Liem,Ba Dinh,9,
+Nam Tu Liem,Hoang Mai,9,
+Nam Tu Liem,Long Bien,16,
+Nam Tu Liem,Bac Tu Liem,2,
+Nam Tu Liem,Cau Giay,3,
+Nam Tu Liem,Dong Da,8,
+Nam Tu Liem,Hai Ba Trung,15,
+Nam Tu Liem,Thanh Xuan,8,
+Nam Tu Liem,Tay Ho,10,
+Nam Tu Liem,Ha Dong,5,
+Tay Ho,Hoan Kiem,2,
+Tay Ho,Ba Dinh,4,
+Tay Ho,Hoang Mai,10,
+Tay Ho,Long Bien,5,
+Tay Ho,Bac Tu Liem,3,
+Tay Ho,Cau Giay,4,
+Tay Ho,Dong Da,7,
+Tay Ho,Hai Ba Trung,5,
+Tay Ho,Thanh Xuan,10,
+Tay Ho,Nam Tu Liem,10,
+Tay Ho,Ha Dong,17,
+Ha Dong,Hoan Kiem,10,
+Ha Dong,Ba Dinh,8,
+Ha Dong,Hoang Mai,11,
+Ha Dong,Long Bien,15,
+Ha Dong,Bac Tu Liem,8,
+Ha Dong,Cau Giay,8,
+Ha Dong,Dong Da,7,
+Ha Dong,Hai Ba Trung,12,
+Ha Dong,Thanh Xuan,3,
+Ha Dong,Nam Tu Liem,5,
+Ha Dong,Tay Ho,17,

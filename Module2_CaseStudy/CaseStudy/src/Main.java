@@ -28,6 +28,9 @@ public class Main {
                                 case 2:
                                     taxiApp.findHistory();
                                     break;
+                                case 3:
+                                    System.exit(0);
+                                    break;
                             }
 
 
@@ -53,11 +56,13 @@ public class Main {
         System.out.println("----------------MENU_1---------------");
         System.out.println("1. Login");
         System.out.println("2. Register");
+        System.out.println("3. Exit");
 
     }
     public static void menu_2(){
         System.out.println("----------------MENU_2---------------");
         System.out.println("1. Find taxi");
         System.out.println("2. Find history");
+        System.out.println("3. Exit");
     }
 }

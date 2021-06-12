@@ -87,21 +87,36 @@ public class TaxiApp {
     }
 
     public void findTaxi() {
+//        SCANNER.nextLine();
         System.out.print("Enter start location: ");
         String startLocation = SCANNER.nextLine();
         System.out.print("Enter end location: ");
         String endLocation = SCANNER.nextLine();
+        this.taxiService.display();
+        System.out.println("Enter taxi that you want to choose: ");
+        int taxiIndex = SCANNER.nextInt();
+        LocalDateTime startTime = LocalDateTime.now();
+        LocalDateTime endTime = startTime.plusMinutes(60);
+        Taxi currentTaxi = taxiService.getTaxis().get(taxiIndex);
+        int orderId= Input.inputOrderId();
+        order = new Order(orderId, client, currentTaxi, startLocation, endLocation, startTime, endTime, 10, 0);
+        this.orderService.create(order);
         int choice;
         do {
-            this.taxiService.display();
-            System.out.println("Enter taxi that you want to choose: ");
-            choice = SCANNER.nextInt();
-            LocalDateTime startTime = LocalDateTime.now();
-            LocalDateTime endTime = startTime.plusMinutes(60);
-            Taxi currentTaxi = taxiService.getTaxis().get(choice);
-            int orderId= Input.inputOrderId();
-            order = new Order(orderId, client, currentTaxi, startLocation, endLocation, startTime, endTime, 10, 2);
-            this.orderService.create(order);
+            System.out.println("----------------MENU_3---------------");
+            System.out.println("1: Accept this taxi");
+            System.out.println("2: Cancel");
+            System.out.print("Enter you choice: ");
+            choice=SCANNER.nextInt();
+            switch (choice){
+                case 1:
+                    order.setOrderStatus(2);
+                    System.out.println("Taxi going ---------");
+                    break;
+                case 2:
+                    order.setOrderStatus(1);
+                    break;
+            }
         } while (choice >= taxiService.getTaxis().size());
     }
 
