@@ -17,7 +17,7 @@ public class OrderIO {
         File file=new File(pathFile);
         FileWriter fileWriter=new FileWriter(file);
         BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
-        bufferedWriter.write("Order ID,Client Username,Taxi ID,Start Location,End Location,Start Time,End Time,Journey Time,Km,Price,Total Amount,Order Status\n");
+        bufferedWriter.write("Order ID,Client Username,Taxi ID,Start Location,End Location,Start Time,End Time,Journey Time,Length Distance,Price,Total Amount,Order Status\n");
         for (Order order:list) {
             bufferedWriter.write(order.getOrderId()+","+
                     order.getClient().getClientUsername()+","+
@@ -27,7 +27,7 @@ public class OrderIO {
                     order.displayTime(order.getStartTime())+","+
                     order.displayTime(order.getEndTime())+","+
                     order.getJourneyTime()+","+
-                    order.getKm()+","+
+                    order.getLengthDistance()+","+
                     order.getPrice()+","+
                     order.getTotalAmount()+","+
                     order.getOrderStatus()+"\n"
@@ -54,9 +54,9 @@ public class OrderIO {
             String endLocation=lineContent[4];
             LocalDateTime startTime=convertStringToDate(lineContent[5]);
             LocalDateTime endTime=convertStringToDate(lineContent[6]);
-            int km=Integer.parseInt(lineContent[8]);
+
             int orderStatus=Integer.parseInt(lineContent[11]);
-            Order order=new Order(orderId,client,taxi,startLocation,endLocation,startTime,endTime,km,orderStatus);
+            Order order=new Order(orderId,client,taxi,startLocation,endLocation,startTime,endTime,orderStatus);
             orders.add(order);
         }
 

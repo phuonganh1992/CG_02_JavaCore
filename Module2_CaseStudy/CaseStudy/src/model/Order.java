@@ -1,10 +1,14 @@
 package model;
 
+import services.DistanceService;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class Order {
+    public static final int PRICE = 10;
     private int orderId;
     private Client client;
     private Taxi taxi;
@@ -13,15 +17,16 @@ public class Order {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private int journeyTime;
-    private int km;
-    private int price=10;
+    private int lengthDistance;
+    private int price= PRICE;
     private int totalAmount;
     private int orderStatus;
+
 
     public Order() {
 
     }
-    public Order(int orderId,Client client, Taxi taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime, int km, int orderStatus) {
+    public Order(int orderId,Client client, Taxi taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime, int lengthDistance) {
         this.orderId=orderId;
         this.client = client;
         this.taxi = taxi;
@@ -29,9 +34,9 @@ public class Order {
         this.endLocation = endLocation;
         this.startTime = startTime;
         this.endTime = endTime;
-        this.journeyTime=(int) Duration.between(startTime,endTime).getSeconds();
-        this.totalAmount = price*journeyTime;
-        this.orderStatus = orderStatus;
+        this.lengthDistance=lengthDistance;
+        this.totalAmount = lengthDistance*this.price;
+        this.orderStatus = 0;
     }
 
     public int getOrderId() {
@@ -105,12 +110,12 @@ public class Order {
         this.endLocation = endLocation;
     }
 
-    public int getKm() {
-        return km;
+    public int getLengthDistance() {
+        return lengthDistance;
     }
 
-    public void setKm(int km) {
-        this.km = km;
+    public void setLengthDistance(int lengthDistance) {
+        this.lengthDistance = lengthDistance;
     }
 
     public int getPrice() {
@@ -126,7 +131,7 @@ public class Order {
     }
 
     public void setTotalAmount() {
-        this.totalAmount =price*journeyTime;
+        this.totalAmount =this.price*this.lengthDistance;
     }
 
     public int getOrderStatus() {
@@ -164,7 +169,7 @@ public class Order {
                 ", startTime='" + displayTime(startTime) + '\'' +
                 ", endTime='" + displayTime(endTime) + '\'' +
                 ", journeyTime='" + journeyTime + '\'' +
-                ", km=" + km +
+                ", km=" + lengthDistance +
                 ", price=" + price +
                 ", totalAmount=" + totalAmount +
                 ", orderStatus='" + displayStatus() + '\'' +
