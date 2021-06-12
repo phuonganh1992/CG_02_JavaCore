@@ -5,17 +5,17 @@ import model.Client;
 import model.Taxi;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TaxiService implements GeneralService<Taxi>{
+    public static final String PATH_FILE_TAXI = "D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataTaxi.csv";
     private List<Taxi> taxis;
     private static TaxiService instance;
 
 
     private TaxiService() {
         try {
-            this.taxis = TaxiIO.readFromFile("D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataTaxi.csv");
+            this.taxis = TaxiIO.readFromFile(PATH_FILE_TAXI);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -37,7 +37,12 @@ public class TaxiService implements GeneralService<Taxi>{
 
     @Override
     public void create(Taxi taxi) {
-        taxis.add(taxi);
+        this.taxis.add(taxi);
+        try {
+            TaxiIO.writeToFile(PATH_FILE_TAXI,this.taxis);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -77,7 +82,7 @@ public class TaxiService implements GeneralService<Taxi>{
             }
         }
         if(index==-1) {
-            System.out.println("Found no taxi with id "+id);
+//            System.out.println("Found no taxi with id "+id);
             return null;
         } else {
 //            System.out.println("Taxi is found successfully!");
@@ -85,17 +90,20 @@ public class TaxiService implements GeneralService<Taxi>{
         }
     }
 
-    public List<Taxi> findByLicensePlate(String taxiLicensePlate) {
-        List<Taxi> findList=new ArrayList<>();
+    public Taxi findByLicensePlate(String taxiLicensePlate) {
+        int index=-1;
         for (int i = 0; i < taxis.size(); i++) {
-            if(taxis.get(i).getTaxiLicensePlate().equals(taxiLicensePlate))  findList.add(taxis.get(i));
+            if(taxis.get(i).getTaxiLicensePlate().equals(taxiLicensePlate)) {
+                index=i;
+            }
         }
-        if (findList.isEmpty()) System.out.println("Found taxi with license plate "+taxiLicensePlate);
-        else {
-            System.out.println("List taxi is found");
+        if(index==-1) {
+//            System.out.println("Found no taxi with license plate "+taxiLicensePlate);
+            return null;
+        } else {
+//            System.out.println("Taxi is found successfully!");
+            return taxis.get(index);
         }
-        return findList;
-
     }
 
     @Override

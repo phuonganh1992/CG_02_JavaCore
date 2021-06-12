@@ -1,8 +1,11 @@
 package input;
 
 import model.Client;
+import model.Order;
 import model.Validation;
+import services.OrderService;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Input {
@@ -40,5 +43,13 @@ public class Input {
         } while (!validation.isValid(clientPassword,validation.PASSWORD_REGEX));
 
         return new Client(clientId,clientName,clientPhoneNumber,clientAddress,clientUsername,clientPassword);
+    }
+    public static int inputOrderId(){
+        List<Order> orderList=OrderService.getInstance().getOrders();
+        int index=orderList.size()-1;
+        int lastOrderId=orderList.get(index).getOrderId();
+        return lastOrderId+1;
+
+
     }
 }

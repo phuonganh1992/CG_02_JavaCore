@@ -2,19 +2,20 @@ package services;
 
 import file.OrderIO;
 import model.Order;
-import model.Taxi;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderService implements GeneralService<Order> {
+    public static final String PATH_FILE_ORDER = "D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataOrder.csv";
     private List<Order> orders;
     private static OrderService instance;
 
     private OrderService() {
         try {
-            this.orders = OrderIO.readFromFile("D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataOrder.csv");
+            this.orders = OrderIO.readFromFile(PATH_FILE_ORDER);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -36,7 +37,12 @@ public class OrderService implements GeneralService<Order> {
 
     @Override
     public void create(Order order) {
-        orders.add(order);
+        this.orders.add(order);
+        try {
+            OrderIO.writeToFile(PATH_FILE_ORDER,this.orders);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -50,7 +56,6 @@ public class OrderService implements GeneralService<Order> {
         }
         if(index==-1) System.out.println("Found no order to delete!");
         else System.out.println("Delete successfully!");
-
     }
 
     @Override
@@ -64,7 +69,6 @@ public class OrderService implements GeneralService<Order> {
         }
         if(index==-1) System.out.println("Found no id match "+id);
         else System.out.println("Update successfully");
-
     }
 
     @Override
@@ -76,7 +80,7 @@ public class OrderService implements GeneralService<Order> {
             }
         }
         if(index==-1) {
-            System.out.println("Found no order with id "+id);
+//            System.out.println("Found no order with id "+id);
             return null;
         } else {
             System.out.println("Order is found successfully!");

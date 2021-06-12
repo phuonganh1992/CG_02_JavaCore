@@ -19,8 +19,16 @@ public class Main {
                         int choice_2;
                         do{
                             menu_2();
-                            System.out.print("Enter your choice 2: ");
+                            System.out.print("Enter your action : ");
                             choice_2=SCANNER.nextInt();
+                            switch (choice_2){
+                                case 1:
+                                    taxiApp.findTaxi();
+                                    break;
+                                case 2:
+                                    taxiApp.findHistory();
+                                    break;
+                            }
 
 
                         } while (choice_2>=1 && choice_2<=2);

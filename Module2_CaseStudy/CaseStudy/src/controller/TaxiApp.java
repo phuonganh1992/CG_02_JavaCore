@@ -1,6 +1,7 @@
 package controller;
 
 
+import file.OrderIO;
 import input.Input;
 import model.Client;
 import model.Order;
@@ -59,7 +60,6 @@ public class TaxiApp {
     }
 
     public void register() {
-
         Client client = Input.inputClient();
         clientService.create(client);
     }
@@ -99,7 +99,8 @@ public class TaxiApp {
             LocalDateTime startTime = LocalDateTime.now();
             LocalDateTime endTime = startTime.plusMinutes(60);
             Taxi currentTaxi = taxiService.getTaxis().get(choice);
-            order = new Order(123, client, currentTaxi, startLocation, endLocation, startTime, endTime, 10, 2);
+            int orderId= Input.inputOrderId();
+            order = new Order(orderId, client, currentTaxi, startLocation, endLocation, startTime, endTime, 10, 2);
             this.orderService.create(order);
         } while (choice >= taxiService.getTaxis().size());
     }

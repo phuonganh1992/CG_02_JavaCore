@@ -9,12 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClientService implements GeneralService<Client> {
+    public static final String PATH_FILE_CLIENT = "D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataClient.csv";
     private List<Client> clients;
     private static ClientService instance;
 
     private ClientService() {
         try {
-            this.clients = ClientIO.readFromFile("D:\\Java\\Module2_CaseStudy\\CaseStudy\\src\\file\\DataClient.csv");
+            this.clients = ClientIO.readFromFile(PATH_FILE_CLIENT);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -29,13 +30,14 @@ public class ClientService implements GeneralService<Client> {
         return clients;
     }
 
-    public void setClients(List<Client> clients) {
-        this.clients = clients;
-    }
-
     @Override
     public void create(Client client) {
-        clients.add(client);
+        this.clients.add(client);
+        try {
+            ClientIO.writeToFile(PATH_FILE_CLIENT,this.clients);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -90,7 +92,7 @@ public class ClientService implements GeneralService<Client> {
             }
         }
         if(index==-1) {
-            System.out.println("Found no client with username "+username);
+//            System.out.println("Found no client with username "+username);
             return null;
         } else {
 //            System.out.println("Client is found successfully!");
