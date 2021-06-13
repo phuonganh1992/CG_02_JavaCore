@@ -1,6 +1,7 @@
 package file;
 
 import model.Client;
+import model.Distance;
 import model.Order;
 import model.Taxi;
 import services.ClientService;
@@ -24,12 +25,12 @@ public class OrderIO {
                 bufferedWriter.write(order.getOrderId()+","+
                         order.getClient().getClientUsername()+","+
                         order.getTaxi().getTaxiID()+","+
-                        order.getStartLocation()+","+
-                        order.getEndLocation()+","+
+                        order.getDistance().getStart()+","+
+                        order.getDistance().getEnd()+","+
                         order.displayTime(order.getStartTime())+","+
                         order.displayTime(order.getEndTime())+","+
-                        order.getJourneyTime()+","+
-                        order.getLengthDistance()+","+
+                        order.getDistance().getJourneyEstimateTime()+","+
+                        order.getDistance().getLength()+","+
                         order.getPrice()+","+
                         order.getTotalAmount()+","+
                         order.getOrderStatus()+"\n"
@@ -60,11 +61,13 @@ public class OrderIO {
                 String startLocation=lineContent[3];
                 String endLocation=lineContent[4];
                 int journeyTime= DistanceService.getInstance().findJourneyTime(startLocation,endLocation);
+                int length=DistanceService.getInstance().findLength(startLocation,endLocation);
+                Distance distance=new Distance(startLocation,endLocation,length,journeyTime);
                 LocalDateTime startTime=convertStringToDate(lineContent[5]);
                 LocalDateTime endTime=convertStringToDate(lineContent[6]);
 
                 int orderStatus=Integer.parseInt(lineContent[11]);
-                Order order=new Order(orderId,client,taxi,startLocation,endLocation,startTime,endTime,journeyTime,orderStatus);
+                Order order=new Order(orderId,client,taxi,startTime,endTime,distance);
                 orders.add(order);
             }
         } catch (FileNotFoundException e) {

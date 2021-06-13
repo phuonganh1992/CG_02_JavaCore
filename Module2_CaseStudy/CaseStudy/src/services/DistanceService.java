@@ -27,14 +27,14 @@ public class DistanceService {
         DistanceService.instance = instance;
     }
 
-    public int findDistance(String start, String end){
-        int distance=0;
+    public int findLength(String start, String end){
+        int length=0;
         for (int i = 0; i< distances.size(); i++){
             if(distances.get(i).getStart().equals(start) && distances.get(i).getEnd().equals(end)) {
-                distance= distances.get(i).getLengthDistance();
+                length= distances.get(i).getLength();
             }
         }
-        return distance;
+        return length;
     }
     public int findJourneyTime(String start, String end){
         int journeyTime=0;

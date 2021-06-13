@@ -16,12 +16,9 @@ public class Order {
     private int orderId;
     private Client client;
     private Taxi taxi;
-    private String startLocation;
-    private String endLocation;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
-    private int journeyTime;
-    private int lengthDistance;
+    private Distance distance;
     private int price= PRICE;
     private int totalAmount;
     private int orderStatus;
@@ -30,18 +27,24 @@ public class Order {
     public Order() {
 
     }
-    public Order(int orderId,Client client, Taxi taxi, String startLocation, String endLocation, LocalDateTime startTime, LocalDateTime endTime,int journeyTime, int lengthDistance) {
-        this.orderId=orderId;
+
+    public Order(int orderId, Client client, Taxi taxi, LocalDateTime startTime, LocalDateTime endTime, Distance distance) {
+        this.orderId = orderId;
         this.client = client;
         this.taxi = taxi;
-        this.startLocation = startLocation;
-        this.endLocation = endLocation;
         this.startTime = startTime;
         this.endTime = endTime;
-        this.journeyTime=journeyTime;
-        this.lengthDistance=lengthDistance;
-        this.totalAmount = lengthDistance*this.price;
+        this.distance = distance;
+        if(orderStatus==0 || orderStatus==1 || orderStatus==2) this.totalAmount=0;
+        else this.totalAmount = distance.getLength()*this.price;
         this.orderStatus = 0;
+    }
+    public Distance getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Distance distance) {
+        this.distance = distance;
     }
 
     public int getOrderId() {
@@ -52,16 +55,9 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public void setJourneyTime(int journeyTime) {
-        this.journeyTime = journeyTime;
-    }
 
     public void setTotalAmount(int totalAmount) {
         this.totalAmount = totalAmount;
-    }
-
-    public int getJourneyTime() {
-        return journeyTime;
     }
 
     public LocalDateTime getStartTime() {
@@ -96,30 +92,6 @@ public class Order {
         this.taxi = taxi;
     }
 
-    public String getStartLocation() {
-        return startLocation;
-    }
-
-    public void setStartLocation(String startLocation) {
-        this.startLocation = startLocation;
-    }
-
-    public String getEndLocation() {
-        return endLocation;
-    }
-
-    public void setEndLocation(String endLocation) {
-        this.endLocation = endLocation;
-    }
-
-    public int getLengthDistance() {
-        return lengthDistance;
-    }
-
-    public void setLengthDistance(int lengthDistance) {
-        this.lengthDistance = lengthDistance;
-    }
-
     public int getPrice() {
         return price;
     }
@@ -133,7 +105,8 @@ public class Order {
     }
 
     public void setTotalAmount() {
-        this.totalAmount =this.price*this.lengthDistance;
+        if(orderStatus==0 || orderStatus==1 || orderStatus==2) this.totalAmount=0;
+        else this.totalAmount = distance.getLength()*this.price;
     }
 
     public int getOrderStatus() {
@@ -142,6 +115,7 @@ public class Order {
 
     public void setOrderStatus(int orderStatus) {
         this.orderStatus = orderStatus;
+        setTotalAmount();
     }
     public String displayTime(LocalDateTime time){
         return time.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
@@ -166,12 +140,12 @@ public class Order {
                 "orderID=" + orderId +
                 ", client=" + client +
                 ", taxi=" + taxi +
-                ", startLocation='" + startLocation + '\'' +
-                ", endLocation='" + endLocation + '\'' +
+                ", startLocation='" + distance.getStart() + '\'' +
+                ", endLocation='" + distance.getEnd() + '\'' +
                 ", startTime='" + displayTime(startTime) + '\'' +
                 ", endTime='" + displayTime(endTime) + '\'' +
-                ", journeyTime='" + journeyTime + '\'' +
-                ", km=" + lengthDistance +
+                ", journeyTime='" + distance.getJourneyEstimateTime() + '\'' +
+                ", length=" + distance.getLength() +
                 ", price=" + price +
                 ", totalAmount=" + totalAmount +
                 ", orderStatus='" + displayStatus() + '\'' +

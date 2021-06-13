@@ -41,11 +41,12 @@ public class Main {
                                                 boolean check_4=false;
                                                 do {
                                                     menu_4();
-                                                    System.out.println("Enter your choice 4: ");
+                                                    System.out.print("Enter your choice 4: ");
                                                     choice_4 = SCANNER.nextInt();
                                                     switch (choice_4) {
                                                         case 1:
-                                                            System.out.println("Have not arrived yet, keep going----------------------");
+                                                            System.out.println("------------------going----------------------");
+                                                            System.out.println("------------------going----------------------");
                                                             break;
                                                         case 2:
                                                             taxiApp.payment();

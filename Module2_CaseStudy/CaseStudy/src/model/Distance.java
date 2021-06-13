@@ -3,7 +3,7 @@ package model;
 public class Distance {
     private String start;
     private String end;
-    private int lengthDistance;
+    private int length;
     private int journeyEstimateTime;
 
     public Distance() {
@@ -13,10 +13,10 @@ public class Distance {
         this.end = end;
     }
 
-    public Distance(String start, String end, int lengthDistance, int journeyEstimateTime) {
+    public Distance(String start, String end, int length, int journeyEstimateTime) {
         this.start = start;
         this.end = end;
-        this.lengthDistance = lengthDistance;
+        this.length = length;
         this.journeyEstimateTime = journeyEstimateTime;
     }
 
@@ -36,12 +36,12 @@ public class Distance {
         this.end = end;
     }
 
-    public int getLengthDistance() {
-        return lengthDistance;
+    public int getLength() {
+        return length;
     }
 
-    public void setLengthDistance(int lengthDistance) {
-        this.lengthDistance = lengthDistance;
+    public void setLength(int length) {
+        this.length = length;
     }
 
     public int getJourneyEstimateTime() {
@@ -57,7 +57,7 @@ public class Distance {
         return "Distance{" +
                 "start='" + start + '\'' +
                 ", end='" + end + '\'' +
-                ", length=" + lengthDistance +
+                ", length=" + length +
                 ", journey Estimate Time=" + journeyEstimateTime +
                 '}';
     }

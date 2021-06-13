@@ -2,9 +2,11 @@ package input;
 
 import file.DistanceIO;
 import model.Client;
+import model.Distance;
 import model.Order;
 import model.Validation;
 import services.ClientService;
+import services.DistanceService;
 import services.OrderService;
 
 import java.util.List;
@@ -81,6 +83,9 @@ public class Input {
 
     public static int inputOrderId(){
         List<Order> orderList=OrderService.getInstance().getOrders();
+        if(orderList.size()==0){
+            return 3000;
+        }
         int index=orderList.size()-1;
         int lastOrderId=orderList.get(index).getOrderId();
         return lastOrderId+1;
@@ -105,5 +110,12 @@ public class Input {
             if(endLocation.equals(startLocation)) System.out.println("End location is equal to start location,pls re-enter!");
         }while (!DistanceIO.endLocations(PATH_FILE_LOCATION).contains(endLocation) || endLocation.equals(startLocation));
         return endLocation;
+    }
+    public static Distance inputDistance(){
+        String startLocation=inputStartLocation();
+        String endLocation=inputEndLocation(startLocation);
+        int length= DistanceService.getInstance().findLength(startLocation,endLocation);
+        int journeyTime=DistanceService.getInstance().findJourneyTime(startLocation,endLocation);
+        return new Distance(startLocation,endLocation,length,journeyTime);
     }
 }

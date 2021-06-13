@@ -68,10 +68,8 @@ public class ClientService implements GeneralService<Client> {
             }
         }
         if(index==-1) {
-            System.out.println("Found no client with id "+id);
             return null;
         } else {
-            System.out.println("Client is found successfully!");
             return clients.get(index);
         }
     }

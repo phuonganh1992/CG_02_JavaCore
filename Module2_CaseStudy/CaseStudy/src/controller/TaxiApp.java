@@ -3,6 +3,7 @@ package controller;
 import file.OrderIO;
 import input.Input;
 import model.Client;
+import model.Distance;
 import model.Order;
 import model.Taxi;
 import services.ClientService;
@@ -122,21 +123,18 @@ public class TaxiApp {
     }
 
     public void makeOrder() {
-        String startLocation = Input.inputStartLocation();
-        String endLocation = Input.inputEndLocation(startLocation);
+        Distance distance=Input.inputDistance();
         LocalDateTime startTime = LocalDateTime.now();
-        int journeyEstimateTime=distanceService.findJourneyTime(startLocation,endLocation);
-        LocalDateTime endTime = startTime.plusMinutes(journeyEstimateTime);
-        int lengthDistance=distanceService.findDistance(startLocation,endLocation);
+        LocalDateTime endTime=startTime.plusSeconds(distance.getJourneyEstimateTime());
 
-        System.out.println("Client \'"+client.getClientUsername()+ "\' want to go from \'"+startLocation+"\' to \'"+endLocation+ "\' with distance \'"+lengthDistance +"\' km, will take time of \'"+journeyEstimateTime +"\' minutes");
+        System.out.println("Client \'"+client.getClientUsername()+ "\' want to go from \'"+distance.getStart()+"\' to \'"+distance.getEnd()+ "\' with length \'"+distance.getLength() +"\' km, will take time of \'"+distance.getJourneyEstimateTime() +"\' minutes");
 
         Taxi currentTaxi = chooseTaxi();
         System.out.println("Taxi chosen has information: ");
         System.out.println(currentTaxi);
 
         int orderId= Input.inputOrderId();
-        order = new Order(orderId, client, currentTaxi, startLocation, endLocation, startTime, endTime,journeyEstimateTime, lengthDistance);
+        order = new Order(orderId, client, currentTaxi, startTime, endTime,distance);
         this.orderService.create(order);
         System.out.println("Order is creating");
         System.out.println(this.order);
