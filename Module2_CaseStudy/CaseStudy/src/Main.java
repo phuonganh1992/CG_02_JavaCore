@@ -73,7 +73,7 @@ public class Main {
                                         String startPeriod=SCANNER.nextLine();
                                         System.out.print("Enter end period - dd/MM/yyyy: ");
                                         String endPeriod=SCANNER.nextLine();
-                                        taxiApp.filterHistory(Input.inputTime(startPeriod),Input.inputTime(endPeriod));
+                                        taxiApp.filterHistory(Input.inputDate(startPeriod),Input.inputDate(endPeriod));
                                     }
                                     break;
                                 case 3:

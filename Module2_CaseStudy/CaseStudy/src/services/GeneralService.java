@@ -7,7 +7,6 @@ public interface GeneralService<T> {
     void delete(int id);
     void update(int id, T t);
     T findById(int id);
-//    List<T> findByName(String name);
     List<T> findAll();
     void display();
 }

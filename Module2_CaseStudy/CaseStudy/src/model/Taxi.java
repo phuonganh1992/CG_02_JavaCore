@@ -1,6 +1,10 @@
 package model;
 
 public class Taxi {
+    public static final String UNAVAILABLE = "Unavailable";
+    public static final String AVAILABLE = "Available";
+    public static final int STATUS_UNAVAILABLE = 0;
+    public static final int STATUS_AVAILABLE = 1;
     private int taxiID;
     private String taxiLicensePlate;
     private String taxiColor;
@@ -75,10 +79,10 @@ public class Taxi {
     }
     public String displayStatus(){
         switch (taxiStatus){
-            case 0:
-                return "Unavailable";
-            case 1:
-                return "Available";
+            case STATUS_UNAVAILABLE:
+                return UNAVAILABLE;
+            case STATUS_AVAILABLE:
+                return AVAILABLE;
         }
         return "";
     }

@@ -36,6 +36,12 @@ public class TaxiApp {
         distanceService=DistanceService.getInstance();
     }
 
+    public TaxiApp(Client client, Order order, Taxi taxi) {
+        this.client = client;
+        this.order = order;
+        this.taxi = taxi;
+    }
+
     public ClientService getClientService() {
         return clientService;
     }
@@ -66,12 +72,6 @@ public class TaxiApp {
 
     public void setDistanceService(DistanceService distanceService) {
         this.distanceService = distanceService;
-    }
-
-    public TaxiApp(Client client, Order order, Taxi taxi) {
-        this.client = client;
-        this.order = order;
-        this.taxi = taxi;
     }
 
     public Client getClient() {
