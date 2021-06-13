@@ -4,7 +4,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Order {
-    public static final int PRICE = 10000;
+    public static final int PRICE_4_SEATS = 9000;
+    public static final int PRICE_7_SEATS = 11000;
+    public static final int PRICE_9_SEATS = 15000;
     public static final String WAITING = "Waiting";
     public static final int STATUS_WAITING = 0;
     public static final String CANCEL = "Cancel";
@@ -19,7 +21,7 @@ public class Order {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private Distance distance;
-    private int price= PRICE;
+    private int price;
     private int amount;
     private int orderStatus;
 
@@ -35,6 +37,9 @@ public class Order {
         this.startTime = startTime;
         this.endTime = endTime;
         this.distance = distance;
+        if(this.taxi.getTaxiSeatQuantity()==4) this.price=PRICE_4_SEATS;
+        else if(this.taxi.getTaxiSeatQuantity()==7) this.price=PRICE_7_SEATS;
+        else if(this.taxi.getTaxiSeatQuantity()==9) this.price=PRICE_9_SEATS;
         if(orderStatus==0 || orderStatus==1 || orderStatus==2) this.amount =0;
         else this.amount = distance.getLength()*this.price;
         this.orderStatus = 0;
@@ -47,6 +52,9 @@ public class Order {
         this.startTime = startTime;
         this.endTime = endTime;
         this.distance = distance;
+        if(this.taxi.getTaxiSeatQuantity()==4) this.price=PRICE_4_SEATS;
+        else if(this.taxi.getTaxiSeatQuantity()==7) this.price=PRICE_7_SEATS;
+        else if(this.taxi.getTaxiSeatQuantity()==9) this.price=PRICE_9_SEATS;
         if(orderStatus==0 || orderStatus==1 || orderStatus==2) this.amount =0;
         else this.amount = distance.getLength()*this.price;
         this.orderStatus = orderStatus;
@@ -111,6 +119,11 @@ public class Order {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+    public void setPrice(){
+        if(this.taxi.getTaxiSeatQuantity()==4) this.price=PRICE_4_SEATS;
+        else if(this.taxi.getTaxiSeatQuantity()==7) this.price=PRICE_7_SEATS;
+        else if(this.taxi.getTaxiSeatQuantity()==9) this.price=PRICE_9_SEATS;
     }
 
     public int getAmount() {

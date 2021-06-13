@@ -14,6 +14,12 @@ public class Tes {
 //        LocalDateTime time = LocalDateTime.parse(timeString, formatter);
         LocalDateTime time=LocalDateTime.parse(time2String,formatter);
         System.out.println(time);
+
+        LocalDate date=LocalDate.of(2021,3,20);
+        LocalDateTime time1=LocalDateTime.of(2021,3,20,15,20,3);
+        LocalDate date2= time1.toLocalDate();
+        System.out.println(date2.equals(date));
+
     }
 //
 

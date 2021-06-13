@@ -10,7 +10,10 @@ import services.ClientService;
 import services.DistanceService;
 import services.OrderService;
 import services.TaxiService;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -31,7 +34,6 @@ public class TaxiApp {
         orderService = OrderService.getInstance();
         taxiService=TaxiService.getInstance();
         distanceService=DistanceService.getInstance();
-
     }
 
     public ClientService getClientService() {
@@ -182,7 +184,7 @@ public class TaxiApp {
         calculateTotalAmount(historyOrder);
     }
 
-    private void calculateTotalAmount(List<Order> orderList) {
+    public void calculateTotalAmount(List<Order> orderList) {
         int totalAmount=0;
         for (Order order: orderList) {
             totalAmount+=order.getAmount();
@@ -190,14 +192,14 @@ public class TaxiApp {
         System.out.println("Client paid total amount: "+totalAmount);
     }
 
-    public void filterHistory(LocalDateTime time_1, LocalDateTime time_2){
+    public void filterHistory(LocalDate startDate, LocalDate endDate){
         List<Order> historyOrder = orderService.findByUsername(client.getClientUsername());
         List<Order> filterOrder=new ArrayList<>();
         for (Order order : historyOrder) {
-           if(order.getStartTime().compareTo(time_1)>0 && order.getStartTime().compareTo(time_2)<0) filterOrder.add(order);
+           if(order.getStartTime().toLocalDate().compareTo(startDate)>0 && order.getStartTime().toLocalDate().compareTo(endDate)<0) filterOrder.add(order);
         }
 
-        System.out.println("Client with username of " + client.getClientUsername() + " from "+time_1+" to "+time_2+" has the following orders: ");
+        System.out.println("Client with username of " + client.getClientUsername() + " from "+startDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))+" to "+endDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))+" has the following orders: ");
         for (Order order : filterOrder) {
             System.out.println(order);
         }

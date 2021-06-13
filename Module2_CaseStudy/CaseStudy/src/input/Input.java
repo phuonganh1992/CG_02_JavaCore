@@ -9,6 +9,7 @@ import services.ClientService;
 import services.DistanceService;
 import services.OrderService;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -120,9 +121,8 @@ public class Input {
         int journeyTime=DistanceService.getInstance().findJourneyTime(startLocation,endLocation);
         return new Distance(startLocation,endLocation,length,journeyTime);
     }
-    public static LocalDateTime inputTime(String dateString){
-        String timeString=dateString+" 00:00:00";
-        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        return LocalDateTime.parse(timeString,formatter);
+    public static LocalDate inputTime(String dateString){
+        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return LocalDate.parse(dateString,formatter);
     }
 }

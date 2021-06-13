@@ -1,10 +1,7 @@
 package services;
 
 import file.TaxiIO;
-import model.Client;
 import model.Taxi;
-
-import java.io.IOException;
 import java.util.List;
 import static file.Path.PATH_FILE_TAXI;
 
