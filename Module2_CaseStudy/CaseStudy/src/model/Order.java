@@ -1,14 +1,25 @@
 package model;
 
-import services.DistanceService;
-
-import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class Order {
-    public static final int PRICE = 10;
+    public enum OrderStatus{
+        WAITING(0),CANCEL(1),ACCEPTED(2),PAID(3);
+        int value;
+        OrderStatus(int value){
+            this.value=value;
+        }
+    }
+    public static final int PRICE = 10000;
+    public static final String WAITING = "Waiting";
+    public static final int STATUS_WAITING = 0;
+    public static final String CANCEL = "Cancel";
+    public static final int STATUS_CANCEL = 1;
+    public static final String ACCEPTED = "Accepted";
+    public static final int STATUS_ACCEPTED = 2;
+    public static final int STATUS_PAID = 3;
+    public static final String PAID = "Paid";
     private int orderId;
     private Client client;
     private Taxi taxi;
@@ -60,9 +71,6 @@ public class Order {
         return journeyTime;
     }
 
-    public void setJourneyTime() {
-        this.journeyTime = (int) Duration.between(startTime,endTime).getSeconds();
-    }
     public LocalDateTime getStartTime() {
         return startTime;
     }
@@ -147,14 +155,14 @@ public class Order {
     }
     public String displayStatus(){
         switch (orderStatus){
-            case 0:
-                return "Waiting";
-            case 1:
-                return "Cancel";
-            case 2:
-                return "Accepted";
-            case 3:
-                return "Paid";
+            case STATUS_WAITING:
+                return WAITING;
+            case STATUS_CANCEL:
+                return CANCEL;
+            case STATUS_ACCEPTED:
+                return ACCEPTED;
+            case STATUS_PAID:
+                return PAID;
         }
         return "";
     }
