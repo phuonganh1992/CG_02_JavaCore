@@ -11,6 +11,7 @@ import services.DistanceService;
 import services.OrderService;
 import services.TaxiService;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import static file.Path.PATH_FILE_ORDER;
@@ -146,7 +147,7 @@ public class TaxiApp {
         System.out.println("Currently, there are list of available taxi as below: ");
         List<Taxi> availableTaxis= this.taxiService.getAvailableTaxis();
         taxiService.display(availableTaxis);
-        System.out.println("Enter taxi ID that you want to choose: ");
+        System.out.print("Enter taxi ID that you want to choose: ");
         int taxiIndex = SCANNER.nextInt();
         Taxi currentTaxi = taxiService.findById(taxiIndex);
         return currentTaxi;
@@ -165,17 +166,42 @@ public class TaxiApp {
     }
 
     public void payment() {
-        System.out.println("Client paid: " + order.getTotalAmount());
         order.setOrderStatus(3);
         System.out.println(order);
+        System.out.println("Client paid: " + order.getAmount());
         OrderIO.writeToFile(PATH_FILE_ORDER,orderService.getOrders());
     }
 
     public void findHistory() {
         List<Order> historyOrder = orderService.findByUsername(client.getClientUsername());
+
         System.out.println("Client with username of " + client.getClientUsername() + " has history as below");
         for (Order order : historyOrder) {
             System.out.println(order);
         }
+        calculateTotalAmount(historyOrder);
+    }
+
+    private void calculateTotalAmount(List<Order> orderList) {
+        int totalAmount=0;
+        for (Order order: orderList) {
+            totalAmount+=order.getAmount();
+        }
+        System.out.println("Client paid total amount: "+totalAmount);
+    }
+
+    public void filterHistory(LocalDateTime time_1, LocalDateTime time_2){
+        List<Order> historyOrder = orderService.findByUsername(client.getClientUsername());
+        List<Order> filterOrder=new ArrayList<>();
+        for (Order order : historyOrder) {
+           if(order.getStartTime().compareTo(time_1)>0 && order.getStartTime().compareTo(time_2)<0) filterOrder.add(order);
+        }
+
+        System.out.println("Client with username of " + client.getClientUsername() + " from "+time_1+" to "+time_2+" has the following orders: ");
+        for (Order order : filterOrder) {
+            System.out.println(order);
+        }
+        calculateTotalAmount(filterOrder);
+
     }
 }

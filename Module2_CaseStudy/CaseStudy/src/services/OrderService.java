@@ -98,6 +98,5 @@ public class OrderService implements GeneralService<Order> {
         for (Order order:orders) {
             System.out.println(order);
         }
-
     }
 }

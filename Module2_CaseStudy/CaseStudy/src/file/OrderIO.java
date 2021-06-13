@@ -32,7 +32,7 @@ public class OrderIO {
                         order.getDistance().getJourneyEstimateTime()+","+
                         order.getDistance().getLength()+","+
                         order.getPrice()+","+
-                        order.getTotalAmount()+","+
+                        order.getAmount()+","+
                         order.getOrderStatus()+"\n"
                 );
             }
@@ -67,7 +67,7 @@ public class OrderIO {
                 LocalDateTime endTime=convertStringToDate(lineContent[6]);
 
                 int orderStatus=Integer.parseInt(lineContent[11]);
-                Order order=new Order(orderId,client,taxi,startTime,endTime,distance);
+                Order order=new Order(orderId,client,taxi,startTime,endTime,distance,orderStatus);
                 orders.add(order);
             }
         } catch (FileNotFoundException e) {

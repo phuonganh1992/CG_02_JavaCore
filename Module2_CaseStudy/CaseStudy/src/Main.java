@@ -1,4 +1,5 @@
 import controller.TaxiApp;
+import input.Input;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -65,6 +66,15 @@ public class Main {
                                     break;
                                 case 2:
                                     taxiApp.findHistory();
+                                    System.out.print("Do you want to filter? Y/N: ");
+                                    String answer=SCANNER.nextLine();
+                                    if(answer.equals("Y")) {
+                                        System.out.print("Enter start period - dd/MM/yyyy: ");
+                                        String startPeriod=SCANNER.nextLine();
+                                        System.out.print("Enter end period - dd/MM/yyyy: ");
+                                        String endPeriod=SCANNER.nextLine();
+                                        taxiApp.filterHistory(Input.inputTime(startPeriod),Input.inputTime(endPeriod));
+                                    }
                                     break;
                                 case 3:
                                     System.exit(0);

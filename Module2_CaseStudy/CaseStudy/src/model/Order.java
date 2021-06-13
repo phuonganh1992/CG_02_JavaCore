@@ -20,7 +20,7 @@ public class Order {
     private LocalDateTime endTime;
     private Distance distance;
     private int price= PRICE;
-    private int totalAmount;
+    private int amount;
     private int orderStatus;
 
 
@@ -35,10 +35,23 @@ public class Order {
         this.startTime = startTime;
         this.endTime = endTime;
         this.distance = distance;
-        if(orderStatus==0 || orderStatus==1 || orderStatus==2) this.totalAmount=0;
-        else this.totalAmount = distance.getLength()*this.price;
+        if(orderStatus==0 || orderStatus==1 || orderStatus==2) this.amount =0;
+        else this.amount = distance.getLength()*this.price;
         this.orderStatus = 0;
     }
+
+    public Order(int orderId, Client client, Taxi taxi, LocalDateTime startTime, LocalDateTime endTime, Distance distance, int orderStatus) {
+        this.orderId = orderId;
+        this.client = client;
+        this.taxi = taxi;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.distance = distance;
+        if(orderStatus==0 || orderStatus==1 || orderStatus==2) this.amount =0;
+        else this.amount = distance.getLength()*this.price;
+        this.orderStatus = orderStatus;
+    }
+
     public Distance getDistance() {
         return distance;
     }
@@ -56,8 +69,8 @@ public class Order {
     }
 
 
-    public void setTotalAmount(int totalAmount) {
-        this.totalAmount = totalAmount;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public LocalDateTime getStartTime() {
@@ -100,13 +113,13 @@ public class Order {
         this.price = price;
     }
 
-    public int getTotalAmount() {
-        return totalAmount;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setTotalAmount() {
-        if(orderStatus==0 || orderStatus==1 || orderStatus==2) this.totalAmount=0;
-        else this.totalAmount = distance.getLength()*this.price;
+    public void setAmount() {
+        if(orderStatus==0 || orderStatus==1 || orderStatus==2) this.amount =0;
+        else this.amount = distance.getLength()*this.price;
     }
 
     public int getOrderStatus() {
@@ -115,7 +128,7 @@ public class Order {
 
     public void setOrderStatus(int orderStatus) {
         this.orderStatus = orderStatus;
-        setTotalAmount();
+        setAmount();
     }
     public String displayTime(LocalDateTime time){
         return time.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
@@ -147,7 +160,7 @@ public class Order {
                 ", journeyTime='" + distance.getJourneyEstimateTime() + '\'' +
                 ", length=" + distance.getLength() +
                 ", price=" + price +
-                ", totalAmount=" + totalAmount +
+                ", totalAmount=" + amount +
                 ", orderStatus='" + displayStatus() + '\'' +
                 '}';
     }
