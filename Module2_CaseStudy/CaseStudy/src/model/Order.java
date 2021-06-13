@@ -4,13 +4,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Order {
-    public enum OrderStatus{
-        WAITING(0),CANCEL(1),ACCEPTED(2),PAID(3);
-        int value;
-        OrderStatus(int value){
-            this.value=value;
-        }
-    }
     public static final int PRICE = 10000;
     public static final String WAITING = "Waiting";
     public static final int STATUS_WAITING = 0;
