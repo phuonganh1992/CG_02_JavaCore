@@ -83,7 +83,7 @@ public class AdminApp {
         Collections.sort(findAllTaxi(), new Comparator<Taxi>() {
             @Override
             public int compare(Taxi o1, Taxi o2) {
-                return countTaxiInOrder(o1)-countTaxiInOrder(o2);
+                return countTaxiInOrder(o2)-countTaxiInOrder(o1);
             }
         });
         displayTaxi();

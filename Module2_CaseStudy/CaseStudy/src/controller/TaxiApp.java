@@ -17,6 +17,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 import static file.Path.PATH_FILE_ORDER;
 
 public class TaxiApp {
@@ -32,8 +33,16 @@ public class TaxiApp {
     public TaxiApp() {
         clientService = ClientService.getInstance();
         orderService = OrderService.getInstance();
-        taxiService=TaxiService.getInstance();
-        distanceService=DistanceService.getInstance();
+        taxiService = TaxiService.getInstance();
+        distanceService = DistanceService.getInstance();
+    }
+
+    public TaxiApp(Client client) {
+        this.client = client;
+        clientService = ClientService.getInstance();
+        orderService = OrderService.getInstance();
+        taxiService = TaxiService.getInstance();
+        distanceService = DistanceService.getInstance();
     }
 
     public TaxiApp(Client client, Order order, Taxi taxi) {
@@ -103,41 +112,42 @@ public class TaxiApp {
         clientService.create(client);
     }
 
-    public void login() {
-        String username;
-        Client clientLogin;
-        do {
-            System.out.print("Enter username: ");
-            username=SCANNER.nextLine();
-            clientLogin = clientService.findByUsername(username);
-            if(clientLogin==null) System.out.println("Wrong username!");
-        }while (clientLogin==null);
-
-        String password;
-        do {
-            System.out.print("Enter password: ");
-            password = SCANNER.nextLine();
-            if(!clientLogin.getClientPassword().equals(password)) System.out.println("Wrong password!");
-            else {
-                this.client=clientLogin;
-                System.out.println("Login successfully!");
-            }
-        }while (!clientLogin.getClientPassword().equals(password));
-    }
+//    public void login() {
+//        String username;
+//        Client clientLogin;
+//        do {
+//            System.out.print("Enter username: ");
+//            username = SCANNER.nextLine();
+//            clientLogin = clientService.findByUsername(username);
+//            if (clientLogin == null) System.out.println("Wrong username!");
+//        } while (clientLogin == null);
+//
+//        String password;
+//        do {
+//            System.out.print("Enter password: ");
+//            password = SCANNER.nextLine();
+//            if (!clientLogin.getClientPassword().equals(password)) System.out.println("Wrong password!");
+//            else {
+//                this.client = clientLogin;
+//                System.out.println("Client login successfully!");
+//            }
+////            if(username.equals("ProAdmin") && password.equals("ProAdmin123")) Main.
+//        } while (!clientLogin.getClientPassword().equals(password));
+//    }
 
     public void makeOrder() {
-        Distance distance=Input.inputDistance();
+        Distance distance = Input.inputDistance();
         LocalDateTime startTime = LocalDateTime.now();
-        LocalDateTime endTime=startTime.plusSeconds(distance.getJourneyEstimateTime());
+        LocalDateTime endTime = startTime.plusSeconds(distance.getJourneyEstimateTime());
 
-        System.out.println("Client \'"+client.getClientUsername()+ "\' want to go from \'"+distance.getStart()+"\' to \'"+distance.getEnd()+ "\' with length \'"+distance.getLength() +"\' km, will take time of \'"+distance.getJourneyEstimateTime() +"\' minutes");
+        System.out.println("Client \'" + client.getClientUsername() + "\' want to go from \'" + distance.getStart() + "\' to \'" + distance.getEnd() + "\' with length \'" + distance.getLength() + "\' km, will take time of \'" + distance.getJourneyEstimateTime() + "\' minutes");
 
         Taxi currentTaxi = chooseTaxi();
         System.out.println("Taxi chosen has information: ");
         System.out.println(currentTaxi);
 
-        int orderId= Input.inputOrderId();
-        order = new Order(orderId, client, currentTaxi, startTime, endTime,distance);
+        int orderId = Input.inputOrderId();
+        order = new Order(orderId, client, currentTaxi, startTime, endTime, distance);
         this.orderService.create(order);
         System.out.println("Order is creating");
         System.out.println(this.order);
@@ -147,23 +157,25 @@ public class TaxiApp {
         System.out.println("Wait a minutes, we are find taxis for you");
         System.out.println("...");
         System.out.println("Currently, there are list of available taxi as below: ");
-        List<Taxi> availableTaxis= this.taxiService.getAvailableTaxis();
+        List<Taxi> availableTaxis = this.taxiService.getAvailableTaxis();
         taxiService.display(availableTaxis);
         System.out.print("Enter taxi ID that you want to choose: ");
         int taxiIndex = SCANNER.nextInt();
         Taxi currentTaxi = taxiService.findById(taxiIndex);
         return currentTaxi;
     }
-    public void acceptTaxi(){
+
+    public void acceptTaxi() {
         order.setOrderStatus(2);
         System.out.println("Order is accepted");
-        OrderIO.writeToFile(PATH_FILE_ORDER,orderService.getOrders());
+        OrderIO.writeToFile(PATH_FILE_ORDER, orderService.getOrders());
         System.out.println(order);
     }
-    public void rejectTaxi(){
+
+    public void rejectTaxi() {
         order.setOrderStatus(1);
         System.out.println("Order is cancelled");
-        OrderIO.writeToFile(PATH_FILE_ORDER,orderService.getOrders());
+        OrderIO.writeToFile(PATH_FILE_ORDER, orderService.getOrders());
         System.out.println(order);
     }
 
@@ -171,7 +183,7 @@ public class TaxiApp {
         order.setOrderStatus(3);
         System.out.println(order);
         System.out.println("Client paid: " + order.getAmount());
-        OrderIO.writeToFile(PATH_FILE_ORDER,orderService.getOrders());
+        OrderIO.writeToFile(PATH_FILE_ORDER, orderService.getOrders());
     }
 
     public void findHistory() {
@@ -185,21 +197,22 @@ public class TaxiApp {
     }
 
     public void calculateTotalAmount(List<Order> orderList) {
-        int totalAmount=0;
-        for (Order order: orderList) {
-            totalAmount+=order.getAmount();
+        int totalAmount = 0;
+        for (Order order : orderList) {
+            totalAmount += order.getAmount();
         }
-        System.out.println("Client paid total amount: "+totalAmount);
+        System.out.println("Client paid total amount: " + totalAmount);
     }
 
-    public void filterHistory(LocalDate startDate, LocalDate endDate){
+    public void filterHistory(LocalDate startDate, LocalDate endDate) {
         List<Order> historyOrder = orderService.findByUsername(client.getClientUsername());
-        List<Order> filterOrder=new ArrayList<>();
+        List<Order> filterOrder = new ArrayList<>();
         for (Order order : historyOrder) {
-           if(order.getStartTime().toLocalDate().compareTo(startDate)>0 && order.getStartTime().toLocalDate().compareTo(endDate)<0) filterOrder.add(order);
+            if (order.getStartTime().toLocalDate().compareTo(startDate) > 0 && order.getStartTime().toLocalDate().compareTo(endDate) < 0)
+                filterOrder.add(order);
         }
 
-        System.out.println("Client with username of " + client.getClientUsername() + " from "+startDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))+" to "+endDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))+" has the following orders: ");
+        System.out.println("Client with username of " + client.getClientUsername() + " from " + startDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " to " + endDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " has the following orders: ");
         for (Order order : filterOrder) {
             System.out.println(order);
         }

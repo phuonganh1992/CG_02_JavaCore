@@ -12,3 +12,4 @@ Order ID,Client Username,Taxi ID,Start Location,End Location,Start Time,End Time
 3010,anhlai,2010,Ha Dong,Thanh Xuan,13/06/2021 13:38:30,13/06/2021 13:38:36,6,3,15000,45000,3
 3011,anhlai,2006,Tay Ho,Hoan Kiem,13/06/2021 19:31:38,13/06/2021 19:31:42,4,2,11000,22000,3
 3012,huyhoang,2010,Dong Da,Ha Dong,13/06/2021 19:34:40,13/06/2021 19:34:54,14,7,15000,105000,3
+3013,anhlai,2006,Thanh Xuan,Dong Da,14/06/2021 10:03:11,14/06/2021 10:03:19,8,4,11000,44000,3

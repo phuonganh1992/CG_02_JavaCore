@@ -1,4 +1,5 @@
 import controller.AdminApp;
+import controller.App;
 import controller.TaxiApp;
 import input.Input;
 import model.Taxi;
@@ -10,8 +11,10 @@ public class Main {
     public static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
+        App app = new App();
         TaxiApp taxiApp = new TaxiApp();
         AdminApp adminApp=new AdminApp();
+
         int choice_1;
         boolean check_1 = false;
         try {
@@ -21,70 +24,75 @@ public class Main {
                 choice_1 = SCANNER.nextInt();
                 switch (choice_1) {
                     case 1:
-                        taxiApp.login();
-                        int choice_2;
-                        do {
-                            menu_2();
-                            System.out.print("Enter your choice 2: ");
-                            choice_2 = SCANNER.nextInt();
-                            SCANNER.nextLine();
-                            switch (choice_2) {
-                                case 1:
-                                    taxiApp.makeOrder();
-                                    int choice_3;
-                                    boolean check_3=false;
-                                    do {
-                                        menu_3();
-                                        System.out.print("Enter you choice 3: ");
-                                        choice_3 = SCANNER.nextInt();
-                                        switch (choice_3) {
-                                            case 1:
-                                                taxiApp.acceptTaxi();
-                                                System.out.println("Meet driver, Taxi going ---------");
-                                                int choice_4;
-                                                boolean check_4=false;
-                                                do {
-                                                    menu_4();
-                                                    System.out.print("Enter your choice 4: ");
-                                                    choice_4 = SCANNER.nextInt();
-                                                    switch (choice_4) {
-                                                        case 1:
-                                                            System.out.println("------------------going----------------------");
-                                                            System.out.println("------------------going----------------------");
-                                                            break;
-                                                        case 2:
-                                                            taxiApp.payment();
-                                                            check_4 = true;
-                                                            break;
-                                                    }
-                                                } while (!check_4);
-                                                check_3=true;
-                                                break;
-                                            case 2:
-                                                taxiApp.rejectTaxi();
-                                                check_3=true;
-                                                break;
+                        if (app.login() == 1) {
+                            int choice_2;
+                            taxiApp.setClient(app.getClient());
+                            do {
+                                menu_2();
+                                System.out.print("Enter your choice 2: ");
+                                choice_2 = SCANNER.nextInt();
+                                SCANNER.nextLine();
+                                switch (choice_2) {
+                                    case 1:
+                                        taxiApp.makeOrder();
+                                        int choice_3;
+                                        boolean check_3=false;
+                                        do {
+                                            menu_3();
+                                            System.out.print("Enter you choice 3: ");
+                                            choice_3 = SCANNER.nextInt();
+                                            switch (choice_3) {
+                                                case 1:
+                                                    taxiApp.acceptTaxi();
+                                                    System.out.println("Meet driver, Taxi going ---------");
+                                                    int choice_4;
+                                                    boolean check_4=false;
+                                                    do {
+                                                        menu_4();
+                                                        System.out.print("Enter your choice 4: ");
+                                                        choice_4 = SCANNER.nextInt();
+                                                        switch (choice_4) {
+                                                            case 1:
+                                                                System.out.println("------------------going----------------------");
+                                                                System.out.println("------------------going----------------------");
+                                                                break;
+                                                            case 2:
+                                                                taxiApp.payment();
+                                                                check_4 = true;
+                                                                break;
+                                                        }
+                                                    } while (!check_4);
+                                                    check_3=true;
+                                                    break;
+                                                case 2:
+                                                    taxiApp.rejectTaxi();
+                                                    check_3=true;
+                                                    break;
+                                            }
+                                        } while (!check_3);
+                                        break;
+                                    case 2:
+                                        taxiApp.findHistory();
+                                        System.out.print("Do you want to filter? Y/N: ");
+                                        String answer=SCANNER.nextLine();
+                                        if(answer.equals("Y")) {
+                                            System.out.print("Enter start period - dd/MM/yyyy: ");
+                                            String startPeriod=SCANNER.nextLine();
+                                            System.out.print("Enter end period - dd/MM/yyyy: ");
+                                            String endPeriod=SCANNER.nextLine();
+                                            taxiApp.filterHistory(Input.inputDate(startPeriod),Input.inputDate(endPeriod));
                                         }
-                                    } while (!check_3);
-                                    break;
-                                case 2:
-                                    taxiApp.findHistory();
-                                    System.out.print("Do you want to filter? Y/N: ");
-                                    String answer=SCANNER.nextLine();
-                                    if(answer.equals("Y")) {
-                                        System.out.print("Enter start period - dd/MM/yyyy: ");
-                                        String startPeriod=SCANNER.nextLine();
-                                        System.out.print("Enter end period - dd/MM/yyyy: ");
-                                        String endPeriod=SCANNER.nextLine();
-                                        taxiApp.filterHistory(Input.inputDate(startPeriod),Input.inputDate(endPeriod));
-                                    }
-                                    break;
-                                case 3:
-                                    System.exit(0);
-                                    break;
-                            }
-                        } while (choice_2<=3 && choice_2>=1);
-                        check_1=true;
+                                        break;
+                                    case 3:
+                                        System.exit(0);
+                                        break;
+                                }
+                            } while (choice_2<=3 && choice_2>=1);
+                            check_1=true;
+                        } else {
+                            System.out.println("Admin App");
+                            adminFunction(adminApp);
+                        }
                         break;
                     case 2:
                         taxiApp.register();
@@ -166,7 +174,7 @@ public class Main {
                     int taxiIDFind=Input.inputTaxiID();
                     Taxi taxiFind=adminApp.findById(taxiIDFind);
                     if(taxiFind==null) System.out.println("Found no taxi with id "+taxiIDFind);
-                    else System.out.println(taxiIDFind);
+                    else System.out.println(taxiFind);
                     break;
                 case 6:
                     adminApp.sortTaxi();
