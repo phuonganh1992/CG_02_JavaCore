@@ -183,7 +183,8 @@ public class TaxiApp {
         List<Order> historyOrder = orderService.findByUsername(client.getClientUsername());
         List<Order> filterOrder = new ArrayList<>();
         for (Order order : historyOrder) {
-            if (order.getStartTime().toLocalDate().compareTo(startDate) >= 0 && order.getStartTime().toLocalDate().compareTo(endDate) <= 0)
+            if (order.getStartTime().toLocalDate().compareTo(startDate) >= 0 && order.getStartTime().toLocalDate().compareTo(endDate)
+                    <= 0)
                 filterOrder.add(order);
         }
         System.out.println("Client with username of " + client.getClientUsername() + " from " + startDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " to " + endDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " has the following orders: ");
