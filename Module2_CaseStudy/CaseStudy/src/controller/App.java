@@ -96,13 +96,16 @@ public class App {
         do {
             System.out.print("Enter password: ");
             password = SCANNER.nextLine();
-            if(!clientLogin.getClientPassword().equals(password)) System.out.println("Wrong password!");
+            if(!clientLogin.getClientPassword().equals(password)) {
+                System.out.println("Wrong password!");
+            }
+
             if(username.equals("ProAdmin") && password.equals("ProAdmin123")) {
                 return 2;
             }
             else {
                 this.client=clientLogin;
-                System.out.println("Client login successfully!");
+//                System.out.println("Client login successfully!");
                 return 1;
             }
         }while (!clientLogin.getClientPassword().equals(password));

@@ -147,7 +147,6 @@ public class Input {
         String licensePlate;
         boolean existLicensePlate;
         boolean invalidLicense;
-
         do{
             System.out.print("Enter taxi license plate: ");
             licensePlate=SCANNER.nextLine();
