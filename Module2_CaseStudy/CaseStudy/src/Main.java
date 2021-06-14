@@ -22,6 +22,7 @@ public class Main {
                 menu_1();
                 System.out.print("Enter your choice 1: ");
                 choice_1 = SCANNER.nextInt();
+                SCANNER.nextLine();
                 switch (choice_1) {
                     case 1:
                         if (app.login() == 1) {
@@ -148,39 +149,48 @@ public class Main {
     }
     public static void adminFunction(AdminApp adminApp){
         int adminChoice;
+        boolean check_admin=false;
         do {
             menu_admin();
             System.out.print("Admin_Enter your choice: ");
             adminChoice = SCANNER.nextInt();
+            SCANNER.nextLine();
             switch (adminChoice) {
                 case 1:
                     Taxi taxi= Input.inputTaxi();
                     adminApp.createTaxi(taxi);
+                    check_admin=true;
                     break;
                 case 2:
                     adminApp.displayTaxi();
+                    check_admin=true;
                     break;
                 case 3:
-                    int taxiIdUpdate=Input.inputTaxiID();
+                    int taxiIdUpdate=Input.inputTaxiIdToFind();
                     Taxi taxiUpdate=Input.inputTaxi();
                     adminApp.update(taxiIdUpdate,taxiUpdate);
+                    check_admin=true;
                     break;
                 case 4:
-                    int taxiIDDelete=Input.inputTaxiID();
+                    int taxiIDDelete=Input.inputTaxiIdToFind();
                     adminApp.deleteTaxi(taxiIDDelete);
+                    check_admin=true;
                     break;
                 case 5:
-                    int taxiIDFind=Input.inputTaxiID();
+                    int taxiIDFind=Input.inputTaxiIdToFind();
                     Taxi taxiFind=adminApp.findById(taxiIDFind);
                     if(taxiFind==null) System.out.println("Found no taxi with id "+taxiIDFind);
                     else System.out.println(taxiFind);
+                    check_admin=true;
                     break;
                 case 6:
                     adminApp.sortTaxi();
                     System.out.println("Sorted successfully!");
+                    check_admin=true;
                     break;
                 case 7:
                     adminApp.displayOrder();
+                    check_admin=true;
                     break;
                 case 8:
                     System.out.print("Enter start date: ");
@@ -188,12 +198,13 @@ public class Main {
                     System.out.print("Enter end date: ");
                     String endDateString=SCANNER.nextLine();
                     adminApp.filterByDate(Input.inputDate(startDateString),Input.inputDate(endDateString));
+                    check_admin=true;
                     break;
                 case 9:
                     System.exit(0);
                     break;
             }
-        } while (adminChoice >= 1 && adminChoice <= 9);
+        } while (check_admin);
 
     }
 

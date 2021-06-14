@@ -7,7 +7,6 @@ import services.DistanceService;
 import services.OrderService;
 import services.TaxiService;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -131,7 +130,7 @@ public class Input {
     }
     public static Taxi inputTaxi(){
         System.out.println("Enter taxi information");
-        int taxiID = inputTaxiID();
+        int taxiID = inputTaxiIToCreate();
         SCANNER.nextLine();
         String licensePlate = inputLicensePlate();
         System.out.print("Enter taxi color: ");
@@ -158,7 +157,7 @@ public class Input {
         return SCANNER.nextLine();
     }
 
-    public static int inputTaxiID() {
+    public static int inputTaxiIToCreate() {
         List<Taxi> taxiList=TaxiService.getInstance().getTaxis();
         int maxTaxiId=INITAL_TAXI_ID;
         if(taxiList.isEmpty()){
@@ -170,4 +169,9 @@ public class Input {
 
         return maxTaxiId+1;
     }
+    public static int inputTaxiIdToFind() {
+        System.out.print("Enter Taxi Id: ");
+        return SCANNER.nextInt();
+    }
+
 }
