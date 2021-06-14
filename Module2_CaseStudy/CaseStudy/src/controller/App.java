@@ -100,13 +100,13 @@ public class App {
                 System.out.println("Wrong password!");
             }
 
-            boolean isAdminAcoount = username.equals("ProAdmin") && password.equals("ProAdmin123");
-            if(isAdminAcoount) {
+            boolean isAdminAcount = username.equals("ProAdmin") && password.equals("ProAdmin123");
+            if(isAdminAcount) {
                 return 2;
             }
-            else {
+            if(!isAdminAcount && clientLogin.getClientPassword().equals(password)){
                 this.client=clientLogin;
-//                System.out.println("Client login successfully!");
+                System.out.println("Client login successfully!");
                 return 1;
             }
         }while (!clientLogin.getClientPassword().equals(password));
