@@ -162,19 +162,18 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "orderID=" + orderId +
-                ", client=" + client +
-                ", taxi=" + taxi +
-                ", startLocation='" + distance.getStart() + '\'' +
-                ", endLocation='" + distance.getEnd() + '\'' +
-                ", startTime='" + displayTime(startTime) + '\'' +
-                ", endTime='" + displayTime(endTime) + '\'' +
-                ", journeyTime='" + distance.getJourneyEstimateTime() + '\'' +
-                ", length=" + distance.getLength() +
-                ", price=" + price +
-                ", totalAmount=" + amount +
-                ", orderStatus='" + displayStatus() + '\'' +
+        return "Order ID: " + orderId +
+                ", Client:  " + client.getClientName() +
+                ", [" + taxi +
+                "], Start Location: '" + distance.getStart() + '\'' +
+                "==> '" + distance.getEnd() + '\'' +
+                ", Start Time: '" + displayTime(startTime) + '\'' +
+                "==> '" + displayTime(endTime) + '\'' +
+                ", Journey Time: '" + distance.getJourneyEstimateTime() + '\'' +
+                ", Length: " + distance.getLength() +
+                ", Price: " + price +
+                ", Total Amount: " + amount +
+                ", Order Status: '" + displayStatus() + '\'' +
                 '}';
     }
 }

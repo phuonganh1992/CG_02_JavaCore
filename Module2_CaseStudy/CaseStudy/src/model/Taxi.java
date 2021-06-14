@@ -77,8 +77,9 @@ public class Taxi {
     public void setStatus(int status) {
         this.taxiStatus = status;
     }
-    public String displayStatus(){
-        switch (taxiStatus){
+
+    public String displayStatus() {
+        switch (taxiStatus) {
             case STATUS_UNAVAILABLE:
                 return UNAVAILABLE;
             case STATUS_AVAILABLE:
@@ -90,12 +91,10 @@ public class Taxi {
 
     @Override
     public String toString() {
-        return "Taxi{" +
-                "taxiID='" + taxiID + '\'' +
-                ", taxiLicensePlate='" + taxiLicensePlate + '\'' +
-                ", taxiColor='" + taxiColor + '\'' +
-                ", seatQuantity=" + taxiSeatQuantity +
-                ", taxiStatus=" + displayStatus() +
-                '}';
+        return "Taxi Id: " + taxiID  +
+                ", License Plate: " + taxiLicensePlate +
+                ", Color: " + taxiColor +
+                ", Seat Quantity: " + taxiSeatQuantity +
+                ", Status: " + displayStatus();
     }
 }
