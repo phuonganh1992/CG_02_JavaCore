@@ -100,7 +100,8 @@ public class App {
                 System.out.println("Wrong password!");
             }
 
-            if(username.equals("ProAdmin") && password.equals("ProAdmin123")) {
+            boolean isAdminAcoount = username.equals("ProAdmin") && password.equals("ProAdmin123");
+            if(isAdminAcoount) {
                 return 2;
             }
             else {
