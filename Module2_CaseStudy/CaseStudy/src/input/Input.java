@@ -130,8 +130,7 @@ public class Input {
     }
     public static Taxi inputTaxi(){
         System.out.println("Enter taxi information");
-        int taxiID = inputTaxiIToCreate();
-        SCANNER.nextLine();
+//        SCANNER.nextLine();
         String licensePlate = inputLicensePlate();
         System.out.print("Enter taxi color: ");
         String taxiColor=SCANNER.nextLine();
@@ -139,6 +138,8 @@ public class Input {
         int taxiSeatQuantity=SCANNER.nextInt();
         System.out.print("Enter taxi status: ");
         int taxiStatus=SCANNER.nextInt();
+
+        int taxiID = inputTaxiIdToCreate();
         return new Taxi(taxiID,licensePlate,taxiColor,taxiSeatQuantity,taxiStatus) ;
     }
 
@@ -154,10 +155,10 @@ public class Input {
             if (invalidLicense) System.out.println("Wrong format of license! ");
             else if(existLicensePlate) System.out.println("License already existed, pls re-enter! ");
         } while (existLicensePlate ||invalidLicense );
-        return SCANNER.nextLine();
+        return licensePlate;
     }
 
-    public static int inputTaxiIToCreate() {
+    public static int inputTaxiIdToCreate() {
         List<Taxi> taxiList=TaxiService.getInstance().getTaxis();
         int maxTaxiId=INITAL_TAXI_ID;
         if(taxiList.isEmpty()){

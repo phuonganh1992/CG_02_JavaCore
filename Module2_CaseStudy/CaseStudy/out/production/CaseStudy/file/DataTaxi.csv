@@ -13,3 +13,7 @@ Taxi ID,Taxi License Plate,Taxi Color,Taxi Seat Quantity,Taxi Status
 2011,30E-555.60,Red,4,0
 2012,30E-555.61,White,7,0
 2013,30E-555.62,Black,4,1
+2014,29E-123.45,red,4,1
+2015,18E-123.45,red,4,1
+2016,17E-123.45,white,7,1
+2017,17E-456.78,red,7,1
