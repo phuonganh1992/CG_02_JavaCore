@@ -19,6 +19,8 @@ public class Input {
     public static final Scanner SCANNER = new Scanner(System.in);
     public static Client inputClient(){
         System.out.println("Enter client information");
+        String clientUsername= inputClientUsername();
+        String clientPassword = inputClientPassword();
         int clientId = inputClientId();
         SCANNER.nextLine();
         System.out.print("Enter client name: ");
@@ -26,9 +28,6 @@ public class Input {
         String clientPhoneNumber= inputPhoneNumber();
         System.out.print("Enter client address: ");
         String clientAddress=SCANNER.nextLine();
-        String clientUsername= inputClientUsername();
-        String clientPassword = inputClientPassword();
-
         return new Client(clientId,clientName,clientPhoneNumber,clientAddress,clientUsername,clientPassword);
     }
 
