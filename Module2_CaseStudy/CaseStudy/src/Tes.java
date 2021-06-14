@@ -1,4 +1,5 @@
 import controller.AdminApp;
+import input.Input;
 import javafx.util.converter.LocalDateTimeStringConverter;
 
 import java.time.LocalDate;
@@ -11,6 +12,8 @@ public class Tes {
         int x= adminApp.countTaxiInOrder(adminApp.findById(2010));
         System.out.println(x);
         adminApp.sortTaxi();
+        System.out.println(Input.inputTaxiID());
+        ;
     }
 //
 

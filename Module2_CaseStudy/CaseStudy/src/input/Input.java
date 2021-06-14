@@ -5,6 +5,7 @@ import model.*;
 import services.ClientService;
 import services.DistanceService;
 import services.OrderService;
+import services.TaxiService;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.time.LocalDate;
@@ -15,6 +16,9 @@ import static file.Path.PATH_FILE_LOCATION;
 
 public class Input {
     public static final Scanner SCANNER = new Scanner(System.in);
+    public static final int INITAL_TAXI_ID = 2000;
+    public static final int INITAL_ORDER_ID = 3000;
+
     public static Client inputClient(){
         System.out.println("Enter client information");
         String clientUsername= inputClientUsername();
@@ -82,12 +86,16 @@ public class Input {
 
     public static int inputOrderId(){
         List<Order> orderList=OrderService.getInstance().getOrders();
-        if(orderList.size()==0){
-            return 3000;
+        int maxOrderID=INITAL_ORDER_ID;
+        if(orderList.isEmpty()){
+            return maxOrderID;
         }
-        int index=orderList.size()-1;
-        int lastOrderId=orderList.get(index).getOrderId();
-        return lastOrderId+1;
+        for (Order order:orderList) {
+            if(order.getOrderId()>maxOrderID) maxOrderID=order.getOrderId();
+        }
+
+        return maxOrderID+1;
+
     }
 
     public static String inputStartLocation(){
@@ -136,12 +144,31 @@ public class Input {
     }
 
     public static String inputLicensePlate() {
-        System.out.print("Enter taxi license plate: ");
+        String licensePlate;
+        boolean existLicensePlate;
+        boolean invalidLicense;
+
+        do{
+            System.out.print("Enter taxi license plate: ");
+            licensePlate=SCANNER.nextLine();
+            existLicensePlate= TaxiService.getInstance().findByLicensePlate(licensePlate)!=null;
+            invalidLicense=!Validation.isValid(licensePlate, Validation.LICENSE_REGEX);
+            if (invalidLicense) System.out.println("Wrong format of license! ");
+            else if(existLicensePlate) System.out.println("License already existed, pls re-enter! ");
+        } while (existLicensePlate ||invalidLicense );
         return SCANNER.nextLine();
     }
 
     public static int inputTaxiID() {
-        System.out.print("Enter taxi ID: ");
-        return SCANNER.nextInt();
+        List<Taxi> taxiList=TaxiService.getInstance().getTaxis();
+        int maxTaxiId=INITAL_TAXI_ID;
+        if(taxiList.isEmpty()){
+            return maxTaxiId;
+        }
+        for (Taxi taxi:taxiList) {
+            if(taxi.getTaxiID()>maxTaxiId) maxTaxiId=taxi.getTaxiID();
+        }
+
+        return maxTaxiId+1;
     }
 }

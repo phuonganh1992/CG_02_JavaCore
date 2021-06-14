@@ -112,29 +112,6 @@ public class TaxiApp {
         clientService.create(client);
     }
 
-//    public void login() {
-//        String username;
-//        Client clientLogin;
-//        do {
-//            System.out.print("Enter username: ");
-//            username = SCANNER.nextLine();
-//            clientLogin = clientService.findByUsername(username);
-//            if (clientLogin == null) System.out.println("Wrong username!");
-//        } while (clientLogin == null);
-//
-//        String password;
-//        do {
-//            System.out.print("Enter password: ");
-//            password = SCANNER.nextLine();
-//            if (!clientLogin.getClientPassword().equals(password)) System.out.println("Wrong password!");
-//            else {
-//                this.client = clientLogin;
-//                System.out.println("Client login successfully!");
-//            }
-////            if(username.equals("ProAdmin") && password.equals("ProAdmin123")) Main.
-//        } while (!clientLogin.getClientPassword().equals(password));
-//    }
-
     public void makeOrder() {
         Distance distance = Input.inputDistance();
         LocalDateTime startTime = LocalDateTime.now();
@@ -185,7 +162,13 @@ public class TaxiApp {
         System.out.println("Client paid: " + order.getAmount());
         OrderIO.writeToFile(PATH_FILE_ORDER, orderService.getOrders());
     }
-
+    public void calculateTotalAmount(List<Order> orderList) {
+        int totalAmount = 0;
+        for (Order order : orderList) {
+            totalAmount += order.getAmount();
+        }
+        System.out.println("Client paid total amount: " + totalAmount);
+    }
     public void findHistory() {
         List<Order> historyOrder = orderService.findByUsername(client.getClientUsername());
 
@@ -196,27 +179,17 @@ public class TaxiApp {
         calculateTotalAmount(historyOrder);
     }
 
-    public void calculateTotalAmount(List<Order> orderList) {
-        int totalAmount = 0;
-        for (Order order : orderList) {
-            totalAmount += order.getAmount();
-        }
-        System.out.println("Client paid total amount: " + totalAmount);
-    }
-
     public void filterHistory(LocalDate startDate, LocalDate endDate) {
         List<Order> historyOrder = orderService.findByUsername(client.getClientUsername());
         List<Order> filterOrder = new ArrayList<>();
         for (Order order : historyOrder) {
-            if (order.getStartTime().toLocalDate().compareTo(startDate) > 0 && order.getStartTime().toLocalDate().compareTo(endDate) < 0)
+            if (order.getStartTime().toLocalDate().compareTo(startDate) >= 0 && order.getStartTime().toLocalDate().compareTo(endDate) <= 0)
                 filterOrder.add(order);
         }
-
         System.out.println("Client with username of " + client.getClientUsername() + " from " + startDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " to " + endDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " has the following orders: ");
         for (Order order : filterOrder) {
             System.out.println(order);
         }
         calculateTotalAmount(filterOrder);
-
     }
 }

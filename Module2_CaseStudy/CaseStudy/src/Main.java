@@ -54,7 +54,6 @@ public class Main {
                                                         switch (choice_4) {
                                                             case 1:
                                                                 System.out.println("------------------going----------------------");
-                                                                System.out.println("------------------going----------------------");
                                                                 break;
                                                             case 2:
                                                                 taxiApp.payment();

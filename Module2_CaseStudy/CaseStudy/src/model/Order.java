@@ -163,17 +163,13 @@ public class Order {
     @Override
     public String toString() {
         return "Order ID: " + orderId +
-                ", Client:  " + client.getClientName() +
+                ", Client:  " + client.getClientUsername() +
                 ", [" + taxi +
-                "], Start Location: '" + distance.getStart() + '\'' +
-                "==> '" + distance.getEnd() + '\'' +
-                ", Start Time: '" + displayTime(startTime) + '\'' +
+                "], ["+distance+
+                "], Start Time: '" + displayTime(startTime) + '\'' +
                 "==> '" + displayTime(endTime) + '\'' +
-                ", Journey Time: '" + distance.getJourneyEstimateTime() + '\'' +
-                ", Length: " + distance.getLength() +
                 ", Price: " + price +
-                ", Total Amount: " + amount +
-                ", Order Status: '" + displayStatus() + '\'' +
-                '}';
+                ", Amount: " + amount +
+                ", Order Status: " + displayStatus();
     }
 }

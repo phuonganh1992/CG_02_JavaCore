@@ -54,11 +54,9 @@ public class Distance {
 
     @Override
     public String toString() {
-        return "Distance{" +
-                "start='" + start + '\'' +
-                ", end='" + end + '\'' +
-                ", length=" + length +
-                ", journey Estimate Time=" + journeyEstimateTime +
-                '}';
+        return "Start Location: '" + start + '\'' +
+                "==> '" + end + '\'' +
+                ", length: " + length +
+                ", journey Estimate Time: " + journeyEstimateTime;
     }
 }
