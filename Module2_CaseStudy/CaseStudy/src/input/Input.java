@@ -1,14 +1,12 @@
 package input;
 
 import file.DistanceIO;
-import model.Client;
-import model.Distance;
-import model.Order;
-import model.Validation;
+import model.*;
 import services.ClientService;
 import services.DistanceService;
 import services.OrderService;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -122,5 +120,28 @@ public class Input {
     public static LocalDate inputDate(String dateString){
         DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return LocalDate.parse(dateString,formatter);
+    }
+    public static Taxi inputTaxi(){
+        System.out.println("Enter taxi information");
+        int taxiID = inputTaxiID();
+        SCANNER.nextLine();
+        String licensePlate = inputLicensePlate();
+        System.out.print("Enter taxi color: ");
+        String taxiColor=SCANNER.nextLine();
+        System.out.print("Enter taxi seat quantity: ");
+        int taxiSeatQuantity=SCANNER.nextInt();
+        System.out.print("Enter taxi status: ");
+        int taxiStatus=SCANNER.nextInt();
+        return new Taxi(taxiID,licensePlate,taxiColor,taxiSeatQuantity,taxiStatus) ;
+    }
+
+    public static String inputLicensePlate() {
+        System.out.print("Enter taxi license plate: ");
+        return SCANNER.nextLine();
+    }
+
+    public static int inputTaxiID() {
+        System.out.print("Enter taxi ID: ");
+        return SCANNER.nextInt();
     }
 }

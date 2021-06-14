@@ -1,5 +1,7 @@
+import controller.AdminApp;
 import controller.TaxiApp;
 import input.Input;
+import model.Taxi;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -9,6 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         TaxiApp taxiApp = new TaxiApp();
+        AdminApp adminApp=new AdminApp();
         int choice_1;
         boolean check_1 = false;
         try {
@@ -113,17 +116,78 @@ public class Main {
 
     public static void menu_3() {
         System.out.println("-----------------------------MENU_3---------------------------------");
-        System.out.println("1: Accept this taxi");
-        System.out.println("2: Cancel");
+        System.out.println("1. Accept this taxi");
+        System.out.println("2. Cancel");
     }
 
     public static void menu_4() {
         System.out.println("-----------------------------MENU_4---------------------------------");
-        System.out.println("1: Have not arrived yet, keep going---------------------------------");
-        System.out.println("2: Finished, pls make payment");
+        System.out.println("1. Have not arrived yet, keep going---------------------------------");
+        System.out.println("2. Finished, pls make payment");
     }
 
     public static void menu_admin(){
+        System.out.println("-----------------------------MENU_ADMIN---------------------------------");
+        System.out.println("1. Add new taxi");
+        System.out.println("2. Display taxi list");
+        System.out.println("3. Update taxi");
+        System.out.println("4. Delete taxi by taxi ID");
+        System.out.println("5. Find taxi by taxi ID");
+        System.out.println("6. Sort taxi");
+        System.out.println("7. Display all order");
+        System.out.println("8. Filter order by date");
+        System.out.println("9. Exit");
 
     }
+    public static void adminFunction(AdminApp adminApp){
+        int adminChoice;
+        do {
+            menu_admin();
+            System.out.print("Admin_Enter your choice: ");
+            adminChoice = SCANNER.nextInt();
+            switch (adminChoice) {
+                case 1:
+                    Taxi taxi= Input.inputTaxi();
+                    adminApp.createTaxi(taxi);
+                    break;
+                case 2:
+                    adminApp.displayTaxi();
+                    break;
+                case 3:
+                    int taxiIdUpdate=Input.inputTaxiID();
+                    Taxi taxiUpdate=Input.inputTaxi();
+                    adminApp.update(taxiIdUpdate,taxiUpdate);
+                    break;
+                case 4:
+                    int taxiIDDelete=Input.inputTaxiID();
+                    adminApp.deleteTaxi(taxiIDDelete);
+                    break;
+                case 5:
+                    int taxiIDFind=Input.inputTaxiID();
+                    Taxi taxiFind=adminApp.findById(taxiIDFind);
+                    if(taxiFind==null) System.out.println("Found no taxi with id "+taxiIDFind);
+                    else System.out.println(taxiIDFind);
+                    break;
+                case 6:
+                    adminApp.sortTaxi();
+                    System.out.println("Sorted successfully!");
+                    break;
+                case 7:
+                    adminApp.displayOrder();
+                    break;
+                case 8:
+                    System.out.print("Enter start date: ");
+                    String startDateString=SCANNER.nextLine();
+                    System.out.print("Enter end date: ");
+                    String endDateString=SCANNER.nextLine();
+                    adminApp.filterByDate(Input.inputDate(startDateString),Input.inputDate(endDateString));
+                    break;
+                case 9:
+                    System.exit(0);
+                    break;
+            }
+        } while (adminChoice >= 1 && adminChoice <= 9);
+
+    }
+
 }

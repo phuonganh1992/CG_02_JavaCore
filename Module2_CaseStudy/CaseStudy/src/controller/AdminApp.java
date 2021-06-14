@@ -7,10 +7,8 @@ import services.OrderService;
 import services.TaxiService;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class AdminApp {
     private ClientService clientService;
@@ -21,6 +19,9 @@ public class AdminApp {
         clientService=ClientService.getInstance();
         orderService=OrderService.getInstance();
         taxiService=TaxiService.getInstance();
+    }
+    public List<Order> findAllOrder(){
+        return orderService.findAll();
     }
     public List<Order> filterByDate(LocalDate startDate,LocalDate endDate){
         List<Order> allOrders = orderService.findAll();
@@ -43,6 +44,10 @@ public class AdminApp {
         }
         System.out.println("Total amount: "+totalAmount);
     }
+    public void displayOrder(){
+        orderService.display();
+        calculateTotalAmount(findAllOrder());
+    }
     public void createTaxi(Taxi taxi){
         taxiService.create(taxi);
     }
@@ -60,7 +65,27 @@ public class AdminApp {
     public Taxi findByLicense(String taxiLicense){
         return taxiService.findByLicensePlate(taxiLicense);
     }
-    public List<Taxi> findAll(){
+    public List<Taxi> findAllTaxi(){
         return taxiService.findAll();
+    }
+    public void displayTaxi(){
+        taxiService.display();
+    }
+
+    public int countTaxiInOrder(Taxi taxi){
+        int turn=0;
+        for (Order order:findAllOrder()) {
+            if(order.getTaxi().equals(taxi)) turn+=1;
+        }
+        return turn;
+    }
+    public void sortTaxi(){
+        Collections.sort(findAllTaxi(), new Comparator<Taxi>() {
+            @Override
+            public int compare(Taxi o1, Taxi o2) {
+                return countTaxiInOrder(o1)-countTaxiInOrder(o2);
+            }
+        });
+        displayTaxi();
     }
 }
