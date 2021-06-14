@@ -117,9 +117,13 @@ public class Main {
         System.out.println("2: Cancel");
     }
 
-    private static void menu_4() {
+    public static void menu_4() {
         System.out.println("-----------------------------MENU_4---------------------------------");
         System.out.println("1: Have not arrived yet, keep going---------------------------------");
         System.out.println("2: Finished, pls make payment");
+    }
+
+    public static void menu_admin(){
+
     }
 }

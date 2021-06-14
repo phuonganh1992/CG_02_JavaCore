@@ -1,6 +1,7 @@
 package controller;
 
 import model.Order;
+import model.Taxi;
 import services.ClientService;
 import services.OrderService;
 import services.TaxiService;
@@ -42,6 +43,24 @@ public class AdminApp {
         }
         System.out.println("Total amount: "+totalAmount);
     }
+    public void createTaxi(Taxi taxi){
+        taxiService.create(taxi);
+    }
 
+    public void deleteTaxi(int id){
+        taxiService.delete(id);
+    }
 
+    public void update(int id, Taxi taxi){
+        taxiService.update(id,taxi);
+    }
+    public Taxi findById(int id){
+        return taxiService.findById(id);
+    }
+    public Taxi findByLicense(String taxiLicense){
+        return taxiService.findByLicensePlate(taxiLicense);
+    }
+    public List<Taxi> findAll(){
+        return taxiService.findAll();
+    }
 }
