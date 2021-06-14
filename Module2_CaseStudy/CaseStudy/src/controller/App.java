@@ -12,6 +12,8 @@ import java.util.Scanner;
 
 public class App {
     public static final Scanner SCANNER = new Scanner(System.in);
+    public static final int ROLE_ADMIN = 2;
+    public static final int ROLE_CLIENT = 1;
     private Client client;
     private Order order;
     private Taxi taxi;
@@ -85,6 +87,7 @@ public class App {
     public int login() {
         String username;
         Client clientLogin;
+        int role=0;
         do {
             System.out.print("Enter username: ");
             username=SCANNER.nextLine();
@@ -96,19 +99,21 @@ public class App {
         do {
             System.out.print("Enter password: ");
             password = SCANNER.nextLine();
-            if(!clientLogin.getClientPassword().equals(password)) {
-                System.out.println("Wrong password!");
-            }
+
 
             boolean isAdminAcount = username.equals("ProAdmin") && password.equals("ProAdmin123");
             if(isAdminAcount) {
-                return 2;
+                role= ROLE_ADMIN;
             }
             if(!isAdminAcount && clientLogin.getClientPassword().equals(password)){
                 this.client=clientLogin;
                 System.out.println("Client login successfully!");
-                return 1;
+                role= ROLE_CLIENT;
+            }
+            if(!clientLogin.getClientPassword().equals(password)) {
+                System.out.println("Wrong password!");
             }
         }while (!clientLogin.getClientPassword().equals(password));
+        return role;
     }
 }
