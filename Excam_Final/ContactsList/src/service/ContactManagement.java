@@ -12,7 +12,7 @@ public class ContactManagement {
     private List<Contact> contacts;
 
     public ContactManagement() {
-        contacts=ContactIO.readFromFile(PATH_FILE);
+        this.contacts=ContactIO.readFromFile(PATH_FILE);
     }
 
     public List<Contact> getContacts() {
@@ -24,7 +24,7 @@ public class ContactManagement {
     }
     public void create(Contact contact){
         this.contacts.add(contact);
-        ContactIO.writeToFile(PATH_FILE,this.contacts);
+//        ContactIO.writeToFile(PATH_FILE,this.contacts);
     }
     public void display(){
         for (Contact contact:this.contacts) {
@@ -34,7 +34,7 @@ public class ContactManagement {
     public int findByPhoneNumber(String phoneNumber){
         int index=-1;
         for (int i = 0; i < contacts.size(); i++) {
-            if(contacts.get(i).equals(phoneNumber)) index=i;
+            if(contacts.get(i).getPhoneNumber().equals(phoneNumber)) index=i;
         }
         return index;
     }
@@ -66,15 +66,13 @@ public class ContactManagement {
         }
         if(index==-1) System.out.println("Found no contact to delete!");
         else System.out.println("Delete successfully!");
-        ContactIO.writeToFile(PATH_FILE,this.contacts);
+//        ContactIO.writeToFile(PATH_FILE,this.contacts);
     }
     public void writeToFile(){
         ContactIO.writeToFile(PATH_FILE,contacts);
         System.out.println("Write successfully");
     }
-    public List<Contact> readFromFile(){
-        return ContactIO.readFromFile(PATH_FILE);
-
+    public void readFromFile(){
+        this.contacts= ContactIO.readFromFile(PATH_FILE);
     }
-
 }

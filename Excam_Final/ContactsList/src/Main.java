@@ -43,8 +43,10 @@ public class Main {
                     int choiceFind;
                     boolean check=false;
                     do{
-                        System.out.print("Enter you choice to find!: ");
+                        menu_find();
+                        System.out.print("Enter you choice to find: ");
                         choiceFind= scanner.nextInt();
+                        scanner.nextLine();
                         switch (choiceFind){
                             case 1:
                                 String phoneNumberFind=Input.inputPhoneNumber();
@@ -92,8 +94,8 @@ public class Main {
         System.out.println("3. Update contact");
         System.out.println("4. Delete contact");
         System.out.println("5. Find contact");
-        System.out.println("6. Write to File");
-        System.out.println("7. Read from File");
+        System.out.println("6. Read from File");
+        System.out.println("7. Write to File");
         System.out.println("8. Exit");
     }
     public static void menu_find(){

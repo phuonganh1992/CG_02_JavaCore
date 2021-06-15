@@ -1,3 +1,4 @@
-Phone Number,Group,Name,Gender,Address,Date Of Birth,Email
-0971234567,CodeGym,Nguyen Van A,Male,My Dinh - Ha Noi,01/01/1989,vana@codegym.vn
-0971234568,Friend,Nguyen Van B,Female,Thanh Xuan - Ha Noi,01/01/1990,nguyenthib@codegym.vn
+Phone Number,Group,Name,Address,Student gender,Date Of Birth,Email
+0971234567,CodeGym,Nguyen Van A,My Dinh - Ha Noi,Male,01/01/1989,vana@codegym.vn
+0971234568,Friend,Nguyen Van B,Thanh Xuan - Ha Noi,Female,01/01/1990,nguyenthib@codegym.vn
+0337644653,Friend,Anh,HN,Female,21/12/2992,phuonganh.kt@gmail.com

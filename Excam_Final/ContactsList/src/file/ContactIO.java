@@ -54,6 +54,7 @@ public class ContactIO {
                 DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 LocalDate dateOfBirth=LocalDate.parse(dateString,formatter);
                 Contact contact=new Contact(phoneNumber,group,name,gender,address,email,dateOfBirth);
+                contacts.add(contact);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

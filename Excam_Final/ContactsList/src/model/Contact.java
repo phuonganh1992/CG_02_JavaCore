@@ -86,7 +86,7 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "Phone number='" + phoneNumber +
+        return "Phone number=" + phoneNumber +
                 ", group: " + group +
                 ", name: " + name +
                 ", gender: " + gender +
